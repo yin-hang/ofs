@@ -44,7 +44,7 @@ $info="\n";
 foreach($_POST as $key=>$value) {
 	str_replace("\"","\'",$value);
 	str_replace(",","，",$value);
-	$thisinfo = $key."\" : \"".$value."\" ,\n";
+	$thisinfo = "\"".$key."\" : \"".$value."\" ,\n";
 	//print "<br>\"".$thisinfo; //key."\" : \"".$value."\" ,";
 	$info = $info.$thisinfo;
 }
