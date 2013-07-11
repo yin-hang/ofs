@@ -62,7 +62,7 @@
 		foreach ($row as $key=>$value) {
 			$info1 = explode("\" : \"", $value);
 			if (isset($info1[1])) {
-				$info1index = trim($info1[0]);
+				$info1index = trim($info1[0], "\" \t\n\r\0\x0B");
 				//echo $formvalues["$info1index"]." CHANGE ";
 				$formvalues["$info1index"] = substr($info1[1], 0, -2);
 				//echo $formvalues[$info1index]." BECAUSE ";
