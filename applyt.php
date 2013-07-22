@@ -2,16 +2,15 @@
 require("top.php");
 ?>
 <br>
-ç³»ç»Ÿå°šæœªå®Œæˆï¼ŒæŠ±æ­‰ï¼<br>
-è¯·å‘ä¿¡ç»™ volunteerteachers@gmail.com æŠ¥å
+ÏµÍ³ÉĞÎ´Íê³É£¬±§Ç¸£¡<br>
+Çë·¢ĞÅ¸ø volunteerteachers@gmail.com ±¨Ãû
 <br>
-<a href="./">æŒ‰æ­¤è¿”å›ç”³è¯·ç³»ç»Ÿé¦–é¡µ</a>
+<a href="./">°´´Ë·µ»ØÉêÇëÏµÍ³Ê×Ò³</a>
 
 <p>
 
 <?php
-$filespath="/home/yinhang/proj/teacher/files";
-
+$filespath = $FILESPATH;
 if(isset($_user['name']) == false) {
   require("login.php");
 	die;
@@ -19,21 +18,27 @@ if(isset($_user['name']) == false) {
 $username = $_user['name'];
 $userhead = substr($username, 0, 1);
 if(!is_dir("$filespath/$userhead") && !mkdir("$filespath/$userhead")) {
-	print "æ–‡ä»¶ä¿å­˜ç›®å½• $filespath/$userhead æ— æ³•åˆ›å»º, è¯·è”ç³»ç®¡ç†å‘˜";
+	print "ÎÄ¼ş±£´æÄ¿Â¼ $filespath/$userhead ÎŞ·¨´´½¨, ÇëÁªÏµ¹ÜÀíÔ±";
 	die;
 }
+$userencode = $username; //TODO: ¿¼ÂÇbase64
+if(!is_dir("$filespath/$userhead/$userencode") && !mkdir("$filespath/$userhead/$userencode")) {
+	print "ÎÄ¼ş±£´æÄ¿Â¼ $filespath/$userhead/$userencode ÎŞ·¨´´½¨, ÇëÁªÏµ¹ÜÀíÔ±";
+	die;
+}
+
 $photoObj = $_FILES['photo'];
-$photoExt = strrchr($photoObj['name'], ".");
-$photoPath = $filespath."/$userhead/$username".$photoExt;
+//$photoExt = strrchr($photoObj['name'], ".");
+$photoPath = $filespath."/$userhead/$userencode/".$photoObj['name']; //$photoExt;
 if (move_uploaded_file($photoObj['tmp_name'], $photoPath)) {
 	#good
 } else {
-	$photoPath = "NO"; //die;
+	$photoPath = $INVALIDSTR; //die;
 	if (isset($_POST["lastphotopath"])) {
 		$photoPath = $_POST["lastphotopath"];
-		print "ç…§ç‰‡æœªä¿®æ”¹<br>";
+		print "ÕÕÆ¬Î´ĞŞ¸Ä<br>";
 	} else {
-		print "ç…§ç‰‡ä¸Šä¼ å¤±è´¥<br>";
+		print "ÕÕÆ¬ÉÏ´«Ê§°Ü<br>";
 	}
 }
 
@@ -43,7 +48,7 @@ if (move_uploaded_file($photoObj['tmp_name'], $photoPath)) {
 $info="\n";
 foreach($_POST as $key=>$value) {
 	str_replace("\"","\'",$value);
-	str_replace(",","ï¼Œ",$value);
+	str_replace(",","£¬",$value);
 	$thisinfo = "\"".$key."\" : \"".$value."\" ,\n";
 	//print "<br>\"".$thisinfo; //key."\" : \"".$value."\" ,";
 	$info = $info.$thisinfo;
@@ -53,18 +58,23 @@ print "<hr>";
 require_once ("db.php");
 
 $results = DB::queryFirstRow("select stat from $APPLYTABLE where user = '".$username."'");
+$nowTimeObj = new DateTime('NOW');
+$nowTime = $nowTimeObj->format(DateTime::ISO8601);
 if ($results == NULL) {
 	//echo "Y";
 	DB::insert($APPLYTABLE, array (
 		  'user' => $username
 		, 'info' => $info
 		, 'file' => $photoPath
+		, 'moditime' => $nowTime
+		, 'creatime' => $nowTime
 	));
 } else {
 	//echo "N";
 	DB::update($APPLYTABLE, array (
 		'info' => $info
 		, 'file' => $photoPath
+		, 'moditime' => $nowTime
 		), "user=%s", $username
 	);
 }
@@ -75,14 +85,14 @@ if (isset($_POST['apply'])) {
 	foreach ($MUSTBE as $rule) {
 		if (strpos($info, $rule) == false) {
 			$valid = false;
-			print ("å¡«å†™ä¸å®Œæ•´, è¯·å›é€€é‡æ–°å¡«å†™. å·²å¡«å†™çš„éƒ¨åˆ†å·²ä¿å­˜ï¼Œå¯æ”¾å¿ƒåˆ·æ–°<br>");
+			print ("ÌîĞ´²»ÍêÕû, Çë»ØÍËÖØĞÂÌîĞ´. ÒÑÌîĞ´µÄ²¿·ÖÒÑ±£´æ£¬¿É·ÅĞÄË¢ĞÂ<br>");
 			die;
 		}	
 	}
 	foreach ($MUSTNOT as $rule) {
 		if (strpos($info, $rule) != false) {
 			$valid = false;
-			print ("å¡«å†™ä¸å®Œæ•´, è¯·å›é€€é‡æ–°å¡«å†™. å·²å¡«å†™çš„éƒ¨åˆ†å·²ä¿å­˜ï¼Œå¯æ”¾å¿ƒåˆ·æ–°<br>");
+			print ("ÌîĞ´²»ÍêÕû, Çë»ØÍËÖØĞÂÌîĞ´. ÒÑÌîĞ´µÄ²¿·ÖÒÑ±£´æ£¬¿É·ÅĞÄË¢ĞÂ<br>");
 			die;
 		}	
 	}
@@ -90,8 +100,10 @@ if (isset($_POST['apply'])) {
 	if ($valid == true) {
 		DB::update($APPLYTABLE, array (
 			'stat' => $STAT_APPLYED
+			, 'moditime' => $nowTime
 			), "user=%s", $username
 		);
+		print "<br>ÉêÇëÒÑÌá½»£¬ÇëµÈ´ıÉóºË<br>";
 
 	}
 }
