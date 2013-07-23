@@ -17,11 +17,13 @@
 		} else if ($stat <= $STAT_FAIL) {
 			print "很遗憾，此次您未能申请成功，感谢您的爱心，期待与您再次合作！<br>";
 		} else {
-			print "stat = $stat<br>";
-			if ($stat >= $MAXEMPHSTAT)
+			//print "DEBUG: stat = $stat<br>";
+			/*if ($stat >= $MAXEMPHSTAT)
 				$emph = $MAXEMPHSTAT+$EMPH_OFFSET;
 			else 
 				$emph = $stat + $EMPH_OFFSET;
+			*/
+			$emph = $stat2emph[$stat];
 			require("flow.php");
 			if ($stat == $STAT_LESSONPLAN) {
 				?>
@@ -34,7 +36,9 @@
 				<?php
 					//<input type=submit value="保存" name="save" />
 			}
-			print "<br>请耐心等待，感谢您的爱心！可到<a href=\"/bbs/\">论坛</a>进一步讨论目的地情况和支教经验<br>";
+			print "<br>请耐心等待，感谢您的爱心！可到<a href=\"/bbs/\">论坛</a>进一步讨论目的地情况和支教经验<br><hr>以下是您的申请信息(已提交审核，不能自行修改)：<br>";
+			$username = $_user['name'];
+			include("form.php");
 		}
 	} else {
 		$emph = 0; 

@@ -15,5 +15,12 @@
 		}
 	}
 ?>
-</small>
+</small><br>
+您现在的状态是：
+<?php
+	if(isset($stat)) {
+		echo "[$stat]";
+	}
+	echo $flows[$emph];
+?>
 <br>
