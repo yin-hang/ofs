@@ -1,4 +1,6 @@
 <?php
+require("applyframe.php");
+exit;
   require("user.php");
 	if(isset($_user['is_login']) && $_user['is_login']){
 		require_once ("db.php");

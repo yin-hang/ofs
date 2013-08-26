@@ -1,0 +1,81 @@
+
+body{
+    color: #333;
+    background: #fff url(/teacher/static/img/bg.jpg) center top repeat-x;
+    width: 80%;
+    margin: 0 auto;
+}
+ul,li{
+    list-style: none;
+}
+.header{
+    min-height: 120px;
+}
+.header img{
+    margin-top : 10px;
+}
+.main input[type=text]{
+    height: 26px;
+    margin: 4px 6px 4px 0;
+}
+.main input[type=checkbox],.main input[type=radio]{
+    margin-top:-2px;
+}
+h1 {
+    text-align: center;
+}
+.main{
+    background: #ffffff;
+    border: 1px solid #bdcfdd;
+    border-top: 2px solid #065792;
+    padding: 20px
+}
+.item{
+
+}
+.item .text{
+    display: inline-block;
+    width: 80px;
+    text-align: right;
+    font-weight: normal;
+}
+.item .ip{
+    display: inline-block;
+}
+.item .tip{
+    display: inline-block;
+}
+.til{
+
+}
+.til2{
+    font-size: 22.5px;
+    margin: 10px 0;
+    font-family: inherit;
+    font-weight: bold;
+    line-height: 40px;
+    color: inherit;
+    font-weight: bold;
+    border: 0;
+    border-top: 1px solid #eeeeee;
+    border-bottom: 1px solid #eeeeee;
+}
+.red{
+    color: red;
+}
+.main textarea{
+    width: 600px;
+    height: 100px;
+}
+.footer{
+    text-align: center;
+    margin: 30px;
+}
+.input_small{
+    height: 30px;
+    width:40px;
+}
+.input_big{
+    height: 30px;
+    width: 500px;
+}

@@ -6,4 +6,3 @@
 	DB::$dbName = 'teacher';
 	$APPLYTABLE = DB::$dbName.".apply";
 ?>
-
