@@ -1,12 +1,13 @@
 <?php
 require("top.php");
 ?>
+<!--
 <br>
 系统尚未完成，抱歉！<br>
 请发信给 volunteerteachers@gmail.com 报名
 <br>
 <a href="./">按此返回申请系统首页</a>
-
+-->
 <p>
 
 <?php
@@ -38,7 +39,7 @@ if (move_uploaded_file($photoObj['tmp_name'], $photoPath)) {
 		$photoPath = $_POST["lastphotopath"];
 		print "照片未修改<br>";
 	} else {
-		print "照片上传失败<br>";
+		print '<span class="red">照片上传失败</span><br>';
 	}
 }
 
