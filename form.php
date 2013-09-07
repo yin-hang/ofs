@@ -50,6 +50,7 @@
 	$formvalues["supporttimedetail"] = "";
 	$formvalues["supportstart"] = "";
 	$formvalues["infosrc"] = "";
+    $formvalues['postcode'] = "";
 
 	$res = DB::queryFirstRow("select * from $APPLYTABLE where user = '".$username."'");
 	if ($res == NULL) {
