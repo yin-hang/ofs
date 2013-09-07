@@ -6,6 +6,7 @@
 </div>
 <script src="/teacher/static/libs/js/jquery-2.0.3.js"></script>
 <script src="/teacher/static/libs/js/bootstrap.min.js"></script>
+<script src="/teacher/static/libs/js/jquery-ui.js"></script>
 <script src="/teacher/static/js/teacher.js"></script>
 <script src="/teacher/static/js/apply_submit.js"></script>
 </body>

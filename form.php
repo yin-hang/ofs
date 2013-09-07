@@ -134,10 +134,10 @@
         <tr><td>开始时间</td><td>结束时间</td><td>学校名称</td></tr>
         <tr>
             <td class="sitem">
-                <input type=text size=10  value="<?php echo $formvalues["edubegintime1"]?>" name="edubegintime1" />
+                <input type=text size=10 class="time" value="<?php echo $formvalues["edubegintime1"]?>" name="edubegintime1" />
             </td>
             <td class="sitem">
-                <input type=text size=10  value="<?php echo $formvalues["eduendtime1"]?>" name="eduendtime1" />
+                <input type=text size=10 class="time" value="<?php echo $formvalues["eduendtime1"]?>" name="eduendtime1" />
             </td>
             <td class="bitem">
                 <input type=text size=20  value="<?php echo $formvalues["edu1"]?>" name="edu1" />(中学)
@@ -145,10 +145,10 @@
         </tr>
         <tr>
             <td class="sitem">
-                <input type=text size=10  value="<?php echo $formvalues["edubegintime2"]?>" name="edubegintime2" />
+                <input type=text size=10 class="time" value="<?php echo $formvalues["edubegintime2"]?>" name="edubegintime2" />
             </td>
             <td class="sitem">
-                <input type=text size=10  value="<?php echo $formvalues["eduendtime2"]?>" name="eduendtime2" />
+                <input type=text size=10 class="time" value="<?php echo $formvalues["eduendtime2"]?>" name="eduendtime2" />
             </td>
             <td class="bitem">
                 <input type=text size=20  value="<?php echo $formvalues["edu2"]?>" name="edu2" />(大学)
@@ -157,10 +157,10 @@
         <?php for($i=3;$i<=4;$i++) { ?>
             <tr>
                 <td class="sitem">
-                    <input type=text size=10  value="<?php echo $formvalues["edubegintime$i"] ?>" name="edubegintime<?php echo $i?>" />
+                    <input type=text size=10 class="time" value="<?php echo $formvalues["edubegintime$i"] ?>" name="edubegintime<?php echo $i?>" />
                 </td>
                 <td class="sitem">
-                    <input type=text size=10  value="<?php echo $formvalues["eduendtime$i"] ?>" name="eduendtime<?php echo $i?>" />
+                    <input type=text size=10 class="time" value="<?php echo $formvalues["eduendtime$i"] ?>" name="eduendtime<?php echo $i?>" />
                 </td>
                 <td class="bitem">
                     <input type=text size=20  value="<?php echo $formvalues["edu$i"] ?>" name="edu<?php echo $i?>" />
@@ -172,10 +172,10 @@
     <table class="work_tab">
         <tr><td>开始时间</td><td>结束时间</td><td>单位名称</td><td>担任岗位</td></tr>
         <?php for($i=1;$i<=4;$i++) { ?>
-            <tr><td class="sitem"><input type=text size=10  value="<?php echo $formvalues["jobbegintime$i"] ?>" name="jobbegintime<?php echo $i?>" />
+            <tr><td class="sitem"><input type=text size=10  class="time" value="<?php echo $formvalues["jobbegintime$i"] ?>" name="jobbegintime<?php echo $i?>" />
                 </td>
                 <td class="sitem">
-                    <input type=text size=10  value="<?php echo $formvalues["jobendtime$i"] ?>" name="jobendtime<?php echo $i?>" />
+                    <input type=text size=10 class="time" value="<?php echo $formvalues["jobendtime$i"] ?>" name="jobendtime<?php echo $i?>" />
                 </td>
                 <td class="bitem">
                     <input type=text size=20  value="<?php echo $formvalues["job$i"] ?>" name="job<?php echo $i?>" />
@@ -203,16 +203,28 @@
         }
         ?>
     </table>
+    <h4>家庭成员</h4>
+    <table class="family_tab">
+        <tr>
+            <td>家庭成员</td>
+            <td>姓名</td>
+            <td>工作单位</td>
+        </tr>
+        <?php
+        for($i=1; $i<=4; $i++) {
+            $inputname = 'folkname';
+            echo "<tr><td class='sitem'><input type=text size=20  value=\"".$formvalues["$inputname$i"]."\" name=\"$inputname$i\" /></td>";
+            $inputname = "folk";
+            print "<td class='sitem'><input type='text' size=20  value=\"".$formvalues["$inputname$i"]."\" name=\"$inputname$i\" /></td>";
+            $inputname = "folkjob";
+            print "<td class='bitem'><input type=text size=20 value=\"".$formvalues["$inputname$i"]."\" name=\"$inputname$i\" /></td></tr>";
+        }
+        ?>
+    </table>
     <table class="sp_tab">
         <tr><td>个人特别技能及资历：</td><td><input type=text size=73  value="<?php echo $formvalues["ability"]?>" name="ability" />
             </td></tr><tr><td>有否伤残/病历： </td><td><input type=checkbox class="checkbox" name="ill"  <?php if(isset($formvalues["ill"]) && $formvalues["ill"]=="on") echo "checked"; ?> />有<input type=text size=69  value="<?php echo $formvalues["illdetail"]?>" name="illdetail" />
             </td></tr><tr><td>有否支教经验： </td><td><input type=checkbox class="checkbox" name="exp"  <?php if(isset($formvalues["exp"]) && $formvalues["exp"]=="on") echo "checked"; ?>  />有<input type=text size=69  value="<?php echo $formvalues["expdetail"]?>" name="expdetail" />
-            </td></tr><tr><td>预计支教期限：</td><td>
-                <input type=radio name="supporttime" value="1" <?php if($formvalues["supporttime"]=="1") echo "checked"; ?> />半年
-                <input type=radio name="supporttime" value="2" <?php if($formvalues["supporttime"]=="2") echo "checked"; ?> />一年
-                <input type=radio name="supporttime" value="0" <?php if($formvalues["supporttime"]=="0") echo "checked"; ?> />其它<input type=text size=20  value="<?php echo $formvalues["supporttimedetail"]?>" name="supporttimedetail" />
-            </td></tr><tr><td>愿意开始支教的日期：</td><td><input type=text size=20  value="<?php echo $formvalues["supportstart"]?>" name="supportstart" />
-            </td></tr><tr><td>从何处得悉本服务的消息：</td><td><input type=text size=20  value="<?php echo $formvalues["infosrc"]?>" name="infosrc" />
             </td></tr><tr><td>
                 照片（半身生活照为佳）：</td><td>
                 <?php
@@ -287,7 +299,7 @@
         <input type="text" value="<?=$forumvalues['other_time']?>" name="other_time">
     </p>
     <p>
-        10. 愿意开始支教的日期：<input type="text" name="star_time"/>
+        10. 愿意开始支教的日期：<input class="time" type="text" name="star_time"/>
     </p>
     <p>
         11. 从何处得悉本服务的消息<br>

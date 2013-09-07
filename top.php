@@ -4,6 +4,7 @@
     <meta charset="GBK">
     <link rel="stylesheet" type="text/css" href="/teacher/static/libs/css/bootstrap.css"/>
     <link rel="stylesheet" type="text/css" href="/teacher/static/libs/css/bootstrap-responsive.css"/>
+    <link rel="stylesheet" type="text/css" href="/teacher/static/libs/css/jquery-ui.css"/>
     <link rel="stylesheet" type="text/css" href="/teacher/static/css/teacher.css"/>
 </head>
 <body>
