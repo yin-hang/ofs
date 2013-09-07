@@ -1,5 +1,4 @@
 <?php
-
 $_httprootdir = '/var/www/html';
 require_once ($_httprootdir.'/app/common/User.php');
 $_user = Common_User::current();
