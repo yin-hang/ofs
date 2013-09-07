@@ -21,6 +21,8 @@
 	if(isset($stat)) {
 		echo "[$stat]";
 	}
-	echo $flows[$emph];
+	if(isset($flows[$emph])){
+		echo $flows[$emph];
+	}
 ?>
 <br>
