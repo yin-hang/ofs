@@ -203,24 +203,6 @@
         }
         ?>
     </table>
-    <h4>家庭成员</h4>
-    <table class="family_tab">
-        <tr>
-            <td>家庭成员</td>
-            <td>姓名</td>
-            <td>工作单位</td>
-        </tr>
-        <?php
-        for($i=1; $i<=4; $i++) {
-            $inputname = 'folkname';
-            echo "<tr><td class='sitem'><input type=text size=20  value=\"".$formvalues["$inputname$i"]."\" name=\"$inputname$i\" /></td>";
-            $inputname = "folk";
-            print "<td class='sitem'><input type='text' size=20  value=\"".$formvalues["$inputname$i"]."\" name=\"$inputname$i\" /></td>";
-            $inputname = "folkjob";
-            print "<td class='bitem'><input type=text size=20 value=\"".$formvalues["$inputname$i"]."\" name=\"$inputname$i\" /></td></tr>";
-        }
-        ?>
-    </table>
     <table class="sp_tab">
         <tr><td>个人特别技能及资历：</td><td><input type=text size=73  value="<?php echo $formvalues["ability"]?>" name="ability" />
             </td></tr><tr><td>有否伤残/病历： </td><td><input type=checkbox class="checkbox" name="ill"  <?php if(isset($formvalues["ill"]) && $formvalues["ill"]=="on") echo "checked"; ?> />有<input type=text size=69  value="<?php echo $formvalues["illdetail"]?>" name="illdetail" />
