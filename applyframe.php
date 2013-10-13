@@ -5,6 +5,7 @@
 	require_once ("db.php");
 
 	$username = $_user['name'];
+
 ?>
 <div class="container">
     <div class="main">

@@ -87,14 +87,12 @@ if (isset($_POST['apply'])) {
 		if (strpos($info, $rule) == false) {
 			$valid = false;
 			print ("填写不完整, 请回退重新填写. 已填写的部分已保存，可放心刷新<br>");
-			die;
 		}	
 	}
 	foreach ($MUSTNOT as $rule) {
 		if (strpos($info, $rule) != false) {
 			$valid = false;
 			print ("填写不完整, 请回退重新填写. 已填写的部分已保存，可放心刷新<br>");
-			die;
 		}	
 	}
 	// stat = $STAT_APPLYED
@@ -108,4 +106,4 @@ if (isset($_POST['apply'])) {
 
 	}
 }
-?>
+require('bottom.php');

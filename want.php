@@ -11,7 +11,7 @@
 			require("applyframe.php");
 		} else if ($stat >= $STAT_SUCC) {
 			$emph = $EMPH_SUCC;
-			require("flow.php");
+//			require("flow.php");
 			print "<br>您已申请成功，感谢您的爱心！可到<a href=\"/bbs/\">论坛</a>进一步讨论当地情况和支教经验<br>";
 			//TODO: 可给些参考链接 
 		} else if ($stat <= $STAT_FAIL) {
@@ -24,7 +24,8 @@
 				$emph = $stat + $EMPH_OFFSET;
 			*/
 			$emph = $stat2emph[$stat];
-			require("flow.php");
+		//	require("flow.php");
+			require_once('top.php');
 			if ($stat == $STAT_LESSONPLAN) {
 				?>
 				<form enctype="multipart/form-data" action="deallessonplan.php" method="post" name="form2" >
@@ -38,13 +39,20 @@
 			}
 			print "<br>请耐心等待，感谢您的爱心！可到<a href=\"/bbs/\">论坛</a>进一步讨论目的地情况和支教经验<br><hr>以下是您的申请信息(已提交审核，不能自行修改)：<br>";
 			$username = $_user['name'];
-			include("form.php");
+			?>	
+			<div> 
+			    <div class="main">
+				<?	include("form.php");?>
+				</div>
+			</div>
+<?
 		}
 	} else {
 		$emph = 0; 
-		require("flow.php");
-		require("login.php");
-		include($_httprootdir."/bbs/login.php");
+		header('Location:http://www.ourfreesky.org/bbs/login.php');
+//		require("flow.php");
+//		require("login.php");
+//		include($_httprootdir."/bbs/login.php");
 	}
 	
 	include("bottom.php");	

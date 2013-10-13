@@ -29,6 +29,6 @@ $stat2emph[$STAT_SUCC] = 7;
 $stat2emph[$STAT_FAIL] = 1;
 
 
-$MUSTBE = array("\"notice\" : \"on\"", "\"healthy\" : \"on\"", "\"supporttime\" :");
-$MUSTNOT = array('"income" : ""', '"think" : ""' , '"risk" : ""' , '"parent" : ""');
+$MUSTBE = array("\"notice\" : \"on\"", "\"healthy\" : \"on\"", "\"time\" :");
+$MUSTNOT = array('"think" : ""' , '"risk" : ""' , '"parent" : ""');
 ?>
