@@ -14,11 +14,11 @@
 <?php
 require_once ("user.php");
 if($_user['is_login']){
-	echo $_user['name']." &nbsp; (»»ÓÃ»§<a href=\"/bbs/login.php?action=quit&verify=1acee49d\">µÇÂ¼</a>)<br>";
+//	echo $_user['name']." &nbsp; (»»ÓÃ»§<a href=\"/bbs/login.php?action=quit&verify=1acee49d\">µÇÂ¼</a>)<br>";
 } else {
 	echo " &nbsp; (Çë<a href=\"/bbs/login.php\">µÇÂ¼</a>)<br>";
 }
-require("flow.php");
+//require("flow.php");
 require_once("db.php");
 ?>
 

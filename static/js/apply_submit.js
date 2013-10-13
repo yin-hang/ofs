@@ -28,18 +28,24 @@ var ApplySubmit = (function(){
 		);
         var email = $('input[name=email]').val();
         var mobile = $('input[name=mobile]').val();
-		validator.add($('input[name=name]').val(),'isNotEmpty','用户名不能为空');
-		validator.add($('input[name=birth]').val(),'isNotEmpty','出生年月不能为空');
-		validator.add($('input[name=hometown]').val(),'isNotEmpty','民族不能为空');
-        validator.add(mobile,'isNotEmpty','手机号不能为空');
-        validator.add(mobile,'isMobile','手机号格式不正确');
-        validator.add(email,'isNotEmpty','邮箱不能为空');
+	validator.add($('input[name=name]').val(),'isNotEmpty','用户名不能为空');
+	validator.add($('input[name=birth]').val(),'isNotEmpty','出生年月不能为空');
+	validator.add($('input[name=hometown]').val(),'isNotEmpty','民族不能为空');
+       	validator.add(mobile,'isNotEmpty','手机号不能为空');
+       	validator.add(mobile,'isMobile','手机号格式不正确');
+       	validator.add(email,'isNotEmpty','邮箱不能为空');
         validator.add(email,'isEmail','邮箱格式不正确');
-		validator.add($('input[name=think]').val(),'isNotEmpty','请填写对于支教的想法');
-		//validator.add($('input[name=think]').val(),'strLong','对于支教的想法填写字数过多,请删减部分');
-		validator.add($('input[name=risk]').val(),'strLong','请填写对于支教的风险的认识');
-		validator.add($('input[name=hope]').val(),'strLogin','请填写你对于参与支教工作的期望或者希望贡献');
-		validator.validate();
+	validator.add($('textarea[name=think]').val(),'isNotEmpty','请填写对于支教的想法');
+	//validator.add($('input[name=think]').val(),'strLong','对于支教的想法填写字数过多,请删减部分');
+	validator.add($('textarea[name=risk]').val(),'strLong','请填写对于支教的风险的认识');
+	validator.add($('textarea[name=hope]').val(),'strLogin','请填写你对于参与支教工作的期望或者希望贡献');
+	validator.add($('input[name=work]:checked').val(),'isNotEmpty','请选择您的身份');
+	validator.add($('input[name=money]:checked').val(),'isNotEmpty','请选择支教活动预备资金');
+	validator.add($('input[name=support]:checked').val(),'isNotEmpty','请选择周边好友对于您支教的支持程度');
+	validator.add($('input[name=time]:checked').val(),'isNotEmpty','请选择支教日期');
+	validator.add($('input[name=time]:checked').val(),'isNotEmpty','请选择支教日期');
+	validator.add($('input[name=msg_from]:checked').val(),'isNotEmpty','请选择消息来源');
+	validator.validate();
 	}
 	return {
 		init:function(){
@@ -140,6 +146,7 @@ Validator.prototype.types = {
 			if(value && value.length > 300){
 				return false;
 			}
+			return true;
 		},
 		instruction:'字数不能超过300'
 	},

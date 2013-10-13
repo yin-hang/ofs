@@ -28,8 +28,6 @@ h1 {
 }
 .main{
     background: #ffffff;
-    border: 1px solid #bdcfdd;
-    border-top: 2px solid #065792;
     padding: 20px
 }
 .item{
