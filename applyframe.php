@@ -1,7 +1,7 @@
 <?php
   require("user.php");
 	$emph = 2;
-	require("top.php");
+	require_once("top.php");
 	require_once ("db.php");
 
 	$username = $_user['name'];

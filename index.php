@@ -1,3 +1,3 @@
 <?php
-	require("want.php");
+require("want.php");
 ?>
