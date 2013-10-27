@@ -15,4 +15,13 @@ class Lib_Errno {
     const UPLOAD_IDENTITY_NOT_FULL =6;// '身份信息上传不全';
     const UPLOAD_IDENTITY_FAIL = 7;//'身份信息上传失败';
     const CAN_NOT_UPDATE_IN_AUDIT = 8;//'审核状态不能再修改';
+
+    const NEED_UPLOAD_IDENTITY_CARD = 9;
+    const NEED_UPLOAD_ADACT_CERT = 10;
+    const NEED_UPLOAD_MEDICIAL_REPORT = 11;
+    const NEED_UPLOAD_IDENTITY = 12;
+    const NEED_UPLOAD_LESSON = 13;
+
+    const PERM_ERROR = 14;//权限错误
+    const REMARK_NOT_NULL = 15;
 }

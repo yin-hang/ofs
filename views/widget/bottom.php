@@ -9,5 +9,6 @@
 <script src="/teacher/static/libs/js/jquery-ui.js"></script>
 <script src="/teacher/static/js/teacher.js"></script>
 <script src="/teacher/static/js/apply_submit.js"></script>
+<script src="/teacher/static/js/audit.js"></script>
 </body>
 </html>

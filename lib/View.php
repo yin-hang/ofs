@@ -11,14 +11,14 @@ class Lib_View {
     protected static $_strTpl = '';
     public static function loadPage($strTplName,$arrData = array()){
         $strPath =  dirname(__FILE__) . '/../views/page/' . $strTplName;
+        $arrResult = $arrData;
+        if(!empty(self::$_arrData)){
+            self::$_arrData = array_merge(self::$_arrData,$arrResult);
+        }
+        extract(self::$_arrData,EXTR_OVERWRITE);
         if(is_file($strPath)){
             include($strPath);
         }
-        $arrResult = $arrData;
-        if(!empty(self::$_arrData)){
-            $arrResult = array_merge(self::$_arrData,$arrResult);
-        }
-        extract($arrResult,EXTR_OVERWRITE);
     }
     public static function setTpl($strTpl){
         self::$_strTpl = $strTpl;
@@ -33,8 +33,10 @@ class Lib_View {
             self::$_arrData[$mixName] = $mixValue;
         }
     }
-    public static function loadWidget($strTplName){
+    public static function loadWidget($strTplName,$arrData=array()){
         $strPath = dirname(__FILE__). '/../views/widget/' . $strTplName;
+        $arrData = array_merge(self::$_arrData,$arrData);
+        extract($arrData,EXTR_OVERWRITE);
         if(is_file($strPath)){
             include($strPath);
         }

@@ -75,7 +75,7 @@ h1 {
     background: white;
 }
 .til2{
-    font-size: 22.5px;
+    font-size: 18.5px;
     margin: 10px 0;
     font-family: inherit;
     font-weight: bold;
@@ -135,7 +135,7 @@ h1 {
     margin: 0 10px 0 0;
 }
 .base_tab li{
-    height: 40px;
+    min-height: 40px;
 }
 
 .opt_wrap{

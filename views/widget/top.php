@@ -1,6 +1,6 @@
 <html>
 <head>
-    <title>Welcome to OFS</title>
+    <title>OFS支教申请</title>
     <meta charset="GBK">
     <link rel="stylesheet" type="text/css" href="/teacher/static/libs/css/bootstrap.css"/>
     <link rel="stylesheet" type="text/css" href="/teacher/static/libs/css/bootstrap-responsive.css"/>
