@@ -11,6 +11,7 @@ class Lib_FileUpload {
         $strUsername = rawurlencode($strUsername);
         $strSavePath = $strSavePath . $strUsername . '/';
         if(!is_dir($strSavePath) && !mkdir($strSavePath)){
+            echo 'mkdir fail';
             return false;
         }
         $strPath = $strSavePath . $objFile['name'];

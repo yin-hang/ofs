@@ -5,9 +5,10 @@
  * Time: 2013-10-28
  * Desc: 
  */
-    $userInfo = array();
+    $forumvalues = $apply_data['info'];
 ?>
 <div>
+    <div>个人信息预览</div>
     <div class="base_info">
         <div class="base_wrap wrap">
             <div class="til">个人基本资料</div>
@@ -15,20 +16,24 @@
                 <ul>
                     <li>
                 <span>
-                    <label>真实姓名</label><input type=text size=10 class="wd2" value="<?php echo $formvalues["name"]?>" name="name" />
+                    <label>真实姓名:</label><span><?echo $forumvalues['name'];?></span>
                 </span>
                 <span>
-                    <label>性别</label>
-                    <select name="sex" class="sex">
-                        <option value="man" <?php if($forumvalues['sex'] == 'man'){echo 'selected';}?>>男</option>
-                        <option value="women" <?php if($forumvalues['sex'] == 'women'){echo 'selected';}?>>女</option>
-                    </select>
+                    <label>性别:</label><span>
+                        <?
+                            if($forumvalues['sex'] == 'man'){
+                                echo '男';
+                            }else{
+                                echo '女';
+                            }
+                        ?>
+                    </span>
                 </span>
                 <span>
-                    <label>出生年份</label><input type=text size=10  class="wd2" value="<?php echo $formvalues["birth"]?>" name="birth" />
+                    <label>出生年份:</label><span><?echo $formvalues["birth"]?></span>
                 </span>
                 <span>
-                    <label>身份证号码</label><input type=text size=30 name="identity_code" value="<?php echo $forumvalues['identity_code']?>"/>
+                    <label>身份证号码:</label><?echo $forumvalues['identity_code']?>
                 </span>
                     </li>
                     <li>
@@ -41,10 +46,10 @@
                      </select>
                 </span>
                 <span>
-                    <label>民族</label><input type=text size=10 class="wd1" value="<?php echo $formvalues["hometown"]?>" name="hometown" />
+                    <label>民族:</label><?echo $formvalues["hometown"]?>
                 </span>
                 <span>
-                    <label>籍贯</label><input type=text size=10 class="wd1" value="<?php echo $formvalues["name"]?>" name="name" />
+                    <label>籍贯:</label><input type=text size=10 class="wd1" value="<?php echo $formvalues["name"]?>" name="name" />
                 </span>
                 <span>
                     <label>教育程度</label><input type=text size=30 class="wd2" value="<?php echo $formvalues["edu"]?>" name="edu" />

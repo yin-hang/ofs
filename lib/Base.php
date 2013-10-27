@@ -41,7 +41,7 @@ abstract class BaseAction{
             'errmsg' => $this->_strErrmsg,
             'data' => $this->_arrData
         );
-        $arrResult = self::convert($arrResult,'gbk','utf-8');
+        $arrResult = Lib_Encode::convert($arrResult,'gbk','utf-8');
         echo json_encode($arrResult);
     }
     public function displayTemplate(){
@@ -49,20 +49,6 @@ abstract class BaseAction{
         Lib_View::assign('errno',$this->_intErrno);
         Lib_View::assign('errmsg',$this->_strErrmsg);
         Lib_View::loadPage($this->_strTpl);
-    }
-    public  static function convert($mixData,$strToEncode='gbk',$strFromEncode='utf-8'){
-        $arrResult = array();
-        if(is_array($mixData)){
-            if (empty($mixVar)) return array();
-            foreach($mixData as $key => $value){
-                $key = self::convert($key,$strToEncode,$strFromEncode);
-                $arrResult[$key] = self::convert($value,$strToEncode,$strFromEncode);
-            }
-            return $arrResult;
-        }elseif(is_string($mixData)){
-            return mb_convert_encoding($mixData,$strToEncode,$strFromEncode);
-        }
-        return $mixData;
     }
     protected  function  _error($intErrno,$strErrmsg = ''){
         $this->_intErrno = $intErrno;

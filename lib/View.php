@@ -11,14 +11,14 @@ class Lib_View {
     protected static $_strTpl = '';
     public static function loadPage($strTplName,$arrData = array()){
         $strPath =  dirname(__FILE__) . '/../views/page/' . $strTplName;
-        if(is_file($strPath)){
-            include($strPath);
-        }
         $arrResult = $arrData;
         if(!empty(self::$_arrData)){
             $arrResult = array_merge(self::$_arrData,$arrResult);
         }
         extract($arrResult,EXTR_OVERWRITE);
+        if(is_file($strPath)){
+            include($strPath);
+        }
     }
     public static function setTpl($strTpl){
         self::$_strTpl = $strTpl;

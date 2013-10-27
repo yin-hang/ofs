@@ -9,7 +9,7 @@ if($_user['is_login']){
         你需要先<a href="http://www.ourfreesky.org/bbs/login.php">登录</a>之后才能进行申请操作
     <?php }else{
         if($apply_stat === false){
-            echo '你尚未进行支教申请，<a href="/teacher/applyt.php">点击进行申请</a>';
+            echo '你尚未进行支教申请，<a href="/teacher/apply.php">点击进行申请</a>';
         }else{
             switch($apply_stat){
                 case Lib_Define::STAT_APPLYING;//申请中,还未提交申请

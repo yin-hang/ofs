@@ -10,7 +10,16 @@ Lib_View::loadWidget('top.php');
 <div class="container">
     <div class="main">
         <h1>OFS支教志愿者申请表</h1>
-        <form enctype="multipart/form-data" action="applyt.php" method="post" name="form1" >
+        <div>
+            <span class="red">
+                <?
+                    if($errmsg){
+                        echo $errmsg;
+                    }
+                ?>
+            </span>
+        </div>
+        <form enctype="multipart/form-data" action="/teacher/commit/apply.php" method="post" name="form1" >
             <?php Lib_View::loadWidget('form.php')?>
         </form>
 </div>
