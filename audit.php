@@ -30,5 +30,5 @@
 		print "<a href=\"$addr?type=$STAT_RECHECKED_NOPLAN\">复审完成,仍在修改教案</a><br>";
 	}
 
-	include("bottom.php");
+	include("views/widget/bottom.php");
 ?>

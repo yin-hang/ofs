@@ -1,5 +1,5 @@
 <?php
-require("top.php");
+require("views/widget/top.php");
 ?>
 <!--
 <br>
@@ -12,10 +12,6 @@ require("top.php");
 
 <?php
 $filespath = $FILESPATH;
-if(isset($_user['name']) == false) {
-  require("login.php");
-	die;
-}
 $username = $_user['name'];
 $userhead = substr($username, 0, 1);
 if(!is_dir("$filespath/$userhead") && !mkdir("$filespath/$userhead")) {
@@ -42,10 +38,6 @@ if (move_uploaded_file($photoObj['tmp_name'], $photoPath)) {
 		print '<span class="red">ÕÕÆ¬ÉÏ´«Ê§°Ü</span><br>';
 	}
 }
-
-//print_r($_POST);
-//print "File: $photoPath - ".$_FILES['photo']['name'];
-//print_r($_FILES);
 $info="\n";
 foreach($_POST as $key=>$value) {
 	str_replace("\"","\'",$value);

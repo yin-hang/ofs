@@ -3,13 +3,13 @@
  * Author: jiangzhibin
  * Date: 13-10-27
  * Time: 2013-10-27
- * Desc: 完成心里测试
+ * Desc: 
  */
 require_once('../lib/Base.php');
-class FinishText extends BaseAction{
+class starTest extends BaseAction{
     private $_intApplyNum = 0;
     public function _execute(){
-        $arrResult = DB::update('update apply set stat=%d where user=%s and apply_num=%s',Lib_Define::STAT_PSYCHOLOGY_TEST_EDN,$this->_arrUser['name'],$this->_intApplyNum);
+        $arrResult = DB::update('update apply set stat=%d where user=%s and apply_num=%s',Lib_Define::STAT_PSYCHOLOGY_TESTING,$this->_arrUser['name'],$this->_intApplyNum);
         if($arrResult !== false){
             return true;
         }
@@ -20,7 +20,7 @@ class FinishText extends BaseAction{
             return false;
         }
         $this->_intApplyNum = $_POST['apply_num'];
-        if(Lib_Data::getApplyStatByUsername($this->_arrUser['name']) !== Lib_Define::STAT_PSYCHOLOGY_TESTING){
+        if(Lib_Data::getApplyStatByUsername($this->_arrUser['name']) !== Lib_Define::STAT_APPLYED){
             return false;
         }
         return true;

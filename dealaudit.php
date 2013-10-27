@@ -1,5 +1,5 @@
 <?php
-require("top.php");
+require("views/widget/top.php");
 
 if(!isset($_POST['user']) || !isset($_POST['oldstat'])) {
 	print "<h2>Illegal visit of this page!</h2>";

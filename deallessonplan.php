@@ -1,5 +1,5 @@
 <?php
-	require("top.php");
+	require("views/widget/top.php");
 	
 	$filespath = $FILESPATH;
 	if(isset($_user['name']) == false) {
@@ -39,7 +39,7 @@
 	}
 
 
-	require_once ("db.php");
+	require_once ("views/widget/db.php");
 
 	DB::update($APPLYTABLE, array (
 		 'doc' => $lessonplanPath
@@ -48,5 +48,5 @@
 	);
 
 	
-	include("bottom.php");
+	include("views/widget/bottom.php");
 ?>

@@ -12,7 +12,11 @@
     <div class="left"><a href="/"><img src="/teacher/static/img/ofs_logo.gif" width="240" height="100"/></a></div>
 </div>
 <?php
-require_once ("user.php");
-require_once("db.php");
+$file_path = dirname(__FILE__) . '/../../';
+require_once ($file_path . "user.php");
+require_once($file_path . "db.php");
+require_once($file_path . "lib/Data.php");
+require_once($file_path . "lib/Define.php");
+require_once($file_path . "lib/FileUpload.php");
 ?>
 
