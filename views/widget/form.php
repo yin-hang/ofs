@@ -107,10 +107,10 @@
                      </select>
                 </span>
                 <span>
-                    <label>民族</label><input type=text size=10 class="wd1" value="<?php echo $formvalues["hometown"]?>" name="hometown" />
+                    <label>民族</label><input type=text size=10 class="wd1" value="<?php echo $formvalues["nation"]?>" name="nation" />
                 </span>
                 <span>
-                    <label>籍贯</label><input type=text size=10 class="wd1" value="<?php echo $formvalues["name"]?>" name="name" />
+                    <label>籍贯</label><input type=text size=10 class="wd1" value="<?php echo $formvalues["hometown"]?>" name="hometown" />
                 </span>
                 <span>
                     <label>教育程度</label><input type=text size=30 class="wd2" value="<?php echo $formvalues["edu"]?>" name="edu" />
@@ -207,7 +207,11 @@
             $inputname = "folk";
             print "<td class='sitem'><input type='text' size=20  value=\"".$formvalues["$inputname$i"]."\" name=\"$inputname$i\" /></td>";
             $inputname = "folkjob";
-            print "<td class='bitem'><input type=text size=20 value=\"".$formvalues["$inputname$i"]."\" name=\"$inputname$i\" /></td></tr>";
+            print "<td class='bitem'><input type=text size=20 value=\"".$formvalues["$inputname$i"]."\" name=\"$inputname$i\" />";
+            if($i==1){
+                echo '<span class="red">*</span>';
+            }
+            echo "</td></tr>";
         }
         ?>
     </table>
@@ -221,17 +225,17 @@
         <tr>
             <td>有否伤残/病历： </td>
             <td>
-                <input type="radio" class="radio" name="ill" value="yes" <?php if(isset($formvalues["ill"]) &&$forumvalues['ill'] == 'yes'){ echo 'selected';}?> />无
-                <input type="radio" class="radio" name="ill"  value="no" <?php if(isset($formvalues["ill"]) &&$forumvalues['ill'] == 'no'){ echo 'selected';}?> />有
-                <input type="text" size="30"  value="<?php echo $formvalues["illdetail"]?>" name="illdetail" />
+                <input type="radio" class="radio" name="ill" value="no" <?php if(isset($formvalues["ill"]) &&$forumvalues['ill'] == 'no'){ echo 'selected';}?> />无
+                <input type="radio" class="radio" name="ill"  value="yes" <?php if(isset($formvalues["ill"]) &&$forumvalues['ill'] == 'yes'){ echo 'selected';}?> />有
+                <input type="text" size="30"  class="hide" value="<?php echo $formvalues["illdetail"]?>" name="illdetail" />
             </td>
         </tr>
         <tr>
             <td>有否支教经验： </td>
             <td>
-                <input type="radio" class="checkbox" name="exp"  value="yes" <?php if(isset($formvalues["exp"]) &&$forumvalues['exp'] == 'yes'){ echo 'selected';}?>  />无
-                <input type="radio" class="checkbox" name="exp"  value="no" <?php if(isset($formvalues["exp"]) &&$forumvalues['exp'] == 'no'){ echo 'selected';}?> />有
-                <input type=text size="30"  value="<?php echo $formvalues["expdetail"]?>" name="expdetail" />
+                <input type="radio" class="checkbox" name="exp"  value="no" <?php if(isset($formvalues["exp"]) &&$forumvalues['exp'] == 'no'){ echo 'selected';}?>  />无
+                <input type="radio" class="checkbox" name="exp"  value="yes" <?php if(isset($formvalues["exp"]) &&$forumvalues['exp'] == 'yes'){ echo 'selected';}?> />有
+                <input type=text size="30" class="hide" value="<?php echo $formvalues["expdetail"]?>" name="expdetail" />
             </td>
         </tr>
         <tr>
@@ -261,14 +265,18 @@
     <p>1. 您的身份？
     <ul>
         <li><input type=radio value="student" name=work <?php if($formvalues["work"]=="quitted") echo "checked"; ?> />学生</li>
-        <li><input type=radio value="work" name=work <?php if($formvalues["work"]=="quitted") echo "checked"; ?> />在职</li>
         <li><input type=radio value="free" name=work <?php if($formvalues["work"]=="quitted") echo "checked"; ?> />赋闲在家</li>
-        <li> 如果您是在职，若通过申请，您计划：</li>
-        <li><input type=radio value="quit" name=onwork <?php if($formvalues["onwork"]=="quit") echo "checked"; ?> />离职去支教</li>
-        <li><input type=radio value="leave" name=onwork <?php if($formvalues["onwork"]=="leave") echo "checked"; ?> />向单位请假</li>
+        <li><input type=radio value="work" name=work <?php if($formvalues["work"]=="quitted") echo "checked"; ?> />在职</li>
         <li>
-            <input type=radio value="other" name=onwork <?php if($formvalues["onwork"]=="other") echo "checked"; ?> />以其他方式保留职位
-            <input type=text size=30  value="<?php echo $formvalues["workdetail"]?>" name="workdetail" />再去支教
+            <ul class="hide" id="j_in_work">
+                <li> 如果您是在职，若通过申请，您计划：</li>
+                <li><input type=radio value="quit" name=onwork <?php if($formvalues["onwork"]=="quit") echo "checked"; ?> />离职去支教</li>
+                <li><input type=radio value="leave" name=onwork <?php if($formvalues["onwork"]=="leave") echo "checked"; ?> />向单位请假</li>
+                <li>
+                    <input type=radio value="other" name=onwork <?php if($formvalues["onwork"]=="other") echo "checked"; ?> />以其他方式保留职位
+                    <input type=text size=30  value="<?php echo $formvalues["workdetail"]?>" name="workdetail" />再去支教
+                </li>
+            </ul>
         </li>
     </ul>
     <p>2. 支教活动没有任何经济报酬，一次支教活动根据时间长短和地区差异有所差别，但基本需要自己承担在5000元以上，请确认您对此次支教活动预备的资金。<br>
