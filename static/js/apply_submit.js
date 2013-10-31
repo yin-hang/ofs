@@ -43,11 +43,12 @@ var ApplySubmit = (function(){
 		var validator = new Validator({
                 stop:true,
                 callback:function(msg,$node){
-                    window.scrollTo($node);//滚动到相应位置
+                    if($node.length > 0){
+                        window.scrollTo(100,$node.offset().top);//滚动到相应位置
+                    }
                     alert(msg);
                 }
-        }
-		);
+        });
         var email = $('input[name=email]');
         var mobile = $('input[name=mobile]');
         validator.add($('input[name=name]'),'isNotEmpty','用户名不能为空');
@@ -71,20 +72,26 @@ var ApplySubmit = (function(){
         validator.add($('input[name=eduendtime2]'),'isNotEmpty','结束时间不能为空');
         validator.add($('input[name=edu2]'),'isNotEmpty','大学信息不能为空');
 
+        validator.add($('input[name=folkname1]'),'isNotEmpty','家庭成员不能为空');
+        validator.add($('input[name=folk1]'),'isNotEmpty','家庭成员不能为空');
+        validator.add($('input[name=folkjob1]'),'isNotEmpty','请填写家庭成员工作单位');
+        validator.add($('input[name=positon1]'),'isNotEmpty','担任岗位不能为空');
+
+
         validator.add($('input[name=jobbegintime1]'),'isNotEmpty','开始时间不能为空');
         validator.add($('input[name=jobendtime1]'),'isNotEmpty','结束时间不能为空');
         validator.add($('input[name=job1]'),'isNotEmpty','单位名称不能为空');
         validator.add($('input[name=positon1]'),'isNotEmpty','担任岗位不能为空');
 
         validator.add($('input[name=exp]:checked'),'isNotEmpty','请选择是否有支教经验');
+
         validator.add($('input[name=EmergencyContactName]'),'isNotEmpty','紧急联系人不能为空');
         validator.add($('input[name=EmergencyContact]'),'isNotEmpty','紧急联系人联系方式不能为空');
         validator.add($('input[name=EmergencyContactWork]'),'isNotEmpty','紧急联系人工作单位不能为空');
 
         validator.add($('textarea[name=think]'),'isNotEmpty','请填写对于支教的想法');
-        validator.add($('textarea[name=risk]'),'strLong','请填写对于支教的风险的认识');
-        validator.add($('textarea[name=hope]'),'strLogin','请填写你对于参与支教工作的期望或者希望贡献');
-
+        validator.add($('textarea[name=risk]'),'isNotEmpty','请填写对于支教的风险的认识');
+        validator.add($('textarea[name=hope]'),'isNotEmpty','请填写你对于参与支教工作的期望或者希望贡献');
         validator.add($('input[name=work]:checked'),'isNotEmpty','请选择您的身份');
         validator.add($('input[name=money]:checked'),'isNotEmpty','请选择支教活动预备资金');
         validator.add($('input[name=support]:checked'),'isNotEmpty','请选择周边好友对于您支教的支持程度');
@@ -95,7 +102,8 @@ var ApplySubmit = (function(){
         validator.add($('input[name=time]:checked'),'isNotEmpty','请选择支教期限');
         validator.add($('input[name=msg_from]:checked'),'isNotEmpty','请选择消息来源');
 //        return true;
-        return validator.validate();
+        var result =  validator.validate();
+        return result;
 	}
 	return {
 		init:function(){
@@ -152,15 +160,16 @@ Validator.prototype = {
                         switch(typeof datas[item]['msg']){
                             case 'string':
                                 if(typeof this.callback == 'function'){
-                                    this.callback(datas[item]['msg']);
+                                    console.log(datas);
+                                    this.callback(datas[item]['msg'],datas[item]['data']);
                                 }
                                 break;
                             case 'function':
-                                datas[item]['msg'](checker.instruction,datas['item']['data']);//使用默认的消息
+                                datas[item]['msg'](checker.instruction);//使用默认的消息
                                 break;
                             default :
                                 if(typeof this.callback == 'function'){
-                                    this.callback(checker.instruction,datas[item]['data']);
+                                    this.callback(checker.instruction);
                                 }
                                 break;
                         }
@@ -206,13 +215,13 @@ Validator.prototype.types = {
 	},
 	isMobile:{
 		validate:function($node){
-			return /^1[3|4|5|8][0-9]\d{4,8}$/.test($node);
+			return /^1[3|4|5|8][0-9]\d{4,8}$/.test($node.val());
 		},
 		instruction:'手机号填写错误,请检查'
 	},
 	isEmail:{
 		validate:function($node){
-			return /^(\w)+(\.\w+)*@(\w)+((\.\w+)+)$/.test($node);
+			return /^(\w)+(\.\w+)*@(\w)+((\.\w+)+)$/.test($node.val());
 		},
 		instruction:'邮箱填写错误,请检查'
 	}

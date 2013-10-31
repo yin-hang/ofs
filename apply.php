@@ -14,6 +14,8 @@ class apply extends BaseAction{
     protected $_strApplyNum = array();
     protected $_arrApplyInfo = array();
     public function _execute(){
+        $this->_arrData['apply_data'] = Lib_Data::getUserInfoByName($this->_arrUser['name']);
+
         return true;
     }
     public function _check(){
