@@ -5,6 +5,7 @@
  * Time: 2013-10-27
  * Desc: 
  */
+date_default_timezone_set("Asia/Chongqing");
 error_reporting(E_ALL^E_NOTICE);
 require_once('lib/Define.php');
 require_once('lib/Data.php');

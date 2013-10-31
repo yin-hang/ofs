@@ -5,9 +5,6 @@
  * Time: ÏÂÎç9:09
  * To change this template use File | Settings | File Templates.
  */
-var Teacher = function(){
-
-};
 $(document).ready(function(){
     $('#j_star_test').bind('click',function(e){
         e.preventDefault();
@@ -17,7 +14,7 @@ $(document).ready(function(){
             'url':'/teacher/commit/starTest.php',
             'success':function(json){
                 if(json&&json.errno == 0){
-                    window.location = $(e.target).attr('href');
+                    window.open($(e.target).attr('href'));
                 }
             }
         });
@@ -31,7 +28,7 @@ $(document).ready(function(){
             'success':function(json){
                 if(json&&json.errno == 0){
                     window.location = $(e.target).attr('href');
-                    window.Location.refresh();
+                    //window.Location.refresh();
                 }
             }
     });

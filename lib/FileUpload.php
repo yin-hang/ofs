@@ -8,10 +8,12 @@
 class Lib_FileUpload {
     //图片上传
     public static function upload($objFile,$strSavePath,$strUsername){
+        if($objFile['name'] == ''){
+            return false;
+        }
         $strUsername = rawurlencode($strUsername);
         $strSavePath = $strSavePath . $strUsername . '/';
         if(!is_dir($strSavePath) && !mkdir($strSavePath)){
-            echo 'mkdir fail';
             return false;
         }
         $strPath = $strSavePath . $objFile['name'];
@@ -20,7 +22,7 @@ class Lib_FileUpload {
             return false;
         }
         //返回图片地址
-        $strUrl = 'http://' . $_SERVER['SERVER_NAME'] . '/teacher/file/' . $strUsername .'/'.$objFile['name'];
+        $strUrl = 'http://' . $_SERVER['SERVER_NAME'] . '/teacher/static/file/' . $strUsername .'/'.$objFile['name'];
         return $strUrl;
     }
     //上传图片

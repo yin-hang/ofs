@@ -16,13 +16,16 @@ class apply extends BaseAction{
     private $_bolIsSaveInfo = true;//是否是保存信息
     public function _execute(){
         $this->_processPic();//处理图片
-        foreach($_POST as $key => $value){
-            $arrList[$key] = $value;
+        if(count($_POST) > 0){
+            foreach($_POST as $key => $value){
+                $arrList[$key] = $value;
+            }
+            $arrList['photo_path'] = $this->_strPhotoPath;
+            $this->_arrApplyInfo = $arrList;
+            $this->_buildNewApplyNum();
+            $this->_insertToDB();//插入数据库
         }
-        $arrList['photo_path'] = $this->_strPhotoPath;
-        $this->_arrApplyInfo = $arrList;
-        $this->_buildNewApplyNum();
-        $this->_insertToDB();//插入数据库
+        $this->_getUserData();
         $this->_display();
     }
     private function _display(){
@@ -31,7 +34,6 @@ class apply extends BaseAction{
         }else{//表示提交失败
             $this->_strTpl = 'apply.php';
         }
-        var_dump($this->_strTpl);
     }
     public function _check(){
         if(!$this->_arrUser['is_login']){
@@ -39,7 +41,7 @@ class apply extends BaseAction{
         }
         if(isset($_POST['save'])){
             $this->_bolIsSaveInfo = true;
-        }else{
+        }elseif(isset($_POST['apply'])){
             $this->_bolIsSaveInfo = false;
         }
         return true;
@@ -81,9 +83,10 @@ class apply extends BaseAction{
     public function _insertToDB(){
         $result = DB::queryFirstRow('select * from apply where user=%s order by create_time desc',$this->_arrUser['name']);
         $intTime = Time();
+        $strInfo = Lib_Encode::array2json($this->_arrApplyInfo);
         $arrInsert = array(
             'user' => $this->_arrUser['name'],
-            'info' => Lib_Encode::array2json($this->_arrApplyInfo),
+            'info' => $strInfo,
             'file' => $this->_strPhotoPath,
             'stat' => Lib_Define::STAT_APPLYED,
             'moditime' => $intTime,
@@ -97,9 +100,16 @@ class apply extends BaseAction{
             if($result[0]['stat'] >= Lib_Define::STAT_PSYCHOLOGY_TEST_EDN){//已经进入初审阶段，不能再修改信息
                 $this->_error(Lib_Errno::CAN_NOT_UPDATE_IN_AUDIT,Lib_Error::CAN_NOT_UPDATE_IN_AUDIT);
             }else{
-                DB::update('apply',$arrInsert,'id=%d',$arrInsert[0]['id']);
+                DB::update('apply',$arrInsert,'user=%s',$this->_arrUser['name']);
             }
             $this->_bolIsUpdate = false;
+        }
+    }
+    //获取当前用户的申请信息
+    private function _getUserData(){
+        if($this->_arrUser['is_login']){
+            $arrUser = Lib_Data::getUserInfoByName($this->_arrUser['name']);
+            $this->_arrData['apply_data'] = $arrUser;
         }
     }
 }

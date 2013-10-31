@@ -16,9 +16,11 @@ class Lib_Data {
         return false;
     }
     public static function getUserInfoByName($strName){
-        $arrResult = DB::query('select stat from apply where $strName=%s',$strName);
-        if($arrResult !== false || isset($arrResult[0])){
-            return $arrResult[0];
+        $arrResult = DB::query('select * from apply where user=%s',$strName);
+        if($arrResult !== false || count($arrResult) > 0){
+            $arrData = $arrResult[0];
+            $arrData['info'] = Lib_Encode::json2array($arrData['info']);
+            return $arrData;
         }
         return false;
     }
@@ -35,4 +37,7 @@ class Lib_Data {
         }
     }
 
+    public static function getUserInfo(){
+        $arrUser = Common_User::current();
+    }
 }

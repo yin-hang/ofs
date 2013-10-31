@@ -26,8 +26,8 @@ abstract class BaseAction{
         }
         $this->build();
     }
-    abstract public function _check();
-    abstract public function _execute();
+    abstract protected  function _check();
+    abstract protected  function _execute();
     protected function build(){
         if($this->_strTpl !== ''){
             $this->displayTemplate();
@@ -41,8 +41,7 @@ abstract class BaseAction{
             'errmsg' => $this->_strErrmsg,
             'data' => $this->_arrData
         );
-        $arrResult = Lib_Encode::convert($arrResult,'gbk','utf-8');
-        echo json_encode($arrResult);
+        echo Lib_Encode::array2json($arrResult);
     }
     public function displayTemplate(){
         Lib_View::assign($this->_arrData);
@@ -53,5 +52,14 @@ abstract class BaseAction{
     protected  function  _error($intErrno,$strErrmsg = ''){
         $this->_intErrno = $intErrno;
         $this->_strErrmsg = $strErrmsg;
+    }
+    public function isAdmin(){
+        $arrUser = $this->_arrUser;
+        if(isset($arrUser['power']['teacher_apply_admin'])){
+            if($arrUser['power']['teacher_apply_admin'] == 1){
+                return true;
+            }
+        }
+        return false;
     }
 }

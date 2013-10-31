@@ -25,9 +25,9 @@ var ApplySubmit = (function(){
         });
         $('input[name=ill]').bind('click',function(e){
             if($('input[name=ill]:checked').val() == 'yes'){
-                $('input[name=illdetail').removeClass('hide');
+                $('input[name=illdetail]').removeClass('hide');
             }else{
-                $('input[name=illdetail').addClass('hide');
+                $('input[name=illdetail]').addClass('hide');
             }
         });
         $('input[name=exp]').bind('click',function(e){
@@ -94,7 +94,7 @@ var ApplySubmit = (function(){
         validator.add($('input[name=lineal_num]'),'isNotEmpty','请填写直系亲属的联系方式');
         validator.add($('input[name=time]:checked'),'isNotEmpty','请选择支教期限');
         validator.add($('input[name=msg_from]:checked'),'isNotEmpty','请选择消息来源');
-        return true;
+//        return true;
         return validator.validate();
 	}
 	return {

@@ -14,8 +14,6 @@ CREATE TABLE `apply` (
   `file` char(128) DEFAULT NULL,
   `doc` char(128) DEFAULT NULL,
   `docreview` char(128) DEFAULT NULL,
-  -- 是否已经上传身份信息
-  `has_upload_identify` tinyint(4) DEFAULT '0',
   -- 身份证地址
   `identity_card` varchar(255) DEFAULT NULL,
   -- 学历证书地址
@@ -24,6 +22,7 @@ CREATE TABLE `apply` (
   `medical_report` varchar(255) DEFAULT NULL,
   `moditime` INT DEFAULT NULL,
   `create_time` INT DEFAULT NULL,
+  `audit_time` int DEFAULT NULL,
   -- 审核信息
   `audit_remark` varchar(255) DEFAULT NULL
 )ENGINE=MyISAM DEFAULT CHARSET=gbk;

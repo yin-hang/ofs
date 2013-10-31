@@ -14,4 +14,16 @@ class Lib_Error{
     const UPLOAD_IDENTITY_NOT_FULL = '身份信息上传不全';
     const UPLOAD_IDENTITY_FAIL = '身份信息上传失败';
     const CAN_NOT_UPDATE_IN_AUDIT = '审核状态不能再修改';
+
+    const NEED_UPLOAD_IDENTITY_CARD = '请上传学历证书';
+    const NEED_UPLOAD_ADACT_CERT = '请上传学历扫描件';
+    const NEED_UPLOAD_MEDICIAL_REPORT = '请上传体检报告扫描件';
+
+    const NEED_UPLOAD_IDENTITY = '身份信息上传不全，请重新上传';
+    const NEED_UPLOAD_LESSON = '教案上传不正确，请重新上传';
+
+    const UPLOAD_LESSON_SUCCESS = '教案上传成功';
+    const REMARK_NOT_NULL = '请填写审核不通过的原因';
+
+    const PERM_ERROR = '没有权限访问';
 }
