@@ -20,7 +20,7 @@ class apply extends BaseAction{
             foreach($_POST as $key => $value){
                 $arrList[$key] = $value;
             }
-            $arrList['photo_path'] = $this->_strPhotoPath;
+            //$arrList['photo_path'] = $this->_strPhotoPath;
             $this->_arrApplyInfo = $arrList;
             $this->_buildNewApplyNum();
             $this->_insertToDB();//插入数据库
@@ -29,7 +29,7 @@ class apply extends BaseAction{
         $this->_display();
     }
     private function _display(){
-        if($this->_intErrno == 0){//表示提交成功
+        if($this->_intErrno == 0 && !$this->_bolIsSaveInfo){//表示提交成功
             $this->_strTpl = 'apply_suc.php';
         }else{//表示提交失败
             $this->_strTpl = 'apply.php';
@@ -65,14 +65,14 @@ class apply extends BaseAction{
         if($strPhotoPath){//
             $this->_strPhotoPath = $strPhotoPath;
             $strPath = Lib_FileUpload::upload($_FILES['photo'],Lib_Define::PHOTO_PATH,$this->_arrUser['name']);
-            if($strPath == false){
+            if($strPath == false && !$this->_bolIsSaveInfo){
                 return true;
             }
             $this->_strPhotoPath = $strPath;
             return true;
         }else{
             $strPath = Lib_FileUpload::upload($_FILES['photo'],Lib_Define::PHOTO_PATH,$this->_arrUser['name']);
-            if($strPath == false){
+            if($strPath == false && !$this->_bolIsSaveInfo){
                 $this->_error(Lib_Errno::UPLODA_PIC_FAIL,Lib_Error::UPLODA_PIC_FAIL);
                 return false;
             }
@@ -87,7 +87,7 @@ class apply extends BaseAction{
         $arrInsert = array(
             'user' => $this->_arrUser['name'],
             'info' => $strInfo,
-            'file' => $this->_strPhotoPath,
+            'file' => Lib_Encode::convert($this->_strPhotoPath,'utf-8','gbk'),
             'stat' => Lib_Define::STAT_APPLYED,
             'moditime' => $intTime,
         );

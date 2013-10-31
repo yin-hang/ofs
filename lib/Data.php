@@ -38,6 +38,7 @@ class Lib_Data {
     }
 
     public static function getUserInfo(){
-        $arrUser = Common_User::current();
+	global $_user;
+        $arrUser = $_user; 
     }
 }

@@ -19,7 +19,7 @@ Lib_View::loadWidget('top.php');
                 ?>
             </span>
         </div>
-        <form enctype="multipart/form-data" action="/teacher/commit/apply.php" method="post" name="form1" >
+        <form enctype="multipart/form-data" action="/teacher/commit/apply.php" method="post" name="form1">
             <?php Lib_View::loadWidget('form.php')?>
         </form>
 </div>

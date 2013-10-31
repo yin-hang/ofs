@@ -154,16 +154,16 @@ $formvalues = $apply_data['info'];
         <tr>
             <td>有否伤残/病历： </td>
             <td>
-                <input type="radio" class="radio" name="ill" value="no" <?php if(isset($formvalues["ill"]) &&$formvalues['ill'] == 'no'){ echo 'selected';}?> />无
-                <input type="radio" class="radio" name="ill"  value="yes" <?php if(isset($formvalues["ill"]) &&$formvalues['ill'] == 'yes'){ echo 'selected';}?> />有
+                <input type="radio" class="radio" name="ill" value="no" <?php if(isset($formvalues["ill"]) &&$formvalues['ill'] == 'no'){ echo 'checked';}?> />无
+                <input type="radio" class="radio" name="ill"  value="yes" <?php if(isset($formvalues["ill"]) &&$formvalues['ill'] == 'yes'){ echo 'checked';}?> />有
                 <input type="text" size="30"  class="hide" value="<?php echo $formvalues["illdetail"]?>" name="illdetail" />
             </td>
         </tr>
         <tr>
             <td>有否支教经验： </td>
             <td>
-                <input type="radio" class="checkbox" name="exp"  value="no" <?php if(isset($formvalues["exp"]) &&$formvalues['exp'] == 'no'){ echo 'selected';}?>  />无
-                <input type="radio" class="checkbox" name="exp"  value="yes" <?php if(isset($formvalues["exp"]) &&$formvalues['exp'] == 'yes'){ echo 'selected';}?> />有
+                <input type="radio" class="checkbox" name="exp"  value="no" <?php if(isset($formvalues["exp"]) &&$formvalues['exp'] == 'no'){ echo 'checked';}?>  />无
+                <input type="radio" class="checkbox" name="exp"  value="yes" <?php if(isset($formvalues["exp"]) &&$formvalues['exp'] == 'yes'){ echo 'checked';}?> />有
                 <input type=text size="30" class="hide" value="<?php echo $formvalues["expdetail"]?>" name="expdetail" />
             </td>
         </tr>
@@ -208,9 +208,9 @@ $formvalues = $apply_data['info'];
         </li>
     </ul>
     <p>2. 支教活动没有任何经济报酬，一次支教活动根据时间长短和地区差异有所差别，但基本需要自己承担在5000元以上，请确认您对此次支教活动预备的资金。<br>
-        <input type="radio" value="grade_1" name="money" <?php if($formvalues['money'] == 'grade_1'){echo 'selected';}?>/><5000元
-        <input type="radio" value="grade_2" name="money" <?php if($formvalues['money'] == 'grade_2'){echo 'selected';}?>/>5000-10000元
-        <input type="radio" value="grade_3" name="money" <?php if($formvalues['money'] == 'grade_3'){echo 'selected';}?>/>1万
+        <input type="radio" value="grade_1" name="money" <?php if($formvalues['money'] == 'grade_1'){echo 'checked';}?>/><5000元
+        <input type="radio" value="grade_2" name="money" <?php if($formvalues['money'] == 'grade_2'){echo 'checked';}?>/>5000-10000元
+        <input type="radio" value="grade_3" name="money" <?php if($formvalues['money'] == 'grade_3'){echo 'checked';}?>/>1万
     </p>
     <p>
         3. 您何时开始有支教的想法？请简述您对支教的看法。(<span class="red">*</span>)
@@ -227,10 +227,10 @@ $formvalues = $apply_data['info'];
     </p>
     <p>
         6. 您是否就计划去支教的想法与您周边的亲朋好友进行过沟通？他们对您计划支教的想法所持的态度如何?<br>
-        <input type="radio" value="support" name="support" <?php if($formvalues['support'] == 'support'){ echo 'selected';}?>>非常支持
-        <input type="radio" value="general" name="support" <?php if($formvalues['support'] == 'general'){ echo 'selected';}?>>一般
-        <input type="radio" value="except" name="support" <?php if($formvalues['support'] == 'except'){ echo 'selected';}?>>反对
-        <input type="radio" value="not_talk" name="support" <?php if($formvalues['support'] == 'not_talk'){ echo 'selected';}?>>没有沟通过
+        <input type="radio" value="support" name="support" <?php if($formvalues['support'] == 'support'){ echo 'checked';}?>>非常支持
+        <input type="radio" value="general" name="support" <?php if($formvalues['support'] == 'general'){ echo 'checked';}?>>一般
+        <input type="radio" value="except" name="support" <?php if($formvalues['support'] == 'except'){ echo 'checked';}?>>反对
+        <input type="radio" value="not_talk" name="support" <?php if($formvalues['support'] == 'not_talk'){ echo 'checked';}?>>没有沟通过
     </p>
     <p>
         7. 请告知您的直系长辈亲属的联系方式，以便我们与您的家人联系，获取他们对您计划支教的支持程度。
@@ -243,9 +243,9 @@ $formvalues = $apply_data['info'];
     </p>
     <p>
         8. 预计支教期限<br>
-        <input type="radio" value="term" name="time" <?php if($formvalues['time'] == 'term'){ echo 'selected';}?>>一学期
-        <input type="radio" value="year" name="time" <?php if($formvalues['time'] == 'year'){ echo 'selected';}?>>一年
-        <input type="radio" value="other" name="time" <?php if($formvalues['time'] == 'other'){ echo 'selected';}?>>其他
+        <input type="radio" value="term" name="time" <?php if($formvalues['time'] == 'term'){ echo 'checked';}?>>一学期
+        <input type="radio" value="year" name="time" <?php if($formvalues['time'] == 'year'){ echo 'checked';}?>>一年
+        <input type="radio" value="other" name="time" <?php if($formvalues['time'] == 'other'){ echo 'checked';}?>>其他
         <input type="text" value="<?php echo $formvalues['other_time']?>" name="other_time">
     </p>
     <p>
@@ -256,13 +256,13 @@ $formvalues = $apply_data['info'];
     </p>
     <p>
         10. 从何处得悉本服务的消息<br>
-        <input type="radio" value="friend" name="msg_from" <?php if($formvalues['msg_from'] == 'friend'){echo 'selected';}?>>朋友
-        <input type="radio" value="website" name="msg_from" <?php if($formvalues['msg_from'] == 'website'){echo 'selected';}?>>OFS网站
-        <input type="radio" value="weibo" name="msg_from" <?php if($formvalues['msg_from'] == 'weibo'){echo 'selected';}?>>微博
-        <input type="radio" value="weixin" name="msg_from" <?php if($formvalues['msg_from'] == 'weixin'){echo 'selected';}?>>微信
-        <input type="radio" value="baidu" name="msg_from" <?php if($formvalues['msg_from'] == 'baidu'){echo 'selected';}?>>百度
-        <input type="radio" value="douban" name="msg_from" <?php if($formvalues['msg_from'] == 'douban'){echo 'selected';}?>>豆瓣
-        <input type="radio" value="other" name="msg_from" <?php if($formvalues['msg_from'] == 'other'){echo 'selected';}?>>其他<input type="text" value="<?php echo $formvalues['msg_from_other']?>" name="mgs_from_other"/>
+        <input type="radio" value="friend" name="msg_from" <?php if($formvalues['msg_from'] == 'friend'){echo 'checked';}?>>朋友
+        <input type="radio" value="website" name="msg_from" <?php if($formvalues['msg_from'] == 'website'){echo 'checked';}?>>OFS网站
+        <input type="radio" value="weibo" name="msg_from" <?php if($formvalues['msg_from'] == 'weibo'){echo 'checked';}?>>微博
+        <input type="radio" value="weixin" name="msg_from" <?php if($formvalues['msg_from'] == 'weixin'){echo 'checked';}?>>微信
+        <input type="radio" value="baidu" name="msg_from" <?php if($formvalues['msg_from'] == 'baidu'){echo 'checked';}?>>百度
+        <input type="radio" value="douban" name="msg_from" <?php if($formvalues['msg_from'] == 'douban'){echo 'checked';}?>>豆瓣
+        <input type="radio" value="other" name="msg_from" <?php if($formvalues['msg_from'] == 'other'){echo 'checked';}?>>其他<input type="text" value="<?php echo $formvalues['msg_from_other']?>" name="mgs_from_other"/>
     </p>
     <p>
         12. 其他意见：<br>

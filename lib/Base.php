@@ -5,7 +5,7 @@
  * Time: 2013-10-27
  * Desc: 
  */
-require_once('/../init.php');
+require_once(dirname(__FILE__).'/../init.php');
 abstract class BaseAction{
     protected $_intErrno = 0;//´íÎóºÅ
     protected $_strErrmsg = '';//´íÎóÐÅÏ¢
@@ -13,7 +13,8 @@ abstract class BaseAction{
     protected $_arrUser = array();
     protected $_strTpl = '';
     public function execute(){
-        $this->_arrUser = Common_User::current();
+	global $_user;
+        $this->_arrUser = $_user; 
         if($this->_check()){
             $ret = $this->_execute();
             if($ret === false && $this->_intErrno ===0){
