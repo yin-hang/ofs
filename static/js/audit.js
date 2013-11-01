@@ -8,7 +8,11 @@ var Audit = (function(){
             var value = $('#j_select_audit_user').val();
             if(value == 'all_apply'){
                 url += '?all_apply=1' ;
+<<<<<<< HEAD
             }else if(value != 'audit'){
+=======
+            }else if(value != 'all'){
+>>>>>>> eca022c7ff46462bc0cb6735bc5714d0f06478aa
                 url +='?stat=' + value;
             }
             window.location.href = url;
