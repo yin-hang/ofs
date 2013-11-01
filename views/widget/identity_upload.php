@@ -24,7 +24,7 @@ $apply_stat = $apply_data['stat'];
             <li>身份证扫描件:<input type="file" name="identity_card"></li>
             <li>学历证扫描件:<input type="file" name="acade_cert"/></li>
             <li>体检报告扫描件:<input type="file" name="medical_report"/></li>
-            <li><input type="submit" class="btn" name="submit_identity" value="提交"/></li>
+            <li><button type="submit" class="btn btn-default" name="submit_identity">提交</button>
         </ul>
     </form>
 </div>
