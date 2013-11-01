@@ -6,8 +6,10 @@ var Audit = (function(){
         $('#j_select_audit_user').change(function(e){
             var url = '/teacher/admin/audit.php';
             var value = $('#j_select_audit_user').val();
-            if(value != 'all'){
-                url += '?stat=' + value;
+            if(value == 'all_apply'){
+                url += '?all_apply=1' ;
+            }else if(value != 'all'){
+                url +='?stat=' + value;
             }
             window.location.href = url;
         });

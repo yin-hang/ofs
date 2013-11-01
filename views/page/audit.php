@@ -34,7 +34,7 @@ $arrAllStat = array(
       <span>选择查询类别</span>
       <select name="audit_user" id="j_select_audit_user">
           <?
-            echo '<option value="all">所有申请者</option>';
+            echo '<option value="audit">所有待审核用户</option>';
             foreach($arrStatList as $key=>$value){
                 if(isset($_GET['stat'])&&isset($arrStatList[$_GET['stat']])&&$_GET['stat'] == $key){
                     echo '<option value="' . $key.'" selected="true">'.$value.'</option>';
@@ -42,6 +42,11 @@ $arrAllStat = array(
                     echo '<option value="' . $key . '">' .$value .'</option>';
                 }
             }
+          if($_GET['all_apply'] == 1){
+              echo '<option value="all_apply" selected="true">所有申请中的用户</option>';
+          }else{
+              echo '<option value="all_apply">所有申请中的用户</option>';
+          }
           ?>
       </select>
   </div>
