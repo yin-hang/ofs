@@ -73,7 +73,7 @@
                 </ul>
             </div>
             <div class="til2">受教育经历</div>
-            <table class="edu_tab">
+            <table class="edu_tab table">
                 <tr><td>开始时间</td><td>结束时间</td><td>学校名称</td></tr>
                 <tr>
                     <td class="sitem">
@@ -112,7 +112,7 @@
                 <?php } ?>
             </table>
             <div class="til2">工作经历</div>
-            <table class="work_tab">
+            <table class="work_tab table">
                 <tr><td>开始时间</td><td>结束时间</td><td>单位名称</td><td>担任岗位</td></tr>
                 <?php
                     $start = 1;
@@ -147,8 +147,8 @@
                     </tr>
                 <?php } ?>
             </table>
-            <h4>家庭成员</h4>
-            <table class="family_tab">
+            <div class="til2">家庭成员</div>
+            <table class="family_tab table">
                 <tr>
                     <td>家庭成员</td>
                     <td>姓名</td>
@@ -183,14 +183,16 @@
                     </td>
                 </tr>
                 <tr>
-                    <td>有否伤残/病历： </td>
-                    <?php
+                    <td>有否伤残/病历：
+                        <?php
                         if($formvalues['ill'] == 'no'){
                             echo '无';
                         }else{
                             echo '有.' . $formvalues['illdetail'];
                         }
-                    ?>
+                        ?>
+                    </td>
+
                 </tr>
                 <tr>
                     <td>有否支教经验： </td>
@@ -221,7 +223,7 @@
             </div>
         </div>
     </div>
-    <div class="tech_info">
+    <div class="teach_wrap wrap">
         <div class="til">支教准备工作</div>
         <p>1. 您的身份:
         <?
