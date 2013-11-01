@@ -13,6 +13,7 @@ class Lib_FileUpload {
         }
         $strUsername = rawurlencode($strUsername);
         $strSavePath = $strSavePath . $strUsername . '/';
+        var_dump($strSavePath);
         if(!is_dir($strSavePath) && !mkdir($strSavePath)){
             return false;
         }
