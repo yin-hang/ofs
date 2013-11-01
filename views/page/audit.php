@@ -72,12 +72,12 @@ $arrAllStat = array(
                                 echo $arrAllStat[$value['stat']];
                             ?>
                         </td>
-                        <td><a href="/teacher/preview.php?username=<?echo urlencode($value['user']);?>">点击查看</a></td>
+                        <td><a target="_blank" href="/teacher/preview.php?username=<?echo urlencode($value['user']);?>">点击查看</a></td>
                         <td>
                             <?
                                 if(isset($arrStatList[$value['stat']])){
-                                    echo '<input type="button" class="btn j_audit_pass_btn" value="通过" stat="' . $value['stat'] .'"/>';
-                                    echo '<input type="button" class="btn j_audit_reject_btn" value="不通过" stat="' . $value['stat'] .'"/>';
+                                    echo '<input type="button" class="btn j_audit_pass_btn btn-primary" value="通过" stat="' . $value['stat'] .'"/>';
+                                    echo '<input type="button" class="btn j_audit_reject_btn  btn-primary" value="不通过" stat="' . $value['stat'] .'"/>';
                                 }
                             ?>
                         </td>

@@ -42,7 +42,7 @@ var Audit = (function(){
                 success:function(json){
                     if(json&&json.errno == 0){
                         alert('操作成功!');
-                        window.location.refresh();//页面重新刷新
+                        window.location.reload();//页面重新刷新
                     }else{
                         alert(json.errmsg);
                     }
