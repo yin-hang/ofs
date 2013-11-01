@@ -88,13 +88,14 @@ var ApplySubmit = (function(){
         validator.add($('input[name=EmergencyContactName]'),'isNotEmpty','紧急联系人不能为空');
         validator.add($('input[name=EmergencyContact]'),'isNotEmpty','紧急联系人联系方式不能为空');
         validator.add($('input[name=EmergencyContactWork]'),'isNotEmpty','紧急联系人工作单位不能为空');
+        validator.add($('input[name=EmergencyContactRelation]'),'isNotEmpty','紧急联系人关系不能为空');
 
         validator.add($('textarea[name=think]'),'isNotEmpty','请填写对于支教的想法');
         validator.add($('textarea[name=risk]'),'isNotEmpty','请填写对于支教的风险的认识');
         validator.add($('textarea[name=hope]'),'isNotEmpty','请填写你对于参与支教工作的期望或者希望贡献');
         validator.add($('input[name=work]:checked'),'isNotEmpty','请选择您的身份');
         validator.add($('input[name=money]:checked'),'isNotEmpty','请选择支教活动预备资金');
-        validator.add($('input[name=support]:checked'),'isNotEmpty','请选择周边好友对于您支教的支持程度');
+        validator.add($('input[name=support]:checked'),'isNotEmpty','请选择周边亲友对于您支教的支持程度');
 
         validator.add($('input[name=lineal_name]'),'isNotEmpty','请填写直系亲属的姓名');
         validator.add($('input[name=lineal_relation]'),'isNotEmpty','请填写和直系亲属的关系');

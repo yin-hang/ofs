@@ -222,6 +222,7 @@
             <div>
                 <h4>紧急联络人信息</h4>
                 <label>姓名：</label><?php echo $formvalues["EmergencyContactName"]?><br/>
+                <label>关系：</label><?php echo $formvalues["EmergencyRelation"]?><br/>
                 <label>联系方式：</label><?php echo $formvalues["EmergencyContact"]?><br/>
                 <label>工作单位:</label><?php echo $formvalues["EmergencyContactWork"]?>
             </div>
@@ -362,5 +363,16 @@
             12. 其他意见：<br>
             <?php echo $formvalues['other'];?>
         </p>
+    </div>
+    <div class="teach_wrap wrap">
+        <div class="til">其他资料</div>
+        <div>
+            <ul>
+                <li>教案信息:<?if($apply_data['doc']){?><a target="_blank" href="<?echo $apply_data['doc']?>">点击查看</a><?}else{?>尚未上传<?}?></li>
+                <li>身份扫描件:<?if($apply_data['identity_card']){?><a target="_blank" href="<?echo $apply_data['identity_card']?>">点击查看</a><?}else{?>尚未上传<?}?></li>
+                <li>学历扫描件:<?if($apply_data['acade_cert']){?><a target="_blank" href="<?echo $apply_data['acade_cert']?>">点击查看</a><?}else{?>尚未上传<?}?></li>
+                <li>体检扫描件:<?if($apply_data['medical_report']){?><a target="_blank" href="<?echo $apply_data['medical_report']?>">点击查看</a><?}else{?>尚未上传<?}?></li>
+            </ul>
+        </div>
     </div>
 </div>

@@ -21,6 +21,7 @@ class apply extends BaseAction{
                 $arrList[$key] = $value;
             }
             //$arrList['photo_path'] = $this->_strPhotoPath;
+            $arrList['photo_path'] = Lib_Encode::convert($this->_strPhotoPath,'utf-8','gbk');
             $this->_arrApplyInfo = $arrList;
             $this->_buildNewApplyNum();
             $this->_insertToDB();//²åÈëÊý¾Ý¿â
@@ -87,7 +88,6 @@ class apply extends BaseAction{
         $arrInsert = array(
             'user' => $this->_arrUser['name'],
             'info' => $strInfo,
-            'file' => Lib_Encode::convert($this->_strPhotoPath,'utf-8','gbk'),
             'stat' => Lib_Define::STAT_APPLYED,
             'moditime' => $intTime,
         );

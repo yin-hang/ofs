@@ -7,8 +7,7 @@
     Lib_View::loadWidget('top.php');
 ?>
 <div>
-    <span>申请提交成功,请等待审核</span><br/>
-    <span>您的申请编号:<?=$apply_data['apply_num'];?></span><br/>
+    <span>支教申请提交成功,下一步需要进行心理测试</span><br/>
     <span>请点击心理测试:<a href="http://www.cnpsy.net/16pf/index3.asp" id="j_star_test" target="_blank">链接地址</a>
 </div>
 <?
