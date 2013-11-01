@@ -15,6 +15,7 @@ class preview extends BaseAction{
     }
     protected function _check(){
         $this->_arrData['user'] = $this->_arrUser;
+        $this->_strUserName = $_GET['username'];
         if($this->_strUserName&&$this->_arrUser['is_login']&&$this->isAdmin()){
             return true;
         }

@@ -38,9 +38,6 @@ class uploadLesson extends BaseAction{
             $this->_error(Lib_Errno::NEED_UPLOAD_LESSON,Lib_Error::NEED_UPLOAD_LESSON);
             return false;
         }
-        var_dump($arrApplyData['stat']);
-        var_dump(Lib_Define::STAT_LESSON_CHECK_NOT_PASS);
-        var_dump(Lib_Define::STAT_SECOND_CHECK_SUC);
         if(Lib_Define::STAT_SECOND_CHECK_SUC != $arrApplyData['stat'] && (Lib_Define::STAT_LESSON_CHECK_NOT_PASS != $arrApplyData['stat'])){
             echo 'error';
             $this->_error(Lib_Errno::UN_KNOW_ERR,Lib_Error::UN_KNOW_ERR);

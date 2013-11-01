@@ -1,5 +1,5 @@
 <?php
-require_once('/../init.php');
+require_once('../lib/Base.php');
 class audit extends BaseAction{
     private $_intStat = false;
     private $_arrStat = array(
