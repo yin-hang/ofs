@@ -31,7 +31,7 @@ class apply extends BaseAction{
     }
     private function _display(){
         if($this->_intErrno == 0 && !$this->_bolIsSaveInfo){//表示提交成功
-            $this->_strTpl = 'apply_suc.php';
+            $this->_strTpl = 'index.php';
         }else{//表示提交失败
             $this->_strTpl = 'apply.php';
         }
@@ -85,6 +85,10 @@ class apply extends BaseAction{
         $result = DB::queryFirstRow('select * from apply where user=%s order by create_time desc',$this->_arrUser['name']);
         $intTime = Time();
         $strInfo = Lib_Encode::array2json($this->_arrApplyInfo);
+        //进入审核状态就不能在修改信息
+        if($strInfo['stat'] >=  Lib_Define::STAT_APPLYED){
+            return false;
+        }
         $arrInsert = array(
             'user' => $this->_arrUser['name'],
             'info' => $strInfo,

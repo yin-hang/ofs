@@ -45,6 +45,9 @@ abstract class BaseAction{
         echo Lib_Encode::array2json($arrResult);
     }
     public function displayTemplate(){
+        if(!isset($this->_arrData['user'])){
+            $this->_arrData['user'] = $this->_arrUser;
+        }
         Lib_View::assign($this->_arrData);
         Lib_View::assign('errno',$this->_intErrno);
         Lib_View::assign('errmsg',$this->_strErrmsg);

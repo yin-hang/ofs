@@ -43,6 +43,6 @@ class audit extends BaseAction{
         }
         return true;
     }
-    }
+ }
 $action = new audit();
 $action->execute();

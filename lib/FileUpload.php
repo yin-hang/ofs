@@ -11,8 +11,9 @@ class Lib_FileUpload {
         if($objFile['name'] == ''){
             return false;
         }
-        $strUsername = rawurlencode($strUsername);
-        $strSavePath = $strSavePath . $strUsername . '/';
+	global $_user;
+	$user_id = $_user['uid'];
+        $strSavePath = $strSavePath . $user_id . '/';
         if(!is_dir($strSavePath) && !mkdir($strSavePath)){
             return false;
         }
@@ -33,7 +34,7 @@ class Lib_FileUpload {
             return false;
         }
         //返回图片地址
-        $strUrl = 'http://' . $_SERVER['SERVER_NAME'] . '/teacher/files/' . $strUsername .'/'.$strName;
+        $strUrl = 'http://' . $_SERVER['SERVER_NAME'] . '/teacher/files/' . $user_id .'/'.$strName;
         return $strUrl;
     }
     //上传图片

@@ -7,8 +7,8 @@
 Lib_View::loadWidget('top.php');
 $arrStatList = array(
     Lib_Define::STAT_PSYCHOLOGY_TEST_EDN => '等待初审',
-    Lib_Define::STAT_LESSON_UPLOAD_FINISH => '等待复审',
-    Lib_Define::STAT_FIRST_CHECK_SUC => '等待教案审核',
+    Lib_Define::STAT_FIRST_CHECK_SUC => '等待复审',
+    Lib_Define::STAT_LESSON_UPLOAD_FINISH => '等待教案审核',
     Lib_Define::STAT_SUBMIT_IDENTITY_END => '等待身份审核'
 );
 $arrAllStat = array(

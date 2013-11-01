@@ -6,9 +6,11 @@
  */
 Lib_View::loadWidget('top.php');
 ?>
-<div class="container">
+<div class="wrapper">
+    <div class="page-header"><h3 class="text-center">OFS÷æ‘∏’ﬂ…Í«Î</h3></div>
    <?
    Lib_View::loadWidget('show_msg.php');
+   Lib_View::loadWidget('process.php');
    Lib_View::loadWidget('stat.php');
    ?>
 </div>

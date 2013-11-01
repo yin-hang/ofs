@@ -14,7 +14,7 @@ $(document).ready(function(){
             'url':'/teacher/commit/starTest.php',
             'success':function(json){
                 if(json&&json.errno == 0){
-                    window.open($(e.target).attr('href'));
+                    window.location.href = $(e.target).attr('href');
                 }
             }
         });
