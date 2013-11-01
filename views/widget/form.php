@@ -10,7 +10,7 @@ $formvalues = $apply_data['info'];
         <ul>
             <li>
                 <span>
-                    <label>真实姓名</label><input type=text size=10 class="wd2" value="<?php echo $formvalues["name"]?>" name="name" />
+                    <label>真实姓名<span class="red">*</span></label><input type=text size=10 class="wd2" value="<?php echo $formvalues["name"]?>" name="name" />
                 </span>
                 <span>
                     <label>性别</label>

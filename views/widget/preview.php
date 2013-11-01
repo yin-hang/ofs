@@ -73,7 +73,7 @@
                 </ul>
             </div>
             <div class="til2">受教育经历</div>
-            <table class="edu_tab table">
+            <table class="edu_tab table table-bordered">
                 <tr><td>开始时间</td><td>结束时间</td><td>学校名称</td></tr>
                 <tr>
                     <td class="sitem">
@@ -97,7 +97,11 @@
                         <?php echo $formvalues["edu2"]?>(大学)<span class="red">*</span>
                     </td>
                 </tr>
-                <?php for($i=3;$i<=4;$i++) { ?>
+                <?php for($i=3;$i<=4;$i++) {
+                        if(!$formvalues["edubegintime$i"]){
+                            break;
+                        }
+                 ?>
                     <tr>
                         <td class="sitem">
                             <?php echo $formvalues["edubegintime$i"] ?>
@@ -112,7 +116,7 @@
                 <?php } ?>
             </table>
             <div class="til2">工作经历</div>
-            <table class="work_tab table">
+            <table class="work_tab table table-bordered">
                 <tr><td>开始时间</td><td>结束时间</td><td>单位名称</td><td>担任岗位</td></tr>
                 <?php
                     $start = 1;
@@ -148,7 +152,7 @@
                 <?php } ?>
             </table>
             <div class="til2">家庭成员</div>
-            <table class="family_tab table">
+            <table class="family_tab table table-bordered">
                 <tr>
                     <td>家庭成员</td>
                     <td>姓名</td>
