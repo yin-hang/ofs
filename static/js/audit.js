@@ -3,7 +3,7 @@
  */
 var Audit = (function(){
     function init(){
-        $('#query_stat_btn').on('click',function(e){
+        $('#j_select_audit_user').change(function(e){
             var url = '/teacher/admin/audit.php';
             var value = $('#j_select_audit_user').val();
             if(value != 'all'){
