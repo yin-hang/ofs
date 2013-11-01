@@ -57,10 +57,10 @@ if($user['is_login']){
                 Lib_View::loadWidget('identity_upload.php');
                 break;
             case Lib_Define::STAT_SUBMIT_IDENTITY_END;//身份信息提交完成,等待审核
-                echo '当前状态:身份信息提交完成,等待审核';
+                echo '当前状态:身份信息提交完成,等待身份相关信息审核';
                 break;
             case Lib_Define::STAT_IDENTITY_CHECK_SUC;//身份信息提交成功,等待培训
-                echo '当前状态:目前已经审核完成,等待培训';
+                echo '当前状态:目前所有审核已经完毕,等待培训';
                 break;
             case Lib_Define::STAT_IDENTITY_CHECK_FAIL;//身份信息提交失败,需要重新上传身份信息
                 Lib_View::loadWidget('identity_upload.php');

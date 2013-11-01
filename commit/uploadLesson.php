@@ -44,7 +44,7 @@ class uploadLesson extends BaseAction{
             return false;
         }
         $arrUpdate = array(
-            'doc' => $this->_strDoc,
+            'doc' =>$this->_strDoc,
             'stat' => Lib_Define::STAT_LESSON_UPLOAD_FINISH,
             'moditime' => time()
         );
@@ -57,7 +57,7 @@ class uploadLesson extends BaseAction{
         return true;
     }
     private function _upload($strPostName){
-        $strUrl = Lib_FileUpload::upload($_FILES[$strPostName],Lib_Define::PHOTO_PATH,$this->_arrUser['name']);
+        $strUrl = Lib_FileUpload::upload($_FILES[$strPostName],Lib_Define::PHOTO_PATH,$this->_arrUser['name'],'lesson');
         return $strUrl;
     }
 }

@@ -23,6 +23,6 @@ $apply_stat = $apply_data['stat'];
     <div>请上传教案:</div>
     <form enctype="multipart/form-data" action="/teacher/commit/uploadLesson.php" method="post" name="form" >
         <input type="file" name="doc"/>
-        <input type="submit" class="btn" name="submit_doc" value="提交"/>
+        <button type="submit" class="btn btn-default" name="submit_doc">提交</button>
     </form>
 </div>

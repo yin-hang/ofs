@@ -23,7 +23,7 @@ class Lib_Define {
     const STAT_ALL_FINISH = 14;//所有流程都已经完成
     const MIN_STAT = 0;
     const MAX_STAT = 14;
-    const PHOTO_PATH = '../static/file/';
-    const LESSONG_PATH = '../static/file/';
-    const IDENTITY_PATH = '../static/file/';
+    const PHOTO_PATH = '../files/';
+    const LESSONG_PATH = '../files/';
+    const IDENTITY_PATH = '../files/';
 }
