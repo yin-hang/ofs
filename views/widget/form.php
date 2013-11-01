@@ -10,25 +10,25 @@ $formvalues = $apply_data['info'];
         <ul>
             <li>
                 <span>
-                    <label>真实姓名</label><input type=text size=10 class="wd2" value="<?php echo $formvalues["name"]?>" name="name" />
+                    <label>真实姓名<span class="red">*</span></label><input type=text size=10 class="wd2" value="<?php echo $formvalues["name"]?>" name="name" />
                 </span>
                 <span>
-                    <label>性别</label>
+                    <label>性别</label><span class="red">*</span>
                     <select name="sex" class="sex">
                         <option value="man" <?php if($formvalues['sex'] == 'man'){echo 'selected';}?>>男</option>
                         <option value="women" <?php if($formvalues['sex'] == 'women'){echo 'selected';}?>>女</option>
                     </select>
                 </span>
                 <span>
-                    <label>出生年份</label><input type=text size=10  class="wd2" value="<?php echo $formvalues["birth"]?>" name="birth" />
+                    <label>出生年份<span class="red">*</span></label><input type=text size=10  class="wd2" value="<?php echo $formvalues["birth"]?>" name="birth" />
                 </span>
                 <span>
-                    <label>身份证号码</label><input type=text size=30 name="identity_code" value="<?php echo $formvalues['identity_code']?>"/>
+                    <label>身份证号码<span class="red">*</span></label><input type=text size=30 name="identity_code" value="<?php echo $formvalues['identity_code']?>"/>
                 </span>
             </li>
             <li>
                 <span>
-                    <label>婚否</label>
+                    <label>婚否<span class="red">*</span></label>
                     <!--<input type=text size=10  class="wd1" value="<?php echo $formvalues["marriage"]?>" name="marriage" />-->
                      <select name="marriage" class="marriage">
                          <option value="0" <?php if($formvalues['marriage'] == 0){echo 'selected';}?>>是</option>
@@ -36,26 +36,26 @@ $formvalues = $apply_data['info'];
                      </select>
                 </span>
                 <span>
-                    <label>民族</label><input type=text size=10 class="wd1" value="<?php echo $formvalues["nation"]?>" name="nation" />
+                    <label>民族<span class="red">*</span></label><input type=text size=10 class="wd1" value="<?php echo $formvalues["nation"]?>" name="nation" />
                 </span>
                 <span>
-                    <label>籍贯</label><input type=text size=10 class="wd1" value="<?php echo $formvalues["hometown"]?>" name="hometown" />
+                    <label>籍贯<span class="red">*</span></label><input type=text size=10 class="wd1" value="<?php echo $formvalues["hometown"]?>" name="hometown" />
                 </span>
                 <span>
-                    <label>教育程度</label><input type=text size=30 class="wd2" value="<?php echo $formvalues["edu"]?>" name="edu" />
+                    <label>教育程度<span class="red">*</span></label><input type=text size=30 class="wd2" value="<?php echo $formvalues["edu"]?>" name="edu" />
                 </span>
             </li>
             <li>
-                <span><label>现居住地</label><input type=text size=30 class="wd6" value="<?php echo $formvalues["liveplace"]?>" name="liveplace" /></span>
+                <span><label>现居住地<span class="red">*</span></label><input type=text size=30 class="wd6" value="<?php echo $formvalues["liveplace"]?>" name="liveplace" /></span>
             </li>
             <li>
-                <span><label>手机</label><input type=text size=10 class="wd4" value="<?php echo $formvalues["mobile"]?>" name="mobile" /></span>
+                <span><label>手机<span class="red">*</span></label><input type=text size=10 class="wd4" value="<?php echo $formvalues["mobile"]?>" name="mobile" /></span>
                 <span><label>固定电话</label><input type=text size=10 class="wd4" value="<?php echo $formvalues["tel"]?>" name="tel" /></span>
-                <span><label>email</label><input type=text size=10  class="wd4" value="<?php echo $formvalues["email"]?>" name="email" /></span>
+                <span><label>email<span class="red">*</span></label><input type=text size=10  class="wd4" value="<?php echo $formvalues["email"]?>" name="email" /></span>
             </li>
             <li>
-                <span><label>通讯地址</label><input type=text size=30 class="wd5" value="<?php echo $formvalues["addr"]?>" name="addr" /></span>
-                <span><label>邮编</label><input type=text size=10   class="wd2" value="<?php echo $formvalues["postcode"]?>" name="postcode" /></span>
+                <span><label>通讯地址<span class="red">*</span></label><input type=text size=30 class="wd5" value="<?php echo $formvalues["addr"]?>" name="addr" /></span>
+                <span><label>邮编<span class="red">*</span></label><input type=text size=10   class="wd2" value="<?php echo $formvalues["postcode"]?>" name="postcode" /></span>
             </li>
         </ul>
     </div>
@@ -146,13 +146,13 @@ $formvalues = $apply_data['info'];
     </table>
     <table class="sp_tab">
         <tr>
-            <td>个人特别技能及资历：</td>
+            <td>个人特别技能及资历<span class="red">*</span>：</td>
             <td>
                 <input type=text size=73  value="<?php echo $formvalues["ability"]?>" name="ability" />
             </td>
         </tr>
         <tr>
-            <td>有否伤残/病历： </td>
+            <td>有否伤残/病历<span class="red">*</span>： </td>
             <td>
                 <input type="radio" class="radio" name="ill" value="no" <?php if(isset($formvalues["ill"]) &&$formvalues['ill'] == 'no'){ echo 'checked';}?> />无
                 <input type="radio" class="radio" name="ill"  value="yes" <?php if(isset($formvalues["ill"]) &&$formvalues['ill'] == 'yes'){ echo 'checked';}?> />有
@@ -160,7 +160,7 @@ $formvalues = $apply_data['info'];
             </td>
         </tr>
         <tr>
-            <td>有否支教经验： </td>
+            <td>有否支教经验<span class="red">*</span>： </td>
             <td>
                 <input type="radio" class="checkbox" name="exp"  value="no" <?php if(isset($formvalues["exp"]) &&$formvalues['exp'] == 'no'){ echo 'checked';}?>  />无
                 <input type="radio" class="checkbox" name="exp"  value="yes" <?php if(isset($formvalues["exp"]) &&$formvalues['exp'] == 'yes'){ echo 'checked';}?> />有
@@ -169,23 +169,24 @@ $formvalues = $apply_data['info'];
         </tr>
         <tr>
             <td>
-                照片（半身生活照为佳）：
+                照片（半身生活照为佳）<span class="red">*</span>：
             </td>
             <td>
+                <input type=file name="photo" />
                 <?php
                 if($formvalues['photo_path']) {
                     echo '<input type="hidden" name="photo_path" value="' .$formvalues['photo_path']. '"/>';
                 }
                 ?>
-                <input type=file name="photo" />
             </td>
         </tr>
     </table>
     <div>
         <h4>紧急联络人信息</h4>
-        姓名：<input type=text size=10  value="<?php echo $formvalues["EmergencyContactName"]?>" name="EmergencyContactName" /><br/>
-        联系方式：<input type=text size=20  value="<?php echo $formvalues["EmergencyContact"]?>" name="EmergencyContact" /><br/>
-        工作单位：<input type=text size=25  value="<?php echo $formvalues["EmergencyContactWork"]?>" name="EmergencyContactWork" />
+        姓名<span class="red">*</span>：<input type=text size=10  value="<?php echo $formvalues["EmergencyContactName"]?>" name="EmergencyContactName" /><br/>
+        关系<span class="red">*</span>：<input type=text size=10  value="<?php echo $formvalues["EmergencyContactRelation"]?>" name="EmergencyContactRelation" /><br/>
+        联系方式<span class="red">*</span>：<input type=text size=20  value="<?php echo $formvalues["EmergencyContact"]?>" name="EmergencyContact" /><br/>
+        工作单位<span class="red">*</span>：<input type=text size=25  value="<?php echo $formvalues["EmergencyContactWork"]?>" name="EmergencyContactWork" />
     </div>
 </div>
 <div class="teach_wrap wrap">

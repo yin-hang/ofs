@@ -11,7 +11,7 @@ $apply_stat = $apply_data['stat'];
 <?
     switch($apply_stat){
         case Lib_Define::STAT_SECOND_CHECK_SUC;
-            echo '复审完成,请提交教案';
+            echo '复审完成,需要提交教案';
             break;
         case Lib_Define::STAT_LESSON_CHECK_NOT_PASS:
             echo '教案未通过审核,需要修改,请重新上传';

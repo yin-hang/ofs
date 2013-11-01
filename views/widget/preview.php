@@ -73,7 +73,7 @@
                 </ul>
             </div>
             <div class="til2">受教育经历</div>
-            <table class="edu_tab table">
+            <table class="edu_tab table table-bordered">
                 <tr><td>开始时间</td><td>结束时间</td><td>学校名称</td></tr>
                 <tr>
                     <td class="sitem">
@@ -97,7 +97,11 @@
                         <?php echo $formvalues["edu2"]?>(大学)<span class="red">*</span>
                     </td>
                 </tr>
-                <?php for($i=3;$i<=4;$i++) { ?>
+                <?php for($i=3;$i<=4;$i++) {
+                        if(!$formvalues["edubegintime$i"]){
+                            break;
+                        }
+                 ?>
                     <tr>
                         <td class="sitem">
                             <?php echo $formvalues["edubegintime$i"] ?>
@@ -112,7 +116,7 @@
                 <?php } ?>
             </table>
             <div class="til2">工作经历</div>
-            <table class="work_tab table">
+            <table class="work_tab table table-bordered">
                 <tr><td>开始时间</td><td>结束时间</td><td>单位名称</td><td>担任岗位</td></tr>
                 <?php
                     $start = 1;
@@ -148,7 +152,7 @@
                 <?php } ?>
             </table>
             <div class="til2">家庭成员</div>
-            <table class="family_tab table">
+            <table class="family_tab table table-bordered">
                 <tr>
                     <td>家庭成员</td>
                     <td>姓名</td>
@@ -218,6 +222,7 @@
             <div>
                 <h4>紧急联络人信息</h4>
                 <label>姓名：</label><?php echo $formvalues["EmergencyContactName"]?><br/>
+                <label>关系：</label><?php echo $formvalues["EmergencyRelation"]?><br/>
                 <label>联系方式：</label><?php echo $formvalues["EmergencyContact"]?><br/>
                 <label>工作单位:</label><?php echo $formvalues["EmergencyContactWork"]?>
             </div>
@@ -358,5 +363,16 @@
             12. 其他意见：<br>
             <?php echo $formvalues['other'];?>
         </p>
+    </div>
+    <div class="teach_wrap wrap">
+        <div class="til">其他资料</div>
+        <div>
+            <ul>
+                <li>教案信息:<?if($apply_data['doc']){?><a target="_blank" href="<?echo $apply_data['doc']?>">点击查看</a><?}else{?>尚未上传<?}?></li>
+                <li>身份扫描件:<?if($apply_data['identity_card']){?><a target="_blank" href="<?echo $apply_data['identity_card']?>">点击查看</a><?}else{?>尚未上传<?}?></li>
+                <li>学历扫描件:<?if($apply_data['acade_cert']){?><a target="_blank" href="<?echo $apply_data['acade_cert']?>">点击查看</a><?}else{?>尚未上传<?}?></li>
+                <li>体检扫描件:<?if($apply_data['medical_report']){?><a target="_blank" href="<?echo $apply_data['medical_report']?>">点击查看</a><?}else{?>尚未上传<?}?></li>
+            </ul>
+        </div>
     </div>
 </div>

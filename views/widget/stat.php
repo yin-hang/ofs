@@ -26,14 +26,14 @@ if($user['is_login']){
                 echo '当前状态:尚未进行心理测试,<a href="http://www.cnpsy.net/16pf/index3.asp" id="j_star_test" target="_blank">点击进行心理测试</a>';
                 break;
             case Lib_Define::STAT_PSYCHOLOGY_TESTING;//心理测试中，等待心理测试结束
-                echo '当前状态:等待心理测试完成,<a href="/teacher/index.php" class="btn" id="j_finish_test">点击完成</a><br/>';
-                echo '<a href="http://www.cnpsy.net/16pf/index3.asp" target="_blank">心理测试地址</a>';
+                echo '当前状态:等待心理测试完成,若已经完成,请<a href="/teacher/index.php" id="j_finish_test">点击链接</a>进入下一步审核<br/>';
+                echo '如果没完成,请点击<a href="http://www.cnpsy.net/16pf/index3.asp" target="_blank">心理测试地址</a>进行测试';
                 break;
             case Lib_Define::STAT_PSYCHOLOGY_TEST_EDN;//心理测试结束,等待初审
-                echo '当前状态:心理测试完成,等待初审';
+                echo '当前状态:提交完成,初审中,等待初审结果';
                 break;
             case Lib_Define::STAT_FIRST_CHECK_SUC;//初审完成,等待复审
-                echo '当前状态:初审完成,等待复审';
+                echo '当前状态:初审完成,复审中,等待复审结果';
                 break;
             case Lib_Define::STAT_FIRST_CHECK_FAIL://初审失败，请下次再重新申请
                 echo '当前状态:审核失败,请下个学期重新申请';
