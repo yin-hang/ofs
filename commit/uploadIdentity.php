@@ -59,7 +59,7 @@ class uploadIdentity extends BaseAction{
         return true;
     }
     private function _upload($strPostName){
-        $strUrl = Lib_FileUpload::upload($_FILES[$strPostName],Lib_Define::PHOTO_PATH,$this->_arrUser['name']);
+        $strUrl = Lib_FileUpload::upload($_FILES[$strPostName],Lib_Define::PHOTO_PATH,$this->_arrUser['name'],$strPostName);
         return $strUrl;
     }
 }

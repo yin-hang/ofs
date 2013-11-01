@@ -44,8 +44,6 @@ $arrAllStat = array(
             }
           ?>
       </select>
-      <button class="btn btn-primary" id="query_stat_btn">≤È—Ø</button>
-
   </div>
   <div>
     <?if(isset($apply_list) && !empty($apply_list)){?>

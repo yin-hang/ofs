@@ -15,7 +15,7 @@ class audit extends BaseAction{
     }
     private function _getList(){
         $arrData = array();
-        if($this->_intStat === false){
+        if($this->_intStat === false || !isset($_GET['stat'])){
            $arrData = DB::query('select * from apply where stat in (%d,%d,%d,%d) order by moditime', Lib_Define::STAT_PSYCHOLOGY_TEST_EDN,
                Lib_Define::STAT_LESSON_UPLOAD_FINISH,
                Lib_Define::STAT_FIRST_CHECK_SUC,
@@ -37,7 +37,7 @@ class audit extends BaseAction{
             return false;
         }
         if(isset($_GET['stat'])){
-            $this->_intStat = intval($_POST['stat']);
+            $this->_intStat = intval($_GET['stat']);
         }
         return true;
     }
