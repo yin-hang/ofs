@@ -155,13 +155,15 @@ table .btn{
     margin-right:20px;
 }
 .base_pro{
-    padding: 8px;
-    border: 1px solid #ddd;
-    background: #ddd;
+   padding: 8px 30px;
+   border: 1px solid #ddd;
+   background: #f7f5fa;
+   font-size: 14px;
 }
 .main_stat{
     margin-top: 20px;
     text-align: center;
+    font-size: 15px;
 }
 ul>.header{
     height: 40px;

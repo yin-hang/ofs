@@ -16,7 +16,7 @@ class preview extends BaseAction{
     protected function _check(){
         $this->_arrData['user'] = $this->_arrUser;
         $this->_strUserName = $_GET['username'];
-        if($this->_strUserName&&$this->_arrUser['is_login']&&$this->isAdmin()){
+        if(($this->_strUserName&&$this->_arrUser['is_login']&&$this->isAdmin()) || $this->_strUserName == $this->_arrUser['name']){
             return true;
         }
         $this->_strTpl = 'no_perm.php';

@@ -18,6 +18,9 @@ if($user['is_login']){
     if($apply_stat === false){
         echo '<li>你尚未进行支教申请，<a href="/teacher/apply.php">点击进行申请</a></li>';
     }else{
+	if($apply_stat >= Lib_Define::STAT_PSYCHOLOGY_TEST_EDN){
+		echo '<li><a href="/teacher/preview.php?username='.$user['name'].'" target="_blank">查看提交的信息</a></li>';
+	}
         echo '<li><div>申请编号:' . $apply_data['apply_num']. '</div></li>';
         echo '<li><div>提交时间:'.date('Y-m-d',$apply_data['moditime']).'</div></li>';
         switch($apply_stat){

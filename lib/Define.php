@@ -7,7 +7,7 @@
  */
 class Lib_Define {
     const STAT_APPLYING = 0;//申请中,还未提交申请
-    const  = 1;//申请完成,等待心理测试
+    const STAT_APPLYED = 1;//申请完成,等待心理测试
     const STAT_PSYCHOLOGY_TESTING = 2;//心理测试中，等待心理测试结束
     const STAT_PSYCHOLOGY_TEST_EDN = 3;//心理测试结束,等待初审
     const STAT_FIRST_CHECK_SUC = 4;//初审完成,等待复审
