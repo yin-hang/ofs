@@ -7,7 +7,7 @@
  */
     $formvalues = $apply_data['info'];
 ?>
-<div class="preview">
+<div class="wrapper">
     <div>个人信息预览</div>
     <div class="base_info">
         <div class="base_wrap wrap">
@@ -329,7 +329,7 @@
             ?>
         </p>
         <p>
-            9. 愿意开始支教的日期：2013年秋季
+            9. 愿意开始支教的日期：2014年春季
         </p>
         <p>
             10. 从何处得悉本服务的消息:
@@ -369,9 +369,6 @@
         <div>
             <ul>
                 <li>教案信息:<?if($apply_data['doc']){?><a target="_blank" href="<?echo $apply_data['doc']?>">点击查看</a><?}else{?>尚未上传<?}?></li>
-                <li>身份扫描件:<?if($apply_data['identity_card']){?><a target="_blank" href="<?echo $apply_data['identity_card']?>">点击查看</a><?}else{?>尚未上传<?}?></li>
-                <li>学历扫描件:<?if($apply_data['acade_cert']){?><a target="_blank" href="<?echo $apply_data['acade_cert']?>">点击查看</a><?}else{?>尚未上传<?}?></li>
-                <li>体检扫描件:<?if($apply_data['medical_report']){?><a target="_blank" href="<?echo $apply_data['medical_report']?>">点击查看</a><?}else{?>尚未上传<?}?></li>
             </ul>
         </div>
     </div>

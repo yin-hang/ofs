@@ -7,7 +7,6 @@ class audit extends BaseAction{
         Lib_Define::STAT_PSYCHOLOGY_TEST_EDN,
         Lib_Define::STAT_LESSON_UPLOAD_FINISH,
         Lib_Define::STAT_FIRST_CHECK_SUC,
-        Lib_Define::STAT_SUBMIT_IDENTITY_END
     );
     private $_arrApplyData = array();
     protected function _execute(){
@@ -21,10 +20,9 @@ class audit extends BaseAction{
         }elseif($this->_intStat !== false && isset($_GET['stat'])){
             $arrData = DB::query('select * from apply  where stat=%d order by moditime',$this->_intStat);
         }else{
-            $arrData = DB::query('select * from apply where stat in (%d,%d,%d,%d) order by moditime', Lib_Define::STAT_PSYCHOLOGY_TEST_EDN,
+            $arrData = DB::query('select * from apply where stat in (%d,%d,%d) order by moditime', Lib_Define::STAT_PSYCHOLOGY_TEST_EDN,
                 Lib_Define::STAT_LESSON_UPLOAD_FINISH,
-                Lib_Define::STAT_FIRST_CHECK_SUC,
-                Lib_Define::STAT_SUBMIT_IDENTITY_END);
+                Lib_Define::STAT_FIRST_CHECK_SUC);
         }
         if($arrData != false && !empty($arrData)){
             foreach($arrData as $key=>$value){

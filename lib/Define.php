@@ -3,24 +3,21 @@
  * Author: jiangzhibin
  * Date: 13-10-27
  * Time: 2013-10-27
- * Desc: ¶¨ÒåµÄ³£Á¿
+ * Desc: å®šä¹‰çš„å¸¸é‡
  */
 class Lib_Define {
-    const STAT_APPLYING = 0;//ÉêÇëÖÐ,»¹Î´Ìá½»ÉêÇë
-    const STAT_APPLYED = 1;//ÉêÇëÍê³É,µÈ´ýÐÄÀí²âÊÔ
-    const STAT_PSYCHOLOGY_TESTING = 2;//ÐÄÀí²âÊÔÖÐ£¬µÈ´ýÐÄÀí²âÊÔ½áÊø
-    const STAT_PSYCHOLOGY_TEST_EDN = 3;//ÐÄÀí²âÊÔ½áÊø,µÈ´ý³õÉó
-    const STAT_FIRST_CHECK_SUC = 4;//³õÉóÍê³É,µÈ´ý¸´Éó
-    const STAT_FIRST_CHECK_FAIL = 5;//³õÉóÊ§°Ü£¬ÇëÏÂ´ÎÔÙÖØÐÂÉêÇë
-    const STAT_SECOND_CHECK_SUC = 6;//¸´ÉóÍê³É,µÈ´ýÌá½»½Ì°¸
-    const STAT_SECOND_CHECK_FAIL = 7;//¸´ÉóÊ§°Ü,ÇëÏÂ´ÎÔÙÖØÐÂÉêÇë
-    const STAT_LESSON_UPLOAD_FINISH = 8;//½Ì°¸Ìá½»Íê³É£¬µÈ´ýÉóºË
-    const STAT_LESSON_CHECK_NOT_PASS = 9;//½Ì°¸ÉóºËÎ´Í¨¹ý£¬ÐèÒªÐÞ¸Ä
-    const STAT_LESSON_CHECK_PASS = 10;//½Ì°¸ÉóºËÍ¨¹ý,ÐèÒªÌá½»Éí·ÝÐÅÏ¢
-    const STAT_SUBMIT_IDENTITY_END = 11;//Éí·ÝÐÅÏ¢Ìá½»Íê³É,µÈ´ýÉóºË
-    const STAT_IDENTITY_CHECK_SUC = 12;//Éí·ÝÐÅÏ¢Ìá½»³É¹¦,µÈ´ýÅàÑµ
-    const STAT_IDENTITY_CHECK_FAIL = 13;//Éí·ÝÐÅÏ¢Ìá½»Ê§°Ü,ÐèÒªÖØÐÂÉÏ´«Éí·ÝÐÅÏ¢
-    const STAT_ALL_FINISH = 14;//ËùÓÐÁ÷³Ì¶¼ÒÑ¾­Íê³É
+    const STAT_APPLYING = 0;//ç”³è¯·ä¸­,è¿˜æœªæäº¤ç”³è¯·
+    const STAT_APPLYED = 1;//ç”³è¯·å®Œæˆ,ç­‰å¾…å¿ƒç†æµ‹è¯•
+    const STAT_PSYCHOLOGY_TESTING = 2;//å¿ƒç†æµ‹è¯•ä¸­ï¼Œç­‰å¾…å¿ƒç†æµ‹è¯•ç»“æŸ
+    const STAT_PSYCHOLOGY_TEST_EDN = 3;//å¿ƒç†æµ‹è¯•ç»“æŸ,ç­‰å¾…åˆå®¡
+    const STAT_FIRST_CHECK_SUC = 4;//åˆå®¡å®Œæˆ,ç­‰å¾…å¤å®¡
+    const STAT_FIRST_CHECK_FAIL = 5;//åˆå®¡å¤±è´¥ï¼Œè¯·ä¸‹æ¬¡å†é‡æ–°ç”³è¯·
+    const STAT_SECOND_CHECK_SUC = 6;//å¤å®¡å®Œæˆ,ç­‰å¾…æäº¤æ•™æ¡ˆ
+    const STAT_SECOND_CHECK_FAIL = 7;//å¤å®¡å¤±è´¥,è¯·ä¸‹æ¬¡å†é‡æ–°ç”³è¯·
+    const STAT_LESSON_UPLOAD_FINISH = 8;//æ•™æ¡ˆæäº¤å®Œæˆï¼Œç­‰å¾…å®¡æ ¸
+    const STAT_LESSON_CHECK_NOT_PASS = 9;//æ•™æ¡ˆå®¡æ ¸æœªé€šè¿‡ï¼Œéœ€è¦ä¿®æ”¹
+    const STAT_LESSON_CHECK_PASS = 10;//æ•™æ¡ˆå®¡æ ¸é€šè¿‡,ç­‰å¾…åŸ¹è®­
+    const STAT_ALL_FINISH = 14;//æ‰€æœ‰æµç¨‹éƒ½å·²ç»å®Œæˆ
     const MIN_STAT = 0;
     const MAX_STAT = 14;
     const PHOTO_PATH = '../files/';

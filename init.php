@@ -17,4 +17,3 @@ require_once('lib/Error.php');
 require_once('lib/View.php');
 require_once('lib/Encode.php');
 require_once('db.php');
-require_once('constants.php');

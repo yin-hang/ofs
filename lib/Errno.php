@@ -7,14 +7,14 @@
  */
 
 class Lib_Errno {
-    const USER_NOT_LOGIN = 1;//сц╩╖н╢╣гб╪
-    const UN_KNOW_ERR = 2;//н╢ж╙╢МнС
-    const PARAM_ERR = 3;//╡нйЩ╢МнС
-    const UPLODA_PIC_FAIL = 4;//м╪ф╛ио╢╚й╖╟э
+    const USER_NOT_LOGIN = 1;//Г■╗Ф┬╥Ф°╙Г≥╩Е╫∙
+    const UN_KNOW_ERR = 2;//Ф°╙Г÷╔И■≥Х╞╞
+    const PARAM_ERR = 3;//Е▐┌Ф∙╟И■≥Х╞╞
+    const UPLODA_PIC_FAIL = 4;//Е⌡╬Г┴┤Д╦┼Д╪═Е╓╠Х╢╔
     const UPLOAD_LESSON_FAIL = 5;
-    const UPLOAD_IDENTITY_NOT_FULL =6;// 'иМ╥щпео╒ио╢╚╡╩х╚';
-    const UPLOAD_IDENTITY_FAIL = 7;//'иМ╥щпео╒ио╢╚й╖╟э';
-    const CAN_NOT_UPDATE_IN_AUDIT = 8;//'иС╨кв╢л╛╡╩дэтыпч╦д';
+    const UPLOAD_IDENTITY_NOT_FULL =6;// 'Х╨╚Д╩╫Д©║Ф│╞Д╦┼Д╪═Д╦█Е┘╗';
+    const UPLOAD_IDENTITY_FAIL = 7;//'Х╨╚Д╩╫Д©║Ф│╞Д╦┼Д╪═Е╓╠Х╢╔';
+    const CAN_NOT_UPDATE_IN_AUDIT = 8;//'Е╝║Ф═╦Г┼╤Ф─│Д╦█Х┐╫Е├█Д©╝Ф■╧';
 
     const NEED_UPLOAD_IDENTITY_CARD = 9;
     const NEED_UPLOAD_ADACT_CERT = 10;
@@ -22,6 +22,6 @@ class Lib_Errno {
     const NEED_UPLOAD_IDENTITY = 12;
     const NEED_UPLOAD_LESSON = 13;
 
-    const PERM_ERROR = 14;//х╗оч╢МнС
+    const PERM_ERROR = 14;//Ф²┐И≥░И■≥Х╞╞
     const REMARK_NOT_NULL = 15;
 }

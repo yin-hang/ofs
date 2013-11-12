@@ -1,12 +1,12 @@
 <?php
 $formvalues = $apply_data['info'];
 ?>
-
-您是否阅读过《<a href = "http://www.ourfreesky.org/ofs/recruit/teacher.html#1">申请人须知</a>》，并对其中提到的所有条款均已知悉？
-<br>&nbsp;&nbsp;<input type=checkbox name="notice" <?php if(isset($formvalues["notice"]) && $formvalues["notice"]=="on") echo "checked"; ?> />已知悉</p>
-<div class="base_wrap wrap">
-    <div class="til">个人基本资料</div>
-    <div class="base_tab">
+<div class="read">
+    <input type=checkbox name="notice" <?php if(isset($formvalues["notice"]) && $formvalues["notice"]=="on") echo "checked"; ?>> 我已阅读过<a href = "http://www.ourfreesky.org/ofs/recruit/teacher.html#1">《申请人须知》</a>，并对其中提到的所有条款均已知悉</p>
+</div>
+<div class="base_wrap">
+    <div class="til2">个人基本资料</div>
+    <div class="base_tab region">
         <ul>
             <li>
                 <span>
@@ -51,7 +51,7 @@ $formvalues = $apply_data['info'];
             <li>
                 <span><label>手机<span class="red">*</span></label><input type=text size=10 class="wd4" value="<?php echo $formvalues["mobile"]?>" name="mobile" /></span>
                 <span><label>固定电话</label><input type=text size=10 class="wd4" value="<?php echo $formvalues["tel"]?>" name="tel" /></span>
-                <span><label>email<span class="red">*</span></label><input type=text size=10  class="wd4" value="<?php echo $formvalues["email"]?>" name="email" /></span>
+                <span><label>email<span class="red">*</span></label><input type=text size=30 value="<?php echo $formvalues["email"]?>" name="email" /></span>
             </li>
             <li>
                 <span><label>通讯地址<span class="red">*</span></label><input type=text size=30 class="wd5" value="<?php echo $formvalues["addr"]?>" name="addr" /></span>
@@ -60,90 +60,98 @@ $formvalues = $apply_data['info'];
         </ul>
     </div>
     <div class="til2">受教育经历</div>
-    <table class="edu_tab">
-        <tr><td>开始时间</td><td>结束时间</td><td>学校名称</td></tr>
-        <tr>
-            <td class="sitem">
-                <input type=text size=10 class="time" value="<?php echo $formvalues["edubegintime1"]?>" name="edubegintime1" />
-            </td>
-            <td class="sitem">
-                <input type=text size=10 class="time" value="<?php echo $formvalues["eduendtime1"]?>" name="eduendtime1" />
-            </td>
-            <td class="bitem">
-                <input type=text size=20  value="<?php echo $formvalues["edu1"]?>" name="edu1" />(中学)<span class="red">*</span>
-            </td>
-        </tr>
-        <tr>
-            <td class="sitem">
-                <input type=text size=10 class="time" value="<?php echo $formvalues["edubegintime2"]?>" name="edubegintime2" />
-            </td>
-            <td class="sitem">
-                <input type=text size=10 class="time" value="<?php echo $formvalues["eduendtime2"]?>" name="eduendtime2" />
-            </td>
-            <td class="bitem">
-                <input type=text size=20  value="<?php echo $formvalues["edu2"]?>" name="edu2" />(大学)<span class="red">*</span>
-            </td>
-        </tr>
-        <?php for($i=3;$i<=4;$i++) { ?>
+    <div class="region">
+        <table class="edu_tab">
+            <tr><td>开始时间</td><td>结束时间</td><td>学校名称</td></tr>
             <tr>
                 <td class="sitem">
-                    <input type=text size=10 class="time" value="<?php echo $formvalues["edubegintime$i"] ?>" name="edubegintime<?php echo $i?>" />
+                    <input type=text size=10 class="time" value="<?php echo $formvalues["edubegintime1"]?>" name="edubegintime1" />
                 </td>
                 <td class="sitem">
-                    <input type=text size=10 class="time" value="<?php echo $formvalues["eduendtime$i"] ?>" name="eduendtime<?php echo $i?>" />
+                    <input type=text size=10 class="time" value="<?php echo $formvalues["eduendtime1"]?>" name="eduendtime1" />
                 </td>
                 <td class="bitem">
-                    <input type=text size=20  value="<?php echo $formvalues["edu$i"] ?>" name="edu<?php echo $i?>" />
+                    <input type=text size=20  value="<?php echo $formvalues["edu1"]?>" name="edu1" />(中学)<span class="red">*</span>
                 </td>
             </tr>
-        <?php } ?>
-    </table>
+            <tr>
+                <td class="sitem">
+                    <input type=text size=10 class="time" value="<?php echo $formvalues["edubegintime2"]?>" name="edubegintime2" />
+                </td>
+                <td class="sitem">
+                    <input type=text size=10 class="time" value="<?php echo $formvalues["eduendtime2"]?>" name="eduendtime2" />
+                </td>
+                <td class="bitem">
+                    <input type=text size=20  value="<?php echo $formvalues["edu2"]?>" name="edu2" />(大学)<span class="red">*</span>
+                </td>
+            </tr>
+            <?php for($i=3;$i<=4;$i++) { ?>
+                <tr>
+                    <td class="sitem">
+                        <input type=text size=10 class="time" value="<?php echo $formvalues["edubegintime$i"] ?>" name="edubegintime<?php echo $i?>" />
+                    </td>
+                    <td class="sitem">
+                        <input type=text size=10 class="time" value="<?php echo $formvalues["eduendtime$i"] ?>" name="eduendtime<?php echo $i?>" />
+                    </td>
+                    <td class="bitem">
+                        <input type=text size=20  value="<?php echo $formvalues["edu$i"] ?>" name="edu<?php echo $i?>" />
+                    </td>
+                </tr>
+            <?php } ?>
+        </table>
+    </div>
     <div class="til2">工作经历</div>
-    <table class="work_tab">
-        <tr><td>开始时间</td><td>结束时间</td><td>单位名称</td><td>担任岗位</td></tr>
-        <?php for($i=1;$i<=4;$i++) { ?>
-            <tr><td class="sitem"><input type=text size=10  class="time" value="<?php echo $formvalues["jobbegintime$i"] ?>" name="jobbegintime<?php echo $i?>" />
-                </td>
-                <td class="sitem">
-                    <input type=text size=10 class="time" value="<?php echo $formvalues["jobendtime$i"] ?>" name="jobendtime<?php echo $i?>" />
-                </td>
-                <td class="bitem">
-                    <input type=text size=20  value="<?php echo $formvalues["job$i"] ?>" name="job<?php echo $i?>" />
-                </td>
-                <td class="sitem">
-                    <input type=text size=10  value="<?php echo $formvalues["positon$i"] ?>" name="positon<?php echo $i?>" />
-                    <?php
-                        if($i==1){
-                            echo '<span class="red">*</span>';
-                        }
-                    ?>
-                </td>
-
-            </tr>
-        <?php } ?>
-    </table>
+    <div class="region">
+        <table class="work_tab">
+            <tr><td>开始时间</td><td>结束时间</td><td>单位名称</td><td>担任岗位</td></tr>
+            <?php for($i=1;$i<=4;$i++) { ?>
+                <tr><td class="sitem"><input type=text size=10  class="time" value="<?php echo $formvalues["jobbegintime$i"] ?>" name="jobbegintime<?php echo $i?>" />
+                    </td>
+                    <td class="sitem">
+                        <input type=text size=10 class="time" value="<?php echo $formvalues["jobendtime$i"] ?>" name="jobendtime<?php echo $i?>" />
+                    </td>
+                    <td class="bitem">
+                        <input type=text size=20  value="<?php echo $formvalues["job$i"] ?>" name="job<?php echo $i?>" />
+                    </td>
+                    <td class="sitem">
+                        <input type=text size=10  value="<?php echo $formvalues["positon$i"] ?>" name="positon<?php echo $i?>" />
+                        <?php
+                            if($i==1){
+                                echo '<span class="red">*</span>';
+                            }
+                        ?>
+                    </td>
+    
+                </tr>
+            <?php } ?>
+        </table>
+    </div>
     <div class="til2">家庭成员</div>
-    <table class="family_tab">
-        <tr>
-            <td>家庭成员</td>
-            <td>姓名</td>
-            <td>工作单位</td>
-        </tr>
-        <?php
-        for($i=1; $i<=4; $i++) {
-            $inputname = 'folkname';
-            echo "<tr><td class='sitem'><input type=text size=20  value=\"".$formvalues["$inputname$i"]."\" name=\"$inputname$i\" /></td>";
-            $inputname = "folk";
-            print "<td class='sitem'><input type='text' size=20  value=\"".$formvalues["$inputname$i"]."\" name=\"$inputname$i\" /></td>";
-            $inputname = "folkjob";
-            print "<td class='bitem'><input type=text size=20 value=\"".$formvalues["$inputname$i"]."\" name=\"$inputname$i\" />";
-            if($i==1){
-                echo '<span class="red">*</span>';
+    <div class="region">
+        <table class="family_tab">
+            <tr>
+                <td>家庭成员</td>
+                <td>姓名</td>
+                <td>工作单位</td>
+            </tr>
+            <?php
+            for($i=1; $i<=4; $i++) {
+                $inputname = 'folkname';
+                echo "<tr><td class='sitem'><input type=text size=20  value=\"".$formvalues["$inputname$i"]."\" name=\"$inputname$i\" /></td>";
+                $inputname = "folk";
+                print "<td class='sitem'><input type='text' size=20  value=\"".$formvalues["$inputname$i"]."\" name=\"$inputname$i\" /></td>";
+                $inputname = "folkjob";
+                print "<td class='bitem'><input type=text size=20 value=\"".$formvalues["$inputname$i"]."\" name=\"$inputname$i\" />";
+                if($i==1){
+                    echo '<span class="red">*</span>';
+                }
+                echo "</td></tr>";
             }
-            echo "</td></tr>";
-        }
-        ?>
-    </table>
+            ?>
+        </table>
+    </div>
+    <div class="til2">其他信息</div>
+    <div class="region">
     <table class="sp_tab">
         <tr>
             <td>个人特别技能及资历<span class="red">*</span>：</td>
@@ -181,16 +189,16 @@ $formvalues = $apply_data['info'];
             </td>
         </tr>
     </table>
-    <div>
-        <h4>紧急联络人信息</h4>
-        姓名<span class="red">*</span>：<input type=text size=10  value="<?php echo $formvalues["EmergencyContactName"]?>" name="EmergencyContactName" /><br/>
-        关系<span class="red">*</span>：<input type=text size=10  value="<?php echo $formvalues["EmergencyContactRelation"]?>" name="EmergencyContactRelation" /><br/>
-        联系方式<span class="red">*</span>：<input type=text size=20  value="<?php echo $formvalues["EmergencyContact"]?>" name="EmergencyContact" /><br/>
-        工作单位<span class="red">*</span>：<input type=text size=25  value="<?php echo $formvalues["EmergencyContactWork"]?>" name="EmergencyContactWork" />
     </div>
+<div class="til2">紧急联络人信息</div>
+<div class="region">
+    姓名<span class="red">*</span>：<input type=text size=10  value="<?php echo $formvalues["EmergencyContactName"]?>" name="EmergencyContactName" /><br/>
+    关系<span class="red">*</span>：<input type=text size=10  value="<?php echo $formvalues["EmergencyContactRelation"]?>" name="EmergencyContactRelation" /><br/>
+    联系方式<span class="red">*</span>：<input type=text size=20  value="<?php echo $formvalues["EmergencyContact"]?>" name="EmergencyContact" /><br/>
+    工作单位<span class="red">*</span>：<input type=text size=25  value="<?php echo $formvalues["EmergencyContactWork"]?>" name="EmergencyContactWork" />
 </div>
-<div class="teach_wrap wrap">
-    <div class="til">支教准备工作</div>
+<div class="til2">支教准备工作</div>
+<div class="teach_wrap region">
     <p>1. 您的身份？
     <ul>
         <li><input type=radio value="student" name=work <?php if($formvalues["work"]=="student") echo "checked"; ?> />学生</li>
@@ -252,7 +260,7 @@ $formvalues = $apply_data['info'];
     <p>
         9. 愿意开始支教的日期：
         <select name="star_time">
-            <option value="13A">2013年秋季</option>
+            <option value="14A">2014春季</option>
         </select>
     </p>
     <p>
@@ -269,6 +277,7 @@ $formvalues = $apply_data['info'];
         12. 其他意见：<br>
         <textarea  name="other"><?php echo $formvalues['other'];?></textarea>
     </p>
+</div>
 </div>
 <div class="opt_wrap">
     <input class="btn btn-large" type=submit  value="保存" name="save" />

@@ -3,10 +3,10 @@
  * Author: jiangzhibin
  * Date: 13-10-27
  * Time: 2013-10-27
- * Desc: 文件上传
+ * Desc: 鏂囦欢涓婁紶
  */
 class Lib_FileUpload {
-    //图片上传
+    //鍥剧墖涓婁紶
     public static function upload($objFile,$strSavePath,$strUsername,$strSavePrix = ''){
         if($objFile['name'] == ''){
             return false;
@@ -33,11 +33,11 @@ class Lib_FileUpload {
         if($ret == false){
             return false;
         }
-        //返回图片地址
+        //杩斿洖鍥剧墖鍦板潃
         $strUrl = 'http://' . $_SERVER['SERVER_NAME'] . '/teacher/files/' . $user_id .'/'.$strName;
         return $strUrl;
     }
-    //上传图片
+    //涓婁紶鍥剧墖
     public static function uploadPhoto(){
 
     }

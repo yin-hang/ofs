@@ -9,7 +9,6 @@ Lib_View::loadWidget('top.php');
 ?>
 <div class="container">
     <div class="main">
-        <h1>OFS支教志愿者申请表</h1>
         <div>
             <span class="red">
                 <?

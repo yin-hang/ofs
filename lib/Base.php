@@ -7,14 +7,13 @@
  */
 require_once(dirname(__FILE__).'/../init.php');
 abstract class BaseAction{
-    protected $_intErrno = 0;//´íÎóºÅ
-    protected $_strErrmsg = '';//´íÎóÐÅÏ¢
+    protected $_intErrno = 0;//é”™è¯¯å·
+    protected $_strErrmsg = '';//é”™è¯¯ä¿¡æ¯
     protected $_arrData = array();
     protected $_arrUser = array();
     protected $_strTpl = '';
     public function execute(){
-	global $_user;
-        $this->_arrUser = $_user; 
+        $this->_arrUser = Lib_Data::getUserInfo(); 
         if($this->_check()){
             $ret = $this->_execute();
             if($ret === false && $this->_intErrno ===0){
@@ -65,5 +64,9 @@ abstract class BaseAction{
             }
         }
         return false;
+    }
+    
+    public function jumpToPage($url = '/teacher/'){
+        header('Location:' . $url);
     }
 }

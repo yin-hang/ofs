@@ -102,7 +102,7 @@ var ApplySubmit = (function(){
         validator.add($('input[name=lineal_num]'),'isNotEmpty','请填写直系亲属的联系方式');
         validator.add($('input[name=time]:checked'),'isNotEmpty','请选择支教期限');
         validator.add($('input[name=msg_from]:checked'),'isNotEmpty','请选择消息来源');
-//        return true;
+        return true;
         var result =  validator.validate();
         return result;
 	}

@@ -1,18 +1,13 @@
 
 body{
     color: #333;
-    background: #fff url(/teacher/static/img/bg.jpg) center top repeat-x;
-    width: 80%;
+    background: #F6F6F6;
     margin: 0 auto;
     line-height: 25px;
+    
 }
 ul,li{
     list-style: none;
-}
-.header{
-}
-.header img{
-    margin-top : 10px;
 }
 .main input[type=text]{
     height: 26px;
@@ -27,7 +22,6 @@ h1 {
     text-align: center;
 }
 .main{
-    background: #ffffff;
     padding: 20px
 }
 .item{
@@ -74,16 +68,12 @@ h1 {
     background: white;
 }
 .til2{
-    font-size: 18.5px;
+    font-size: 22px;
     margin: 10px 0;
     font-family: inherit;
-    font-weight: bold;
     line-height: 40px;
     color: inherit;
-    font-weight: bold;
-    border: 0;
-    border-top: 1px solid #eeeeee;
-    border-bottom: 1px solid #eeeeee;
+    
 }
 .red{
     color: red;
@@ -150,6 +140,8 @@ h1 {
 }
 .wrapper{
     min-height: 400px;
+    width: 80%;
+    margin: 0 auto;
 }
 table .btn{
     margin-right:20px;
@@ -165,14 +157,82 @@ table .btn{
     text-align: center;
     font-size: 15px;
 }
-ul>.header{
-    height: 40px;
-    font-size: 20px;
-    font-weight: bold;
-}
 .upload_lesson{
 
 }
 .upload_lesson>input{
 
+}
+
+.header{
+    background-color:#F6F4F4;
+    color:#ffffff;
+}
+.nav-top{
+    height:122px;
+}
+.nav-logo{
+    font-size:30px;    
+}
+.f22{
+    font-size:22px;
+}
+.nav{
+    height:80px;
+    line-height:80px;
+    background-color:#5FA4E0;    
+    padding:0 7%;
+}
+.nav-list{
+    font-size:13px;
+    padding: 0 20px;
+}
+
+.nav-list span{
+    display:inline-block;
+}
+
+.nav-item{
+    padding: 0 10PX; 
+}
+.fr{
+    float:right;    
+}
+.fl{
+    float:left;    
+}
+.nav-sep{
+    display:inline-block;
+    margin:0 10px;        
+}
+.cur-item{ 
+    background-color: #3D93C0;
+}
+
+.nav-bottom{
+    height:80px;    
+    line-height:80px;
+    color:#7F7F8C;
+    padding:0 10%;
+    background-color:#ECECEC;
+    font-size:22px;
+}
+.region{
+    background-color:#ECECEC;
+    color:#7F7F8C;    
+    font-size:14px;
+    padding:30px;
+    line-height:25px;
+}
+.base_tab ul{
+    padding-left:0;    
+}
+.sub-logo{
+    margin-left:10px;
+}
+.audit-til{
+    text-align: center;
+}
+.audit-wrapper{
+    margin-top: 20px;
 }

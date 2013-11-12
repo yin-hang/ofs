@@ -7,10 +7,12 @@
 Lib_View::loadWidget('top.php');
 ?>
 <div class="wrapper">
+    <!--
     <div class="page-header"><h3 class="text-center">OFS志愿者申请</h3></div>
+    -->
    <?
-   Lib_View::loadWidget('show_msg.php');
-   Lib_View::loadWidget('process.php');
+//   Lib_View::loadWidget('show_msg.php');
+//   Lib_View::loadWidget('process.php');
    Lib_View::loadWidget('stat.php');
    ?>
 </div>

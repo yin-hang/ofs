@@ -12,8 +12,11 @@ class uploadLesson extends BaseAction{
     protected $_strTpl = 'index.php';
     public function _execute(){
         $this->_processFile();
-        $this->_upIdentity();
+        $this->_upLesseon();
         $this->_arrData['apply_data'] = $this->_arrApplyData;
+        if($this->_intErrno == 0){//处理成功，跳转到首页
+            $this->jumpToPage();
+        }
     }
     public function _check(){
         $this->_arrData['user'] = $this->_arrUser;
@@ -30,8 +33,8 @@ class uploadLesson extends BaseAction{
     private function _processFile(){
         $this->_strDoc = $this->_upload('doc');
     }
-    //更新身份信息
-    private function _upIdentity(){
+    //更新教案信息
+    private function _upLesseon(){
         $arrApplyData = $this->_arrApplyData;
         $arrUpdate = array();
         if(!$this->_strDoc){
@@ -39,7 +42,7 @@ class uploadLesson extends BaseAction{
             return false;
         }
         if(Lib_Define::STAT_SECOND_CHECK_SUC != $arrApplyData['stat'] && (Lib_Define::STAT_LESSON_CHECK_NOT_PASS != $arrApplyData['stat'])){
-            echo 'error';
+            //echo 'error';
             $this->_error(Lib_Errno::UN_KNOW_ERR,Lib_Error::UN_KNOW_ERR);
             return false;
         }

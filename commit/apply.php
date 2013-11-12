@@ -21,7 +21,8 @@ class apply extends BaseAction{
                 $arrList[$key] = $value;
             }
             //$arrList['photo_path'] = $this->_strPhotoPath;
-            $arrList['photo_path'] = Lib_Encode::convert($this->_strPhotoPath,'utf-8','gbk');
+            //$arrList['photo_path'] = Lib_Encode::convert($this->_strPhotoPath,'utf-8','gbk');
+            $arrList['photo_path'] = $this->_strPhotoPath;
             $this->_arrApplyInfo = $arrList;
             $this->_buildNewApplyNum();
             $this->_insertToDB();//插入数据库
@@ -86,9 +87,6 @@ class apply extends BaseAction{
         $intTime = Time();
         $strInfo = Lib_Encode::array2json($this->_arrApplyInfo);
         //进入审核状态就不能在修改信息
-        if($strInfo['stat'] >=  Lib_Define::STAT_APPLYED){
-            return false;
-        }
         $arrInsert = array(
             'user' => $this->_arrUser['name'],
             'info' => $strInfo,
@@ -101,8 +99,9 @@ class apply extends BaseAction{
             DB::insert('apply',$arrInsert);
             $this->_bolIsUpdate = true;
         }else{//初审状态中不能再修改个人资料
-            if($result[0]['stat'] >= Lib_Define::STAT_PSYCHOLOGY_TEST_EDN){//已经进入初审阶段，不能再修改信息
+            if($result['stat'] >= Lib_Define::STAT_PSYCHOLOGY_TEST_EDN){//已经进入初审阶段，不能再修改信息
                 $this->_error(Lib_Errno::CAN_NOT_UPDATE_IN_AUDIT,Lib_Error::CAN_NOT_UPDATE_IN_AUDIT);
+                $this->jumpToPage();
             }else{
                 DB::update('apply',$arrInsert,'user=%s',$this->_arrUser['name']);
             }

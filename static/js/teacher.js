@@ -13,8 +13,13 @@ $(document).ready(function(){
             'dataType':'json',
             'url':'/teacher/commit/starTest.php',
             'success':function(json){
+                console.log(json);
                 if(json&&json.errno == 0){
-                    window.location.href = $(e.target).attr('href');
+//                    window.location.href = $(e.target).attr('href');
+                    window.open($(e.target).attr('href'),'_blank');
+                    setTimeout(function(){
+                        window.location.href = '/teacher/index.php';    
+                    },1000);
                 }
             }
         });

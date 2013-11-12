@@ -19,8 +19,12 @@ class starTest extends BaseAction{
         if(!$this->_arrUser['is_login']){
             return false;
         }
-        $this->_intApplyNum = $_POST['apply_num'];
-        if(Lib_Data::getApplyStatByUsername($this->_arrUser['name']) != Lib_Define::STAT_APPLYED){
+        //$this->_intApplyNum = $_POST['apply_num'];
+        $stat = Lib_Data::getApplyStatByUsername($this->_arrUser['name']);
+        if(!in_array($stat,array(
+            Lib_Define::STAT_PSYCHOLOGY_TESTING,
+            Lib_Define::STAT_PSYCHOLOGY_TEST_EDN
+        ))){
             return false;
         }
         return true;

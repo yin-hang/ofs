@@ -6,7 +6,7 @@
  */
 
 class Lib_Encode {
-    public  static function convert($mixData,$strToEncode='gbk',$strFromEncode='utf-8'){
+    public  static function convert($mixData,$strToEncode='utf-8',$strFromEncode='utf-8'){
         $arrResult = array();
         if(is_array($mixData)){
             if (empty($mixData)) return array();
@@ -20,20 +20,24 @@ class Lib_Encode {
         }
         return $mixData;
     }
-    public static function json2array($strJson,$strToEncode='gbk'){
-        $strJson = self::convert($strJson,'utf-8','gbk');
+    public static function json2array($strJson,$strFromEncode='utf-8',$strToEncode='utf-8'){
+	if($strFromEncode != 'utf-8'){
+       	$strJson = self::convert($strJson,'utf-8',$strFromEncode);
+	}
         $arrData = json_decode($strJson,true);
-        if($strToEncode = 'gbk'){
+        if($strToEncode == 'gbk'){
             return self::convert($arrData,$strToEncode,'utf-8');
         }
         return $arrData;
     }
-    public static function array2json($arrData,$strFromEncode='gbk'){
-        if($strFromEncode = 'gbk'){
+    public static function array2json($arrData,$strFromEncode='utf-8',$strToEncode='utf-8'){
+        if($strFromEncode == 'gbk'){
             $arrData = self::convert($arrData,'utf-8',$strFromEncode);
         }
         $strData =  json_encode($arrData);
-        $strData = self::convert($strData,'gbk','utf-8');
+		if($strToEncode != 'utf-8'){
+        	$strData = self::convert($strData,$strToEncode,'utf-8');
+		}
         return $strData;
     }
 } 

@@ -4,12 +4,11 @@
  * Date: 13-10-31
  * Desc: 
  */
-Lib_View::loadWidget('top.php');
+Lib_View::loadWidget('audit_top.php');
 $arrStatList = array(
     Lib_Define::STAT_PSYCHOLOGY_TEST_EDN => '等待初审',
     Lib_Define::STAT_FIRST_CHECK_SUC => '等待复审',
-    Lib_Define::STAT_LESSON_UPLOAD_FINISH => '等待教案审核',
-    Lib_Define::STAT_SUBMIT_IDENTITY_END => '等待身份审核'
+    Lib_Define::STAT_LESSON_UPLOAD_FINISH => '等待教案审核'
 );
 $arrAllStat = array(
     Lib_Define::STAT_APPLYING =>'申请中,还未提交申请',//申请中,还未提交申请
@@ -22,14 +21,11 @@ $arrAllStat = array(
     Lib_Define::STAT_SECOND_CHECK_FAIL =>'申请失败',//复审失败,请下次再重新申请
     Lib_Define::STAT_LESSON_UPLOAD_FINISH =>'等待审核教案',//教案提交完成，等待审核
     Lib_Define::STAT_LESSON_CHECK_NOT_PASS =>'教案审核未通过,需修改',//教案审核未通过，需要修改
-    Lib_Define::STAT_LESSON_CHECK_PASS =>'需要提交身份信息',//教案审核通过,需要提交身份信息
-    Lib_Define::STAT_SUBMIT_IDENTITY_END =>'等待审核身份信息',//身份信息提交完成,等待审核
-    Lib_Define::STAT_IDENTITY_CHECK_SUC =>'等待培训',//身份信息提交成功,等待培训
-    Lib_Define::STAT_IDENTITY_CHECK_FAIL =>'等待重新上传身份信息',//身份信息提交失败,需要重新上传身份信息
+    Lib_Define::STAT_LESSON_CHECK_PASS =>'需要提交身份信息',//教案审核通过,进入培训流程
     Lib_Define::STAT_ALL_FINISH =>'所有流程已经完成'//所有流程都已经完成
 );
 ?>
-<div>
+<div class="wrapper audit-wrapper">
   <div>
       <span>选择查询类别</span>
       <select name="audit_user" id="j_select_audit_user">

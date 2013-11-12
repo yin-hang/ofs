@@ -6,24 +6,24 @@
  * Desc: 
  */
 class Lib_Error{
-    const USER_NOT_LOGIN = '�û�δ��¼';//�û�δ��¼
-    const UN_KNOW_ERR = 'δ֪����';//δ֪����
-    const PARAM_ERR = '��������';//��������
-    const UPLODA_PIC_FAIL = 'ͼƬ�ϴ�ʧ��';//ͼƬ�ϴ�ʧ��
-    const UPLOAD_LESSON_FAIL = '�̰��ϴ�ʧ��';
-    const UPLOAD_IDENTITY_NOT_FULL = '������Ϣ�ϴ���ȫ';
-    const UPLOAD_IDENTITY_FAIL = '������Ϣ�ϴ�ʧ��';
-    const CAN_NOT_UPDATE_IN_AUDIT = '���״̬�������޸�';
+    const USER_NOT_LOGIN = '用户未登录';//用户未登录
+    const UN_KNOW_ERR = '未知错误';//未知错误
+    const PARAM_ERR = '参数错误';//参数错误
+    const UPLODA_PIC_FAIL = '图片上传失败';//图片上传失败
+    const UPLOAD_LESSON_FAIL = '教案上传失败';
+    const UPLOAD_IDENTITY_NOT_FULL = '身份信息上传不全';
+    const UPLOAD_IDENTITY_FAIL = '身份信息上传失败';
+    const CAN_NOT_UPDATE_IN_AUDIT = '审核状态不能再修改';
 
-    const NEED_UPLOAD_IDENTITY_CARD = '���ϴ�ѧ��֤��';
-    const NEED_UPLOAD_ADACT_CERT = '���ϴ�ѧ��ɨ���';
-    const NEED_UPLOAD_MEDICIAL_REPORT = '���ϴ���챨��ɨ���';
+    const NEED_UPLOAD_IDENTITY_CARD = '请上传学历证书';
+    const NEED_UPLOAD_ADACT_CERT = '请上传学历扫描件';
+    const NEED_UPLOAD_MEDICIAL_REPORT = '请上传体检报告扫描件';
 
-    const NEED_UPLOAD_IDENTITY = '������Ϣ�ϴ���ȫ���������ϴ�';
-    const NEED_UPLOAD_LESSON = '�̰��ϴ�����ȷ���������ϴ�';
+    const NEED_UPLOAD_IDENTITY = '身份信息上传不全，请重新上传';
+    const NEED_UPLOAD_LESSON = '教案上传不正确，请重新上传';
 
-    const UPLOAD_LESSON_SUCCESS = '�̰��ϴ��ɹ�';
-    const REMARK_NOT_NULL = '����д��˲�ͨ����ԭ��';
+    const UPLOAD_LESSON_SUCCESS = '教案上传成功';
+    const REMARK_NOT_NULL = '请填写审核不通过的原因';
 
-    const PERM_ERROR = 'û��Ȩ�޷���';
+    const PERM_ERROR = '没有权限访问';
 }

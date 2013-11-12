@@ -14,8 +14,7 @@ class audit extends BaseAction{
     private $_arrStat = array(
         Lib_Define::STAT_PSYCHOLOGY_TEST_EDN,
         Lib_Define::STAT_LESSON_UPLOAD_FINISH,
-        Lib_Define::STAT_FIRST_CHECK_SUC,
-        Lib_Define::STAT_SUBMIT_IDENTITY_END
+        Lib_Define::STAT_FIRST_CHECK_SUC
     );
     protected function _execute(){
         $this->_transStat();
@@ -73,13 +72,6 @@ class audit extends BaseAction{
                     $this->_intToStat = Lib_Define::STAT_LESSON_CHECK_PASS;
                 }else{
                     $this->_intToStat = Lib_Define::STAT_LESSON_CHECK_NOT_PASS;
-                }
-                break;
-            case    Lib_Define::STAT_SUBMIT_IDENTITY_END:
-                if($this->_intIsPass){
-                    $this->_intToStat = Lib_Define::STAT_IDENTITY_CHECK_SUC;
-                }else{
-                    $this->_intToStat = Lib_Define::STAT_IDENTITY_CHECK_FAIL;
                 }
                 break;
             default:
