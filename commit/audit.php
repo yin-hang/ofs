@@ -2,7 +2,7 @@
 /**
  * Author: jiangzhibin
  * Date: 13-10-30
- * Desc: 
+ * Desc: Ã·Ωª…Û∫À
  */
 require_once('../init.php');
 class audit extends BaseAction{
