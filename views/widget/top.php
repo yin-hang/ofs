@@ -1,7 +1,7 @@
 <html>
 <head>
     <title>OFS支教申请</title>
-    <meta charset="GBK">
+    <meta charset="utf-8">
     <link rel="stylesheet" type="text/css" href="/teacher/static/libs/css/bootstrap.css"/>
     <link rel="stylesheet" type="text/css" href="/teacher/static/libs/css/bootstrap-responsive.css"/>
     <link rel="stylesheet" type="text/css" href="/teacher/static/libs/css/jquery-ui.css"/>
