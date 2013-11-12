@@ -3,7 +3,7 @@
  * Author: jiangzhibin
  * Date: 13-10-27
  * Time: 2013-10-27
- * Desc: ±£´æÉêÇëÐÅÏ¢
+ * Desc: ä¿å­˜ç”³è¯·ä¿¡æ¯
  */
 require_once('../lib/Base.php');
 class apply extends BaseAction{
@@ -12,10 +12,10 @@ class apply extends BaseAction{
     protected $_arrData = array();
     protected $_strApplyNum = array();
     protected $_arrApplyInfo = array();
-    private $_bolIsUpdate = true;//ÊÇ·ñÊÇ¸üÐÂÐÅÏ¢
-    private $_bolIsSaveInfo = true;//ÊÇ·ñÊÇ±£´æÐÅÏ¢
+    private $_bolIsUpdate = true;//æ˜¯å¦æ˜¯æ›´æ–°ä¿¡æ¯
+    private $_bolIsSaveInfo = true;//æ˜¯å¦æ˜¯ä¿å­˜ä¿¡æ¯
     public function _execute(){
-        $this->_processPic();//´¦ÀíÍ¼Æ¬
+        $this->_processPic();//å¤„ç†å›¾ç‰‡
         if(count($_POST) > 0){
             foreach($_POST as $key => $value){
                 $arrList[$key] = $value;
@@ -24,15 +24,15 @@ class apply extends BaseAction{
             $arrList['photo_path'] = Lib_Encode::convert($this->_strPhotoPath,'utf-8','gbk');
             $this->_arrApplyInfo = $arrList;
             $this->_buildNewApplyNum();
-            $this->_insertToDB();//²åÈëÊý¾Ý¿â
+            $this->_insertToDB();//æ’å…¥æ•°æ®åº“
         }
         $this->_getUserData();
         $this->_display();
     }
     private function _display(){
-        if($this->_intErrno == 0 && !$this->_bolIsSaveInfo){//±íÊ¾Ìá½»³É¹¦
+        if($this->_intErrno == 0 && !$this->_bolIsSaveInfo){//è¡¨ç¤ºæäº¤æˆåŠŸ
             $this->_strTpl = 'index.php';
-        }else{//±íÊ¾Ìá½»Ê§°Ü
+        }else{//è¡¨ç¤ºæäº¤å¤±è´¥
             $this->_strTpl = 'apply.php';
         }
     }
@@ -48,19 +48,19 @@ class apply extends BaseAction{
         return true;
     }
     private  function _buildNewApplyNum(){
-        //$strTime = $_POST['star_time'];//ÉêÇëÊ±¼ä
-        $strTime = '13A';//ÔÝÊ±Ð´ËÀ£¬ºóÃæÔÙ¸Ä
+        //$strTime = $_POST['star_time'];//ç”³è¯·æ—¶é—´
+        $strTime = '13A';//æš‚æ—¶å†™æ­»ï¼ŒåŽé¢å†æ”¹
         $intNum = 1;
         $arrResult = DB::query('select max(id) as max_num from apply');
         if($arrResult == NULL){
-            $strNum = 1;//´Ó0¿ªÊ¼
+            $strNum = 1;//ä»Ž0å¼€å§‹
         }else{
-            $strNum = $arrResult[0]['max_num'] + 1;//»ñÈ¡×î´óµÄidÖµ
+            $strNum = $arrResult[0]['max_num'] + 1;//èŽ·å–æœ€å¤§çš„idå€¼
         }
         $strNum = sprintf("%04d",$strNum);
         $this->_strApplyNum = $strTime . $strNum;
     }
-    //´¦ÀíÍ¼Æ¬
+    //å¤„ç†å›¾ç‰‡
     private  function _processPic(){
         $strPhotoPath = $_POST['photo_path'];
         if($strPhotoPath){//
@@ -85,7 +85,7 @@ class apply extends BaseAction{
         $result = DB::queryFirstRow('select * from apply where user=%s order by create_time desc',$this->_arrUser['name']);
         $intTime = Time();
         $strInfo = Lib_Encode::array2json($this->_arrApplyInfo);
-        //½øÈëÉóºË×´Ì¬¾Í²»ÄÜÔÚÐÞ¸ÄÐÅÏ¢
+        //è¿›å…¥å®¡æ ¸çŠ¶æ€å°±ä¸èƒ½åœ¨ä¿®æ”¹ä¿¡æ¯
         if($strInfo['stat'] >=  Lib_Define::STAT_APPLYED){
             return false;
         }
@@ -100,8 +100,8 @@ class apply extends BaseAction{
             $arrInsert['apply_num'] = $this->_strApplyNum;
             DB::insert('apply',$arrInsert);
             $this->_bolIsUpdate = true;
-        }else{//³õÉó×´Ì¬ÖÐ²»ÄÜÔÙÐÞ¸Ä¸öÈË×ÊÁÏ
-            if($result[0]['stat'] >= Lib_Define::STAT_PSYCHOLOGY_TEST_EDN){//ÒÑ¾­½øÈë³õÉó½×¶Î£¬²»ÄÜÔÙÐÞ¸ÄÐÅÏ¢
+        }else{//åˆå®¡çŠ¶æ€ä¸­ä¸èƒ½å†ä¿®æ”¹ä¸ªäººèµ„æ–™
+            if($result[0]['stat'] >= Lib_Define::STAT_PSYCHOLOGY_TEST_EDN){//å·²ç»è¿›å…¥åˆå®¡é˜¶æ®µï¼Œä¸èƒ½å†ä¿®æ”¹ä¿¡æ¯
                 $this->_error(Lib_Errno::CAN_NOT_UPDATE_IN_AUDIT,Lib_Error::CAN_NOT_UPDATE_IN_AUDIT);
             }else{
                 DB::update('apply',$arrInsert,'user=%s',$this->_arrUser['name']);
@@ -109,7 +109,7 @@ class apply extends BaseAction{
             $this->_bolIsUpdate = false;
         }
     }
-    //»ñÈ¡µ±Ç°ÓÃ»§µÄÉêÇëÐÅÏ¢
+    //èŽ·å–å½“å‰ç”¨æˆ·çš„ç”³è¯·ä¿¡æ¯
     private function _getUserData(){
         if($this->_arrUser['is_login']){
             $arrUser = Lib_Data::getUserInfoByName($this->_arrUser['name']);

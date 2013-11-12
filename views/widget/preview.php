@@ -8,73 +8,73 @@
     $formvalues = $apply_data['info'];
 ?>
 <div class="preview">
-    <div>������ϢԤ��</div>
+    <div>个人信息预览</div>
     <div class="base_info">
         <div class="base_wrap wrap">
-            <div class="til">���˻�������</div>
+            <div class="til">个人基本资料</div>
             <div class="base_tab">
                 <ul>
                     <li>
                 <span>
-                    <label>��ʵ����:</label><span><?echo $formvalues['name'];?></span>
+                    <label>真实姓名:</label><span><?echo $formvalues['name'];?></span>
                 </span><br/>
                 <span>
-                    <label>�Ա�:</label><span>
+                    <label>性别:</label><span>
                         <?
                             if($formvalues['sex'] == 'man'){
-                                echo '��';
+                                echo '男';
                             }else{
-                                echo 'Ů';
+                                echo '女';
                             }
                         ?>
                     </span>
                 </span><br/>
                 <span>
-                    <label>�������:</label><span><?echo $formvalues["birth"]?></span>
+                    <label>出生年份:</label><span><?echo $formvalues["birth"]?></span>
                 </span><br/>
                 <span>
-                    <label>����֤����:</label><?echo $formvalues['identity_code']?>
+                    <label>身份证号码:</label><?echo $formvalues['identity_code']?>
                 </span>
                         <br/>
                     </li>
                     <li>
                 <span>
-                    <label>���:</label>
+                    <label>婚否:</label>
                     <?
                         if($formvalues['marriage'] == 1){
-                            echo '��';
+                            echo '是';
                         }else{
-                            echo '��';
+                            echo '否';
                         }
                     ?>
                 </span><br/>
                 <span>
-                    <label>����:</label><?echo $formvalues["nation"]?>
+                    <label>民族:</label><?echo $formvalues["nation"]?>
                 </span><br/>
                 <span>
-                    <label>����:</label><?echo $formvalues['hometown'];?>
+                    <label>籍贯:</label><?echo $formvalues['hometown'];?>
                 </span><br/>
                 <span>
-                    <label>�����̶�:</label><?echo $formvalues['edi'];?>
+                    <label>教育程度:</label><?echo $formvalues['edi'];?>
                 </span>
                     </li>
                     <li>
-                        <span><label>�־�ס��:</label><?echo $formvalues['liveplace'];?>
+                        <span><label>现居住地:</label><?echo $formvalues['liveplace'];?>
                     </li>
                     <li>
-                        <span><label>�ֻ�:</label><?echo $formvalues['mobile']?><br/>
-                        <span><label>�̶��绰:</label><?echo $formvalues['tel'];?><br/>
+                        <span><label>手机:</label><?echo $formvalues['mobile']?><br/>
+                        <span><label>固定电话:</label><?echo $formvalues['tel'];?><br/>
                         <span><label>email:</label><?echo $formvalues['email'];?><br/>
                     </li>
                     <li>
-                        <span><label>ͨѶ��ַ:</label><?php echo $formvalues["addr"]?><br/>
-                        <span><label>�ʱ�:</label><?php echo $formvalues["postcode"]?>
+                        <span><label>通讯地址:</label><?php echo $formvalues["addr"]?><br/>
+                        <span><label>邮编:</label><?php echo $formvalues["postcode"]?>
                     </li>
                 </ul>
             </div>
-            <div class="til2">�ܽ�������</div>
+            <div class="til2">受教育经历</div>
             <table class="edu_tab table table-bordered">
-                <tr><td>��ʼʱ��</td><td>����ʱ��</td><td>ѧУ����</td></tr>
+                <tr><td>开始时间</td><td>结束时间</td><td>学校名称</td></tr>
                 <tr>
                     <td class="sitem">
                         <?php echo $formvalues["edubegintime1"]?>
@@ -83,7 +83,7 @@
                         <?php echo $formvalues["eduendtime1"]?>
                     </td>
                     <td class="bitem">
-                        <?php echo $formvalues["edu1"]?>(��ѧ)<span class="red">*</span>
+                        <?php echo $formvalues["edu1"]?>(中学)<span class="red">*</span>
                     </td>
                 </tr>
                 <tr>
@@ -94,7 +94,7 @@
                         <?php echo $formvalues["eduendtime2"]?>
                     </td>
                     <td class="bitem">
-                        <?php echo $formvalues["edu2"]?>(��ѧ)<span class="red">*</span>
+                        <?php echo $formvalues["edu2"]?>(大学)<span class="red">*</span>
                     </td>
                 </tr>
                 <?php for($i=3;$i<=4;$i++) {
@@ -115,9 +115,9 @@
                     </tr>
                 <?php } ?>
             </table>
-            <div class="til2">��������</div>
+            <div class="til2">工作经历</div>
             <table class="work_tab table table-bordered">
-                <tr><td>��ʼʱ��</td><td>����ʱ��</td><td>��λ����</td><td>���θ�λ</td></tr>
+                <tr><td>开始时间</td><td>结束时间</td><td>单位名称</td><td>担任岗位</td></tr>
                 <?php
                     $start = 1;
                     if($formvalues['jobbegintime2']){
@@ -151,12 +151,12 @@
                     </tr>
                 <?php } ?>
             </table>
-            <div class="til2">��ͥ��Ա</div>
+            <div class="til2">家庭成员</div>
             <table class="family_tab table table-bordered">
                 <tr>
-                    <td>��ͥ��Ա</td>
-                    <td>����</td>
-                    <td>������λ</td>
+                    <td>家庭成员</td>
+                    <td>姓名</td>
+                    <td>工作单位</td>
                 </tr>
                 <?php
                 $start = 1;
@@ -181,38 +181,38 @@
             </table>
             <table class="sp_tab">
                 <tr>
-                    <td>�����ر��ܼ�������</td>
+                    <td>个人特别技能及资历：</td>
                     <td>
                         <?php echo $formvalues["ability"]?>
                     </td>
                 </tr>
                 <tr>
-                    <td>�з��˲�/������
+                    <td>有否伤残/病历：
                         <?php
                         if($formvalues['ill'] == 'no'){
-                            echo '��';
+                            echo '无';
                         }else{
-                            echo '��.' . $formvalues['illdetail'];
+                            echo '有.' . $formvalues['illdetail'];
                         }
                         ?>
                     </td>
 
                 </tr>
                 <tr>
-                    <td>�з�֧�̾��飺 </td>
+                    <td>有否支教经验： </td>
                     <td>
                         <?php
                             if($formvalues['exp'] == 'no'){
-                                echo '��';
+                                echo '无';
                             }else{
-                                echo '��.' . $formvalues['expdetail'];
+                                echo '有.' . $formvalues['expdetail'];
                             }
                         ?>
                     </td>
                 </tr>
                 <tr>
                     <td>
-                        ��Ƭ������������Ϊ�ѣ���
+                        照片（半身生活照为佳）：
                     </td>
                     <td>
                         <img src="<?php echo $formvalues['photo_path']?>"/>
@@ -220,107 +220,107 @@
                 </tr>
             </table>
             <div>
-                <h4>������������Ϣ</h4>
-                <label>������</label><?php echo $formvalues["EmergencyContactName"]?><br/>
-                <label>��ϵ��</label><?php echo $formvalues["EmergencyRelation"]?><br/>
-                <label>��ϵ��ʽ��</label><?php echo $formvalues["EmergencyContact"]?><br/>
-                <label>������λ:</label><?php echo $formvalues["EmergencyContactWork"]?>
+                <h4>紧急联络人信息</h4>
+                <label>姓名：</label><?php echo $formvalues["EmergencyContactName"]?><br/>
+                <label>关系：</label><?php echo $formvalues["EmergencyRelation"]?><br/>
+                <label>联系方式：</label><?php echo $formvalues["EmergencyContact"]?><br/>
+                <label>工作单位:</label><?php echo $formvalues["EmergencyContactWork"]?>
             </div>
         </div>
     </div>
     <div class="teach_wrap wrap">
-        <div class="til">֧��׼������</div>
-        <p>1. ��������:
+        <div class="til">支教准备工作</div>
+        <p>1. 您的身份:
         <?
             switch($formvalues['work']){
                 case 'student':
-                    echo 'ѧ��';
+                    echo '学生';
                     break;
                 case 'free':
-                    echo '�����ڼ�';
+                    echo '赋闲在家';
                     break;
                 case 'work':
-                    echo '��ְ.����';
+                    echo '在职.打算';
                     switch($formvalues['onwork']){
                         case 'quit':
-                            echo '��ְȥ֧��';
+                            echo '离职去支教';
                             break;
                         case 'leave':
-                            echo '��λ���';
+                            echo '向单位请假';
                             break;
                         case 'other':
-                            echo '��������ʽ����ְλ' . $formvalues['workdetail'] . '��ȥ֧��';
+                            echo '以其他方式保留职位' . $formvalues['workdetail'] . '再去支教';
                             break;
                     }
                     break;
             }
         ?>
-        <p>2. ֧�̻û���κξ��ñ��꣬һ��֧�̻����ʱ�䳤�̺͵�������������𣬵�������Ҫ�Լ��е���5000Ԫ���ϣ���ȷ�����Դ˴�֧�̻Ԥ�����ʽ�<br>
+        <p>2. 支教活动没有任何经济报酬，一次支教活动根据时间长短和地区差异有所差别，但基本需要自己承担在5000元以上，请确认您对此次支教活动预备的资金。<br>
             <?
                 switch($formvalues['money']){
                     case 'grade_1':
-                        echo 'С��5000';
+                        echo '小于5000';
                         break;
                     case 'grade_2':
                         echo '5000~10000';
                         break;
                     case 'grade_3':
-                        echo '����1��';
+                        echo '大于1万';
                         break;
                 }
 
             ?>
         </p>
         <p>
-            3. ����ʱ��ʼ��֧�̵��뷨�����������֧�̵Ŀ�����(<span class="red">*</span>)
+            3. 您何时开始有支教的想法？请简述您对支教的看法。(<span class="red">*</span>)
             <br>
             <?php echo $formvalues["think"]?>
         </p>
         <p>
-            4. ���Ƿ����֧�������ڵķ��գ�Ӧ�����Ӧ����Щ���ա�(<span class="red">*</span>)
+            4. 您是否清楚支教所存在的风险，应该如何应对这些风险。(<span class="red">*</span>)
             <br><?php echo $formvalues["risk"]?>
         </p>
         <p>
-            5. ���ڲ���֧�̹����������Լ��к�������ϣ������ʲô��(<span class="red">*</span>)<br>
+            5. 对于参与支教工作，您对自己有何期望或希望贡献什么？(<span class="red">*</span>)<br>
             <?php echo $formvalues["hope"]?>
         </p>
         <p>
-            6. ���Ƿ�ͼƻ�ȥ֧�̵��뷨�����ܱߵ�������ѽ��й���ͨ�����Ƕ����ƻ�֧�̵��뷨���ֵ�̬�����?<br>
+            6. 您是否就计划去支教的想法与您周边的亲朋好友进行过沟通？他们对您计划支教的想法所持的态度如何?<br>
             <?
                 switch($formvalues['support']){
                     case 'support':
-                        echo '�ǳ�֧��';
+                        echo '非常支持';
                         break;
                     case 'general':
-                        echo 'һ��';
+                        echo '一般';
                         break;
                     case 'except':
-                        echo '����';
+                        echo '反对';
                         break;
                     case 'not_talk':
-                        echo 'û�й�ͨ';
+                        echo '没有沟通';
                         break;
                 }
             ?>
         </p>
         <p>
-            7. ���֪����ֱϵ������������ϵ��ʽ���Ա����������ļ�����ϵ����ȡ���Ƕ����ƻ�֧�̵�֧�̶ֳȡ�
+            7. 请告知您的直系长辈亲属的联系方式，以便我们与您的家人联系，获取他们对您计划支教的支持程度。
             <br>
         <ul>
-            <li>����:<?php echo $formvalues["lineal_name"]?></li>
-            <li>��ϵ:<?php echo $formvalues["lineal_relation"]?></li>
-            <li>��ϵ��ʽ:<?php echo $formvalues["lineal_num"]?></li>
+            <li>姓名:<?php echo $formvalues["lineal_name"]?></li>
+            <li>关系:<?php echo $formvalues["lineal_relation"]?></li>
+            <li>联系方式:<?php echo $formvalues["lineal_num"]?></li>
         </ul>
         </p>
         <p>
-            8. Ԥ��֧������:
+            8. 预计支教期限:
             <?
                 switch($formvalues['time']){
                     case 'term':
-                        echo 'һѧ��';
+                        echo '一学期';
                         break;
                     case 'year':
-                        echo 'һ��';
+                        echo '一年';
                         break;
                     case 'other':
                         echo $formvalues['other_time'];
@@ -329,49 +329,49 @@
             ?>
         </p>
         <p>
-            9. Ը�⿪ʼ֧�̵����ڣ�2013���＾
+            9. 愿意开始支教的日期：2013年秋季
         </p>
         <p>
-            10. �Ӻδ���Ϥ���������Ϣ:
+            10. 从何处得悉本服务的消息:
             <?
                 switch($formvalues['msg_from']){
                     case 'friend':
-                        echo '����';
+                        echo '朋友';
                         break;
                     case 'website':
-                        echo 'OFS��վ';
+                        echo 'OFS网站';
                         break;
                     case 'weibo':
-                        echo '΢��';
+                        echo '微博';
                         break;
                     case 'weixin':
-                        echo '΢��';
+                        echo '微信';
                         break;
                     case 'baidu':
-                        echo '�ٶ�';
+                        echo '百度';
                         break;
                     case 'douban':
-                        echo '����';
+                        echo '豆瓣';
                         break;
                     case 'other':
-                        echo '����.'.$formvalues['msg_from_other'];
+                        echo '其他.'.$formvalues['msg_from_other'];
                         break;
                 }
             ?>
         </p>
         <p>
-            12. ���������<br>
+            12. 其他意见：<br>
             <?php echo $formvalues['other'];?>
         </p>
     </div>
     <div class="teach_wrap wrap">
-        <div class="til">��������</div>
+        <div class="til">其他资料</div>
         <div>
             <ul>
-                <li>�̰���Ϣ:<?if($apply_data['doc']){?><a target="_blank" href="<?echo $apply_data['doc']?>">����鿴</a><?}else{?>��δ�ϴ�<?}?></li>
-                <li>����ɨ���:<?if($apply_data['identity_card']){?><a target="_blank" href="<?echo $apply_data['identity_card']?>">����鿴</a><?}else{?>��δ�ϴ�<?}?></li>
-                <li>ѧ��ɨ���:<?if($apply_data['acade_cert']){?><a target="_blank" href="<?echo $apply_data['acade_cert']?>">����鿴</a><?}else{?>��δ�ϴ�<?}?></li>
-                <li>���ɨ���:<?if($apply_data['medical_report']){?><a target="_blank" href="<?echo $apply_data['medical_report']?>">����鿴</a><?}else{?>��δ�ϴ�<?}?></li>
+                <li>教案信息:<?if($apply_data['doc']){?><a target="_blank" href="<?echo $apply_data['doc']?>">点击查看</a><?}else{?>尚未上传<?}?></li>
+                <li>身份扫描件:<?if($apply_data['identity_card']){?><a target="_blank" href="<?echo $apply_data['identity_card']?>">点击查看</a><?}else{?>尚未上传<?}?></li>
+                <li>学历扫描件:<?if($apply_data['acade_cert']){?><a target="_blank" href="<?echo $apply_data['acade_cert']?>">点击查看</a><?}else{?>尚未上传<?}?></li>
+                <li>体检扫描件:<?if($apply_data['medical_report']){?><a target="_blank" href="<?echo $apply_data['medical_report']?>">点击查看</a><?}else{?>尚未上传<?}?></li>
             </ul>
         </div>
     </div>

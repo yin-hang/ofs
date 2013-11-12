@@ -2,7 +2,7 @@
  * Created with JetBrains PhpStorm.
  * User: jiangzhibin
  * Date: 13-8-29
- * Time: ÏÂÎç9:09
+ * Time: ä¸‹åˆ9:09
  * To change this template use File | Settings | File Templates.
  */
 $(document).ready(function(){

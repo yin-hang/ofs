@@ -38,70 +38,70 @@ var ApplySubmit = (function(){
             }
         });
 	}
-	//±íµ¥Ğ£Ñé
+	//è¡¨å•æ ¡éªŒ
 	function formValidator(){
 		var validator = new Validator({
                 stop:true,
                 callback:function(msg,$node){
                     if($node.length > 0){
-                        window.scrollTo(100,$node.offset().top);//¹ö¶¯µ½ÏàÓ¦Î»ÖÃ
+                        window.scrollTo(100,$node.offset().top);//æ»šåŠ¨åˆ°ç›¸åº”ä½ç½®
                     }
                     alert(msg);
                 }
         });
         var email = $('input[name=email]');
         var mobile = $('input[name=mobile]');
-        validator.add($('input[name=name]'),'isNotEmpty','ÓÃ»§Ãû²»ÄÜÎª¿Õ');
-        validator.add($('input[name=birth]'),'isNotEmpty','³öÉúÄêÔÂ²»ÄÜÎª¿Õ');
-        validator.add($('input[name=nation]'),'isNotEmpty','Ãñ×å²»ÄÜÎª¿Õ');
-        validator.add($('input[name=hometown]'),'isNotEmpty','¼®¹á²»ÄÜÎª¿Õ');
-        validator.add($('input[name=edu]'),'isNotEmpty','½ÌÓı³Ì¶È²»ÄÜÎª¿Õ');
-        validator.add($('input[name=edu]'),'isNotEmpty','½ÌÓı³Ì¶È²»ÄÜÎª¿Õ');
-        validator.add($('input[name=liveplace]'),'isNotEmpty','ÏÈ¾Ó×¡µØ²»ÄÜÎª¿Õ');
-        validator.add(mobile,'isNotEmpty','ÊÖ»úºÅ²»ÄÜÎª¿Õ');
-        validator.add(mobile,'isMobile','ÊÖ»úºÅ¸ñÊ½²»ÕıÈ·');
-        validator.add(email,'isNotEmpty','ÓÊÏä²»ÄÜÎª¿Õ');
-        validator.add(email,'isEmail','ÓÊÏä¸ñÊ½²»ÕıÈ·');
-        validator.add($('input[name=addr]'),'isNotEmpty','Í¨Ñ¶µØÖ·²»ÄÜÎª¿Õ');
-        validator.add($('input[name=postcode]'),'isNotEmpty','ÓÊ±à²»ÄÜÎª¿Õ');
+        validator.add($('input[name=name]'),'isNotEmpty','ç”¨æˆ·åä¸èƒ½ä¸ºç©º');
+        validator.add($('input[name=birth]'),'isNotEmpty','å‡ºç”Ÿå¹´æœˆä¸èƒ½ä¸ºç©º');
+        validator.add($('input[name=nation]'),'isNotEmpty','æ°‘æ—ä¸èƒ½ä¸ºç©º');
+        validator.add($('input[name=hometown]'),'isNotEmpty','ç±è´¯ä¸èƒ½ä¸ºç©º');
+        validator.add($('input[name=edu]'),'isNotEmpty','æ•™è‚²ç¨‹åº¦ä¸èƒ½ä¸ºç©º');
+        validator.add($('input[name=edu]'),'isNotEmpty','æ•™è‚²ç¨‹åº¦ä¸èƒ½ä¸ºç©º');
+        validator.add($('input[name=liveplace]'),'isNotEmpty','å…ˆå±…ä½åœ°ä¸èƒ½ä¸ºç©º');
+        validator.add(mobile,'isNotEmpty','æ‰‹æœºå·ä¸èƒ½ä¸ºç©º');
+        validator.add(mobile,'isMobile','æ‰‹æœºå·æ ¼å¼ä¸æ­£ç¡®');
+        validator.add(email,'isNotEmpty','é‚®ç®±ä¸èƒ½ä¸ºç©º');
+        validator.add(email,'isEmail','é‚®ç®±æ ¼å¼ä¸æ­£ç¡®');
+        validator.add($('input[name=addr]'),'isNotEmpty','é€šè®¯åœ°å€ä¸èƒ½ä¸ºç©º');
+        validator.add($('input[name=postcode]'),'isNotEmpty','é‚®ç¼–ä¸èƒ½ä¸ºç©º');
 
-        validator.add($('input[name=edubegintime1]'),'isNotEmpty','¿ªÊ¼Ê±¼ä²»ÄÜÎª¿Õ');
-        validator.add($('input[name=eduendtime1]'),'isNotEmpty','½áÊøÊ±¼ä²»ÄÜÎª¿Õ');
-        validator.add($('input[name=edu1]'),'isNotEmpty','ÖĞÑ§ĞÅÏ¢²»ÄÜÎª¿Õ');
-        validator.add($('input[name=edubegintime2]'),'isNotEmpty','¿ªÊ¼Ê±¼ä²»ÄÜÎª¿Õ');
-        validator.add($('input[name=eduendtime2]'),'isNotEmpty','½áÊøÊ±¼ä²»ÄÜÎª¿Õ');
-        validator.add($('input[name=edu2]'),'isNotEmpty','´óÑ§ĞÅÏ¢²»ÄÜÎª¿Õ');
+        validator.add($('input[name=edubegintime1]'),'isNotEmpty','å¼€å§‹æ—¶é—´ä¸èƒ½ä¸ºç©º');
+        validator.add($('input[name=eduendtime1]'),'isNotEmpty','ç»“æŸæ—¶é—´ä¸èƒ½ä¸ºç©º');
+        validator.add($('input[name=edu1]'),'isNotEmpty','ä¸­å­¦ä¿¡æ¯ä¸èƒ½ä¸ºç©º');
+        validator.add($('input[name=edubegintime2]'),'isNotEmpty','å¼€å§‹æ—¶é—´ä¸èƒ½ä¸ºç©º');
+        validator.add($('input[name=eduendtime2]'),'isNotEmpty','ç»“æŸæ—¶é—´ä¸èƒ½ä¸ºç©º');
+        validator.add($('input[name=edu2]'),'isNotEmpty','å¤§å­¦ä¿¡æ¯ä¸èƒ½ä¸ºç©º');
 
-        validator.add($('input[name=folkname1]'),'isNotEmpty','¼ÒÍ¥³ÉÔ±²»ÄÜÎª¿Õ');
-        validator.add($('input[name=folk1]'),'isNotEmpty','¼ÒÍ¥³ÉÔ±²»ÄÜÎª¿Õ');
-        validator.add($('input[name=folkjob1]'),'isNotEmpty','ÇëÌîĞ´¼ÒÍ¥³ÉÔ±¹¤×÷µ¥Î»');
-        validator.add($('input[name=positon1]'),'isNotEmpty','µ£ÈÎ¸ÚÎ»²»ÄÜÎª¿Õ');
+        validator.add($('input[name=folkname1]'),'isNotEmpty','å®¶åº­æˆå‘˜ä¸èƒ½ä¸ºç©º');
+        validator.add($('input[name=folk1]'),'isNotEmpty','å®¶åº­æˆå‘˜ä¸èƒ½ä¸ºç©º');
+        validator.add($('input[name=folkjob1]'),'isNotEmpty','è¯·å¡«å†™å®¶åº­æˆå‘˜å·¥ä½œå•ä½');
+        validator.add($('input[name=positon1]'),'isNotEmpty','æ‹…ä»»å²—ä½ä¸èƒ½ä¸ºç©º');
 
 
-        validator.add($('input[name=jobbegintime1]'),'isNotEmpty','¿ªÊ¼Ê±¼ä²»ÄÜÎª¿Õ');
-        validator.add($('input[name=jobendtime1]'),'isNotEmpty','½áÊøÊ±¼ä²»ÄÜÎª¿Õ');
-        validator.add($('input[name=job1]'),'isNotEmpty','µ¥Î»Ãû³Æ²»ÄÜÎª¿Õ');
-        validator.add($('input[name=positon1]'),'isNotEmpty','µ£ÈÎ¸ÚÎ»²»ÄÜÎª¿Õ');
+        validator.add($('input[name=jobbegintime1]'),'isNotEmpty','å¼€å§‹æ—¶é—´ä¸èƒ½ä¸ºç©º');
+        validator.add($('input[name=jobendtime1]'),'isNotEmpty','ç»“æŸæ—¶é—´ä¸èƒ½ä¸ºç©º');
+        validator.add($('input[name=job1]'),'isNotEmpty','å•ä½åç§°ä¸èƒ½ä¸ºç©º');
+        validator.add($('input[name=positon1]'),'isNotEmpty','æ‹…ä»»å²—ä½ä¸èƒ½ä¸ºç©º');
 
-        validator.add($('input[name=exp]:checked'),'isNotEmpty','ÇëÑ¡ÔñÊÇ·ñÓĞÖ§½Ì¾­Ñé');
+        validator.add($('input[name=exp]:checked'),'isNotEmpty','è¯·é€‰æ‹©æ˜¯å¦æœ‰æ”¯æ•™ç»éªŒ');
 
-        validator.add($('input[name=EmergencyContactName]'),'isNotEmpty','½ô¼±ÁªÏµÈË²»ÄÜÎª¿Õ');
-        validator.add($('input[name=EmergencyContact]'),'isNotEmpty','½ô¼±ÁªÏµÈËÁªÏµ·½Ê½²»ÄÜÎª¿Õ');
-        validator.add($('input[name=EmergencyContactWork]'),'isNotEmpty','½ô¼±ÁªÏµÈË¹¤×÷µ¥Î»²»ÄÜÎª¿Õ');
-        validator.add($('input[name=EmergencyContactRelation]'),'isNotEmpty','½ô¼±ÁªÏµÈË¹ØÏµ²»ÄÜÎª¿Õ');
+        validator.add($('input[name=EmergencyContactName]'),'isNotEmpty','ç´§æ€¥è”ç³»äººä¸èƒ½ä¸ºç©º');
+        validator.add($('input[name=EmergencyContact]'),'isNotEmpty','ç´§æ€¥è”ç³»äººè”ç³»æ–¹å¼ä¸èƒ½ä¸ºç©º');
+        validator.add($('input[name=EmergencyContactWork]'),'isNotEmpty','ç´§æ€¥è”ç³»äººå·¥ä½œå•ä½ä¸èƒ½ä¸ºç©º');
+        validator.add($('input[name=EmergencyContactRelation]'),'isNotEmpty','ç´§æ€¥è”ç³»äººå…³ç³»ä¸èƒ½ä¸ºç©º');
 
-        validator.add($('textarea[name=think]'),'isNotEmpty','ÇëÌîĞ´¶ÔÓÚÖ§½ÌµÄÏë·¨');
-        validator.add($('textarea[name=risk]'),'isNotEmpty','ÇëÌîĞ´¶ÔÓÚÖ§½ÌµÄ·çÏÕµÄÈÏÊ¶');
-        validator.add($('textarea[name=hope]'),'isNotEmpty','ÇëÌîĞ´Äã¶ÔÓÚ²ÎÓëÖ§½Ì¹¤×÷µÄÆÚÍû»òÕßÏ£Íû¹±Ï×');
-        validator.add($('input[name=work]:checked'),'isNotEmpty','ÇëÑ¡ÔñÄúµÄÉí·İ');
-        validator.add($('input[name=money]:checked'),'isNotEmpty','ÇëÑ¡ÔñÖ§½Ì»î¶¯Ô¤±¸×Ê½ğ');
-        validator.add($('input[name=support]:checked'),'isNotEmpty','ÇëÑ¡ÔñÖÜ±ßÇ×ÓÑ¶ÔÓÚÄúÖ§½ÌµÄÖ§³Ö³Ì¶È');
+        validator.add($('textarea[name=think]'),'isNotEmpty','è¯·å¡«å†™å¯¹äºæ”¯æ•™çš„æƒ³æ³•');
+        validator.add($('textarea[name=risk]'),'isNotEmpty','è¯·å¡«å†™å¯¹äºæ”¯æ•™çš„é£é™©çš„è®¤è¯†');
+        validator.add($('textarea[name=hope]'),'isNotEmpty','è¯·å¡«å†™ä½ å¯¹äºå‚ä¸æ”¯æ•™å·¥ä½œçš„æœŸæœ›æˆ–è€…å¸Œæœ›è´¡çŒ®');
+        validator.add($('input[name=work]:checked'),'isNotEmpty','è¯·é€‰æ‹©æ‚¨çš„èº«ä»½');
+        validator.add($('input[name=money]:checked'),'isNotEmpty','è¯·é€‰æ‹©æ”¯æ•™æ´»åŠ¨é¢„å¤‡èµ„é‡‘');
+        validator.add($('input[name=support]:checked'),'isNotEmpty','è¯·é€‰æ‹©å‘¨è¾¹äº²å‹å¯¹äºæ‚¨æ”¯æ•™çš„æ”¯æŒç¨‹åº¦');
 
-        validator.add($('input[name=lineal_name]'),'isNotEmpty','ÇëÌîĞ´Ö±ÏµÇ×ÊôµÄĞÕÃû');
-        validator.add($('input[name=lineal_relation]'),'isNotEmpty','ÇëÌîĞ´ºÍÖ±ÏµÇ×ÊôµÄ¹ØÏµ');
-        validator.add($('input[name=lineal_num]'),'isNotEmpty','ÇëÌîĞ´Ö±ÏµÇ×ÊôµÄÁªÏµ·½Ê½');
-        validator.add($('input[name=time]:checked'),'isNotEmpty','ÇëÑ¡ÔñÖ§½ÌÆÚÏŞ');
-        validator.add($('input[name=msg_from]:checked'),'isNotEmpty','ÇëÑ¡ÔñÏûÏ¢À´Ô´');
+        validator.add($('input[name=lineal_name]'),'isNotEmpty','è¯·å¡«å†™ç›´ç³»äº²å±çš„å§“å');
+        validator.add($('input[name=lineal_relation]'),'isNotEmpty','è¯·å¡«å†™å’Œç›´ç³»äº²å±çš„å…³ç³»');
+        validator.add($('input[name=lineal_num]'),'isNotEmpty','è¯·å¡«å†™ç›´ç³»äº²å±çš„è”ç³»æ–¹å¼');
+        validator.add($('input[name=time]:checked'),'isNotEmpty','è¯·é€‰æ‹©æ”¯æ•™æœŸé™');
+        validator.add($('input[name=msg_from]:checked'),'isNotEmpty','è¯·é€‰æ‹©æ¶ˆæ¯æ¥æº');
 //        return true;
         var result =  validator.validate();
         return result;
@@ -115,21 +115,21 @@ var ApplySubmit = (function(){
 
 /**
  * options = {
- *     stop:0//µ±³ö´íµÄÊ±ºò¾ÍÍ£Ö¹Ğ£Ñé
- *     callback:function(msgs){}//»Øµ÷º¯Êı£¬Èç¹ûaddÄ³Ìõ¹æÔòµÄÊ±ºòÌí¼ÓÁË»Øµ÷º¯Êı£¬Ôò»á½«´Ëº¯Êı¸²¸Ç
+ *     stop:0//å½“å‡ºé”™çš„æ—¶å€™å°±åœæ­¢æ ¡éªŒ
+ *     callback:function(msgs){}//å›è°ƒå‡½æ•°ï¼Œå¦‚æœaddæŸæ¡è§„åˆ™çš„æ—¶å€™æ·»åŠ äº†å›è°ƒå‡½æ•°ï¼Œåˆ™ä¼šå°†æ­¤å‡½æ•°è¦†ç›–
  * }
  */
 
 var Validator = function(options){
     this.messages = [];
     this.datas = [];
-    this.stop = options.stop||fasle;//µ±Ğ£Ñé³ö´íµÄÊ±ºò¾ÍÍ£Ö¹
+    this.stop = options.stop||fasle;//å½“æ ¡éªŒå‡ºé”™çš„æ—¶å€™å°±åœæ­¢
     this.callback = options.callback||{};
     this.checkResult = true;
 };
 Validator.prototype = {
     /*
-     * Ìí¼ÓÒ»ÌõĞ£Ñé¹æÔò,µÚÒ»¸öÊÇĞèÒªÑéÖ¤µÄÊı¾İ£¬µÚ¶ş¸öÊÇĞèÒªÑéÖ¤µÄº¯Êı£¬µÚÈı¸öÊÇÑéÖ¤Ê§°ÜÊ±ºòµÄÏûÏ¢£¬¿ÉÒÔ²»Ğ´£¬ÓĞÄ¬ÈÏ
+     * æ·»åŠ ä¸€æ¡æ ¡éªŒè§„åˆ™,ç¬¬ä¸€ä¸ªæ˜¯éœ€è¦éªŒè¯çš„æ•°æ®ï¼Œç¬¬äºŒä¸ªæ˜¯éœ€è¦éªŒè¯çš„å‡½æ•°ï¼Œç¬¬ä¸‰ä¸ªæ˜¯éªŒè¯å¤±è´¥æ—¶å€™çš„æ¶ˆæ¯ï¼Œå¯ä»¥ä¸å†™ï¼Œæœ‰é»˜è®¤
      * */
     add:function(data,type,msg){
         var list = {
@@ -145,19 +145,19 @@ Validator.prototype = {
             datas = this.datas;
         for(var item in datas){
             if(datas.hasOwnProperty(item)){
-                type = datas[item]['type'];//¸ù¾İkey²éÑ¯ÊÇ·ñ´æÔÚĞ£Ñé¹æÔòµÄÃû³Æ
+                type = datas[item]['type'];//æ ¹æ®keyæŸ¥è¯¢æ˜¯å¦å­˜åœ¨æ ¡éªŒè§„åˆ™çš„åç§°
                 checker = this.types[type];
                 if(!type){
-                    continue;//ÊäÈëµÄĞ£Ñé¹æÔò²»´æÔÚ
+                    continue;//è¾“å…¥çš„æ ¡éªŒè§„åˆ™ä¸å­˜åœ¨
                 }
-                if(!checker){//Ğ£Ñé¹æÔò²»´æÔÚÀàÖĞ£¬Ò²¼´µ÷ÓÃÁËÒ»¸öÃ»ÓĞµÄĞ£Ñé¹æÔò£¬±¨´í
+                if(!checker){//æ ¡éªŒè§„åˆ™ä¸å­˜åœ¨ç±»ä¸­ï¼Œä¹Ÿå³è°ƒç”¨äº†ä¸€ä¸ªæ²¡æœ‰çš„æ ¡éªŒè§„åˆ™ï¼ŒæŠ¥é”™
                     throw {
                         name:'validator error',
                         message:'No handler to validate type' + type
                     };
                 }
                 if(typeof checker.validate == 'function'){
-                    if(!checker.validate(datas[item]['data'])){//Ğ£Ñé¹æÔò²»Í¨¹ı
+                    if(!checker.validate(datas[item]['data'])){//æ ¡éªŒè§„åˆ™ä¸é€šè¿‡
                         switch(typeof datas[item]['msg']){
                             case 'string':
                                 if(typeof this.callback == 'function'){
@@ -166,7 +166,7 @@ Validator.prototype = {
                                 }
                                 break;
                             case 'function':
-                                datas[item]['msg'](checker.instruction);//Ê¹ÓÃÄ¬ÈÏµÄÏûÏ¢
+                                datas[item]['msg'](checker.instruction);//ä½¿ç”¨é»˜è®¤çš„æ¶ˆæ¯
                                 break;
                             default :
                                 if(typeof this.callback == 'function'){
@@ -175,7 +175,7 @@ Validator.prototype = {
                                 break;
                         }
                         this.checkResult = false;
-                        if(this.stop){//Óöµ½Ğ£Ñé²»Í¨¹ıÁ¢¿Ì¾ÍÍ£Ö¹
+                        if(this.stop){//é‡åˆ°æ ¡éªŒä¸é€šè¿‡ç«‹åˆ»å°±åœæ­¢
                             return false;
                         }
                     }
@@ -193,7 +193,7 @@ Validator.prototype.types = {
         validate:function($node){
             return !isNaN($node.val());
         },
-        instruction:'±ØĞëÎªÊı×Ö'
+        instruction:'å¿…é¡»ä¸ºæ•°å­—'
     },
     isNotEmpty:{
         validate:function($node){
@@ -202,7 +202,7 @@ Validator.prototype.types = {
             }
             return $.trim($node.val()) !== '';
         },
-        instruction:'ÄÚÈİ²»ÄÜÎª¿Õ'
+        instruction:'å†…å®¹ä¸èƒ½ä¸ºç©º'
     },
 	strLong:{
 		validate:function($node){
@@ -212,19 +212,19 @@ Validator.prototype.types = {
 			}
 			return true;
 		},
-		instruction:'×ÖÊı²»ÄÜ³¬¹ı300'
+		instruction:'å­—æ•°ä¸èƒ½è¶…è¿‡300'
 	},
 	isMobile:{
 		validate:function($node){
 			return /^1[3|4|5|8][0-9]\d{4,8}$/.test($node.val());
 		},
-		instruction:'ÊÖ»úºÅÌîĞ´´íÎó,Çë¼ì²é'
+		instruction:'æ‰‹æœºå·å¡«å†™é”™è¯¯,è¯·æ£€æŸ¥'
 	},
 	isEmail:{
 		validate:function($node){
 			return /^(\w)+(\.\w+)*@(\w)+((\.\w+)+)$/.test($node.val());
 		},
-		instruction:'ÓÊÏäÌîĞ´´íÎó,Çë¼ì²é'
+		instruction:'é‚®ç®±å¡«å†™é”™è¯¯,è¯·æ£€æŸ¥'
 	}
 };
 

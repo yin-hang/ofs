@@ -3,26 +3,26 @@
  * Author: jiangzhibin
  * Date: 13-10-27
  * Time: 2013-10-27
- * Desc: �ϴ��̰�
+ * Desc: 上传教案
  */
 $apply_stat = $apply_data['stat'];
 ?>
-<div>��ǰ״̬:
+<div>当前状态:
 <?
     switch($apply_stat){
         case Lib_Define::STAT_SECOND_CHECK_SUC;
-            echo '�������,��Ҫ�ύ�̰�';
+            echo '复审完成,需要提交教案';
             break;
         case Lib_Define::STAT_LESSON_CHECK_NOT_PASS:
-            echo '�̰�δͨ�����,��Ҫ�޸�,�������ϴ�';
+            echo '教案未通过审核,需要修改,请重新上传';
             break;
     }
 ?>
 </div>
 <div class="upload_lesson">
-    <div>���ϴ��̰�:</div>
+    <div>请上传教案:</div>
     <form enctype="multipart/form-data" action="/teacher/commit/uploadLesson.php" method="post" name="form" >
         <input type="file" name="doc"/>
-        <button type="submit" class="btn btn-default" name="submit_doc">�ύ</button>
+        <button type="submit" class="btn btn-default" name="submit_doc">提交</button>
     </form>
 </div>

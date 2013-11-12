@@ -1,7 +1,7 @@
 <div class="footer">
     <span>@2013&nbsp;
-        <a href="/">ÎÒÃÇµÄ×ÔÓÉÌì¿Õ ¹«ÒæÖúÑ§ÏîÄ¿×é£¨OFS£¬ÌÒÀîÌì£©</a>
-        <a href="http://www.miibeian.gov.cn" target="_blank">¾©ICP±¸13003254ºÅ</a>
+        <a href="/">æˆ‘ä»¬çš„è‡ªç”±å¤©ç©º å…¬ç›ŠåŠ©å­¦é¡¹ç›®ç»„ï¼ˆOFSï¼Œæ¡ƒæŽå¤©ï¼‰</a>
+        <a href="http://www.miibeian.gov.cn" target="_blank">äº¬ICPå¤‡13003254å·</a>
     </span>
 </div>
 <script src="/teacher/static/libs/js/jquery-2.0.3.js"></script>

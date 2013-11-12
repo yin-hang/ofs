@@ -9,10 +9,10 @@
 			require("applyframe.php");
 		} else if ($stat >= $STAT_SUCC) {
 			$emph = $EMPH_SUCC;
-			print "<br>��������ɹ�����л���İ��ģ��ɵ�<a href=\"/bbs/\">��̳</a>��һ�����۵��������֧�̾���<br>";
-			//TODO: �ɸ�Щ�ο����� 
+			print "<br>您已申请成功，感谢您的爱心！可到<a href=\"/bbs/\">论坛</a>进一步讨论当地情况和支教经验<br>";
+			//TODO: 可给些参考链接 
 		} else if ($stat <= $STAT_FAIL) {
-			print "���ź����˴���δ������ɹ�����л���İ��ģ��ڴ������ٴκ�����<br>";
+			print "很遗憾，此次您未能申请成功，感谢您的爱心，期待与您再次合作！<br>";
 		} else {
 			$emph = $stat2emph[$stat];
 		//	require("flow.php");
@@ -20,15 +20,15 @@
 			if ($stat == $STAT_LESSONPLAN) {
 				?>
 				<form enctype="multipart/form-data" action="deallessonplan.php" method="post" name="form2" >
-					������һ�ڿεĽ̰��ϴ��� 
+					请制作一节课的教案上传： 
 					<input type=file name="lessonplan" /> <br>
-					<input type=submit value="�ύ" name="apply" />
+					<input type=submit value="提交" name="apply" />
 					<br><br>
 				</form>
 				<?php
-					//<input type=submit value="����" name="save" />
+					//<input type=submit value="保存" name="save" />
 			}
-			print "<br>�����ĵȴ�����л���İ��ģ��ɵ�<a href=\"/bbs/\">��̳</a>��һ������Ŀ�ĵ������֧�̾���<br><hr>����������������Ϣ(���ύ��ˣ����������޸�)��<br>";
+			print "<br>请耐心等待，感谢您的爱心！可到<a href=\"/bbs/\">论坛</a>进一步讨论目的地情况和支教经验<br><hr>以下是您的申请信息(已提交审核，不能自行修改)：<br>";
 			$username = $_user['name'];
 ?>
 			<div>

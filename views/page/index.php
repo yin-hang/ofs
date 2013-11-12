@@ -7,7 +7,7 @@
 Lib_View::loadWidget('top.php');
 ?>
 <div class="wrapper">
-    <div class="page-header"><h3 class="text-center">OFSÖ¾Ô¸ÕßÉêÇë</h3></div>
+    <div class="page-header"><h3 class="text-center">OFSå¿—æ„¿è€…ç”³è¯·</h3></div>
    <?
    Lib_View::loadWidget('show_msg.php');
    Lib_View::loadWidget('process.php');
@@ -17,7 +17,7 @@ Lib_View::loadWidget('top.php');
 <div class="text-center">
         <?
                 if($user['power']['teacher_apply_admin'] == 1){
-                        echo '<a href="/teacher/admin/audit.php" target="_blank">¹ÜÀíÔ±Èë¿Ú</a>';
+                        echo '<a href="/teacher/admin/audit.php" target="_blank">ç®¡ç†å‘˜å…¥å£</a>';
                 };
         ?>
 </div>

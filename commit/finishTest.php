@@ -3,7 +3,7 @@
  * Author: jiangzhibin
  * Date: 13-10-27
  * Time: 2013-10-27
- * Desc: 完成心里测试
+ * Desc: 瀹屾垚蹇冮噷娴嬭瘯
  */
 require_once('../lib/Base.php');
 class finishTest extends BaseAction{

@@ -6,7 +6,7 @@
  */
 Lib_View::loadWidget('top.php');
 if($apply_data == false || empty($apply_data)){
-    echo '此人暂无任何申请信息';
+    echo '姝や汉鏆傛棤浠讳綍鐢宠淇℃伅';
 }else{
     Lib_View::loadWidget('preview.php');
 }
