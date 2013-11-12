@@ -1,0 +1,135 @@
+<?php
+/**
+ * 用户信息
+ * @autor: niuyao
+ * @date: 13-4-5
+ *
+ */
+require_once 'lib/PhpWindAccount.php';
+require_once 'lib/meekrodb.2.1.class.php';
+
+class Common_User{
+	const  _SITE_CONF = '/ofs_site/bbs/data/bbscache/config.php';
+	const  _DB_CONF = 'conf/db.php';
+	private static $_is_db_conntected = false;
+	private static function _loadSiteConf(){
+		if(is_file(self::_SITE_CONF)){
+			include(self::_SITE_CONF);
+			return array(
+				'db_site_hash'	=> $db_sitehash,
+				'db_hash'		=> $db_hash,
+				'db_cookiepre'	=> $db_cookiepre,
+			);
+		}
+	}
+
+	public static function current(){
+		if(defined('ENVIRONMENT') && ENVIRONMENT == 'development'){//开发模式，直接返回模拟的用户信息
+			return array(
+				'is_login'	=> true,
+				'name'		=> 'ofs_kids',
+			);//返回给应用程序使用的用户信息数据
+		}
+
+		$user = array(
+			'is_login'	=> false,
+			'name'		=> '',
+		);//返回给应用程序使用的用户信息数据
+
+		$conf = self::_loadSiteConf();
+		$account = new PhpWindAccount($conf['db_cookiepre'],
+			$conf['db_hash'],
+			$conf['db_site_hash']
+		);
+		$login_info = $account->getLoginInfo();
+		if(intval($login_info['winduid']) > 0 && strlen($login_info['windpwd']) >= 16){
+			self::_connectDb();
+			DB::useDB('phpwind');
+			$sql = 'SELECT username, uid, password, groupid from pw_members where uid='
+				. $login_info['winduid'];
+			$user_info = DB::queryFirstRow($sql);
+			$pwd_code = $account->pwdCode($user_info['password']);
+			if($pwd_code === $login_info['windpwd']){
+				$user['is_login'] = true;
+				$user['name'] = $user_info['username'];
+				$user['uid'] = $user_info['uid'];
+				$user['groupid'] = $user_info['groupid'];
+				$user['power'] = array(
+					'teacher_apply_admin'		=> 0,
+					'kids_admin'						=> 0,
+				);
+				$groupid = intval($user['groupid']);
+				if($groupid === 21){
+					$user['power']['teacher_apply_admin'] = 1;
+				}
+			}
+		}
+		return $user;
+	}
+
+	/**
+	 * 连接数据库
+	 */
+	private static function _connectDb(){
+		$conf_file = dirname(__FILE__) . '/' . self::_DB_CONF;
+		if(is_file($conf_file)){
+			if(self::$_is_db_conntected === false){
+				$conf = include(self::_DB_CONF);
+				DB::$user = $conf['uname'];
+				DB::$password = $conf['passwd'];
+				DB::$dbName = 'phpwind';
+				DB::$encoding = $conf['encoding'];
+				self::$_is_db_conntected = true;
+			}
+		}
+		else{
+			echo '[kids]: db conf not exists!';
+		}
+	}
+
+	/**
+	 * 助学系统中的用户信息
+	 */
+	public static function inKidsApp(){
+		if(defined('ENVIRONMENT') && ENVIRONMENT == 'development'){//开发模式，直接返回模拟的用户信息
+			return array(
+				'is_login'	=> true,
+				'name'		=> 'ofs_kids',
+				'is_registered'	=> true,
+				'is_admin'		=> true,
+			);//返回给应用程序使用的用户信息数据
+		}
+
+		$user = self::current();
+		self::_connectDb();
+		if($user['is_login'] == true){
+			DB::useDB('kids');
+			$sql = 'SELECT realname from ofs_donator where donator_id=%s';
+			$info = DB::queryFirstRow($sql, $user['name']);
+			if($info === null){
+				$user['is_registered'] = false;
+			}
+			else{
+				$user['is_registered'] = true;
+				foreach($info as $key => $value){
+					$user[$key] = $value;
+				}
+			}
+			$admins = array(
+				'ofs_kids',
+				'ourfreesky',
+				'paleswd',
+			);
+			if(in_array($user['name'], $admins)){
+				$user['is_admin'] = true;
+			}
+			else{
+				$user['is_admin'] = false;
+			}
+		}
+
+		return $user;
+	}
+}
+
+//var_dump(Common_User::inkidsApp());

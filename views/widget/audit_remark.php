@@ -7,6 +7,6 @@
 ?>
 <div>
     <?if($apply_data['audit_remark']){?>
-        <span>��˱�ע:</span><span><?echo $apply_data['audit_remark']?></span>
+        <span>审核备注:</span><span><?echo $apply_data['audit_remark']?></span>
     <?}?>
 </div>

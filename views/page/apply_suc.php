@@ -7,8 +7,8 @@
     Lib_View::loadWidget('top.php');
 ?>
 <div>
-    <span>Ö§½ÌÉêÇëÌá½»³É¹¦,ÏÂÒ»²½ÐèÒª½øÐÐÐÄÀí²âÊÔ</span><br/>
-    <span>Çëµã»÷ÐÄÀí²âÊÔ:<a href="http://www.cnpsy.net/16pf/index3.asp" id="j_star_test" target="_blank">Á´½ÓµØÖ·</a>
+    <span>æ”¯æ•™ç”³è¯·æäº¤æˆåŠŸ,ä¸‹ä¸€æ­¥éœ€è¦è¿›è¡Œå¿ƒç†æµ‹è¯•</span><br/>
+    <span>è¯·ç‚¹å‡»å¿ƒç†æµ‹è¯•:<a href="http://www.cnpsy.net/16pf/index3.asp" id="j_star_test" target="_blank">é“¾æŽ¥åœ°å€</a>
 </div>
 <?
     Lib_View::loadWidget('preview.php');

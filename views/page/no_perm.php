@@ -6,7 +6,7 @@
  */
 Lib_View::loadWidget('top.php');
 ?>
-������Ȩ�޲鿴��ҳ�棬<a href="/teacher/index.php">�������</a>
+你暂无权限查看此页面，<a href="/teacher/index.php">点击返回</a>
 <?
 Lib_View::loadWidget('bottom.php');
 ?>

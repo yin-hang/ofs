@@ -3,13 +3,13 @@
  * Author: jiangzhibin
  * Date: 13-10-27
  * Time: 2013-10-27
- * Desc: ÉÏ´«Éí·ÝÐÅÏ¢
+ * Desc: ä¸Šä¼ èº«ä»½ä¿¡æ¯
  */
 require_once('../lib/Base.php');
 class uploadIdentity extends BaseAction{
-    private $_strIdentityUrl = '';//Éí·ÝÖ¤
-    private $_strAcadeUrl = '';//Ñ§Àú
-    private $_strMedicalUrl = '';//Ìå¼ì
+    private $_strIdentityUrl = '';//èº«ä»½è¯
+    private $_strAcadeUrl = '';//å­¦åŽ†
+    private $_strMedicalUrl = '';//ä½“æ£€
     private $_arrApplyData = array();
     protected $_strTpl = 'index.php';
     public function _execute(){
@@ -33,7 +33,7 @@ class uploadIdentity extends BaseAction{
         $this->_strIdentityUrl = $this->_upload('identity_card');
         $this->_strMedicalUrl = $this->_upload('medical_report');
     }
-    //¸üÐÂÉí·ÝÐÅÏ¢
+    //æ›´æ–°èº«ä»½ä¿¡æ¯
     private function _upIdentity(){
         $arrApplyData = $this->_arrApplyData;
         $arrUpdate = array();

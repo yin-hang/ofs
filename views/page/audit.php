@@ -6,35 +6,35 @@
  */
 Lib_View::loadWidget('top.php');
 $arrStatList = array(
-    Lib_Define::STAT_PSYCHOLOGY_TEST_EDN => 'µÈ´ý³õÉó',
-    Lib_Define::STAT_FIRST_CHECK_SUC => 'µÈ´ý¸´Éó',
-    Lib_Define::STAT_LESSON_UPLOAD_FINISH => 'µÈ´ý½Ì°¸ÉóºË',
-    Lib_Define::STAT_SUBMIT_IDENTITY_END => 'µÈ´ýÉí·ÝÉóºË'
+    Lib_Define::STAT_PSYCHOLOGY_TEST_EDN => 'ç­‰å¾…åˆå®¡',
+    Lib_Define::STAT_FIRST_CHECK_SUC => 'ç­‰å¾…å¤å®¡',
+    Lib_Define::STAT_LESSON_UPLOAD_FINISH => 'ç­‰å¾…æ•™æ¡ˆå®¡æ ¸',
+    Lib_Define::STAT_SUBMIT_IDENTITY_END => 'ç­‰å¾…èº«ä»½å®¡æ ¸'
 );
 $arrAllStat = array(
-    Lib_Define::STAT_APPLYING =>'ÉêÇëÖÐ,»¹Î´Ìá½»ÉêÇë',//ÉêÇëÖÐ,»¹Î´Ìá½»ÉêÇë
-    Lib_Define::STAT_APPLYED => 'ÉêÇëÍê³É,µÈ´ýÐÄÀí²âÊÔ',//ÉêÇëÍê³É,µÈ´ýÐÄÀí²âÊÔ
-    Lib_Define::STAT_PSYCHOLOGY_TESTING =>'ÐÄÀí²âÊÔÖÐ',//ÐÄÀí²âÊÔÖÐ£¬µÈ´ýÐÄÀí²âÊÔ½áÊø
-    Lib_Define::STAT_PSYCHOLOGY_TEST_EDN =>'µÈ´ý³õÉó',//ÐÄÀí²âÊÔ½áÊø,µÈ´ý³õÉó
-    Lib_Define::STAT_FIRST_CHECK_SUC =>'µÈ´ý¸´Éó',//³õÉóÍê³É,µÈ´ý¸´Éó
-    Lib_Define::STAT_FIRST_CHECK_FAIL =>'³õÉóÊ§°Ü',//³õÉóÊ§°Ü£¬ÇëÏÂ´ÎÔÙÖØÐÂÉêÇë
-    Lib_Define::STAT_SECOND_CHECK_SUC =>'¸´ÉóÍê³É,µÈ´ýÌá½»½Ì°¸',//¸´ÉóÍê³É,µÈ´ýÌá½»½Ì°¸
-    Lib_Define::STAT_SECOND_CHECK_FAIL =>'ÉêÇëÊ§°Ü',//¸´ÉóÊ§°Ü,ÇëÏÂ´ÎÔÙÖØÐÂÉêÇë
-    Lib_Define::STAT_LESSON_UPLOAD_FINISH =>'µÈ´ýÉóºË½Ì°¸',//½Ì°¸Ìá½»Íê³É£¬µÈ´ýÉóºË
-    Lib_Define::STAT_LESSON_CHECK_NOT_PASS =>'½Ì°¸ÉóºËÎ´Í¨¹ý,ÐèÐÞ¸Ä',//½Ì°¸ÉóºËÎ´Í¨¹ý£¬ÐèÒªÐÞ¸Ä
-    Lib_Define::STAT_LESSON_CHECK_PASS =>'ÐèÒªÌá½»Éí·ÝÐÅÏ¢',//½Ì°¸ÉóºËÍ¨¹ý,ÐèÒªÌá½»Éí·ÝÐÅÏ¢
-    Lib_Define::STAT_SUBMIT_IDENTITY_END =>'µÈ´ýÉóºËÉí·ÝÐÅÏ¢',//Éí·ÝÐÅÏ¢Ìá½»Íê³É,µÈ´ýÉóºË
-    Lib_Define::STAT_IDENTITY_CHECK_SUC =>'µÈ´ýÅàÑµ',//Éí·ÝÐÅÏ¢Ìá½»³É¹¦,µÈ´ýÅàÑµ
-    Lib_Define::STAT_IDENTITY_CHECK_FAIL =>'µÈ´ýÖØÐÂÉÏ´«Éí·ÝÐÅÏ¢',//Éí·ÝÐÅÏ¢Ìá½»Ê§°Ü,ÐèÒªÖØÐÂÉÏ´«Éí·ÝÐÅÏ¢
-    Lib_Define::STAT_ALL_FINISH =>'ËùÓÐÁ÷³ÌÒÑ¾­Íê³É'//ËùÓÐÁ÷³Ì¶¼ÒÑ¾­Íê³É
+    Lib_Define::STAT_APPLYING =>'ç”³è¯·ä¸­,è¿˜æœªæäº¤ç”³è¯·',//ç”³è¯·ä¸­,è¿˜æœªæäº¤ç”³è¯·
+    Lib_Define::STAT_APPLYED => 'ç”³è¯·å®Œæˆ,ç­‰å¾…å¿ƒç†æµ‹è¯•',//ç”³è¯·å®Œæˆ,ç­‰å¾…å¿ƒç†æµ‹è¯•
+    Lib_Define::STAT_PSYCHOLOGY_TESTING =>'å¿ƒç†æµ‹è¯•ä¸­',//å¿ƒç†æµ‹è¯•ä¸­ï¼Œç­‰å¾…å¿ƒç†æµ‹è¯•ç»“æŸ
+    Lib_Define::STAT_PSYCHOLOGY_TEST_EDN =>'ç­‰å¾…åˆå®¡',//å¿ƒç†æµ‹è¯•ç»“æŸ,ç­‰å¾…åˆå®¡
+    Lib_Define::STAT_FIRST_CHECK_SUC =>'ç­‰å¾…å¤å®¡',//åˆå®¡å®Œæˆ,ç­‰å¾…å¤å®¡
+    Lib_Define::STAT_FIRST_CHECK_FAIL =>'åˆå®¡å¤±è´¥',//åˆå®¡å¤±è´¥ï¼Œè¯·ä¸‹æ¬¡å†é‡æ–°ç”³è¯·
+    Lib_Define::STAT_SECOND_CHECK_SUC =>'å¤å®¡å®Œæˆ,ç­‰å¾…æäº¤æ•™æ¡ˆ',//å¤å®¡å®Œæˆ,ç­‰å¾…æäº¤æ•™æ¡ˆ
+    Lib_Define::STAT_SECOND_CHECK_FAIL =>'ç”³è¯·å¤±è´¥',//å¤å®¡å¤±è´¥,è¯·ä¸‹æ¬¡å†é‡æ–°ç”³è¯·
+    Lib_Define::STAT_LESSON_UPLOAD_FINISH =>'ç­‰å¾…å®¡æ ¸æ•™æ¡ˆ',//æ•™æ¡ˆæäº¤å®Œæˆï¼Œç­‰å¾…å®¡æ ¸
+    Lib_Define::STAT_LESSON_CHECK_NOT_PASS =>'æ•™æ¡ˆå®¡æ ¸æœªé€šè¿‡,éœ€ä¿®æ”¹',//æ•™æ¡ˆå®¡æ ¸æœªé€šè¿‡ï¼Œéœ€è¦ä¿®æ”¹
+    Lib_Define::STAT_LESSON_CHECK_PASS =>'éœ€è¦æäº¤èº«ä»½ä¿¡æ¯',//æ•™æ¡ˆå®¡æ ¸é€šè¿‡,éœ€è¦æäº¤èº«ä»½ä¿¡æ¯
+    Lib_Define::STAT_SUBMIT_IDENTITY_END =>'ç­‰å¾…å®¡æ ¸èº«ä»½ä¿¡æ¯',//èº«ä»½ä¿¡æ¯æäº¤å®Œæˆ,ç­‰å¾…å®¡æ ¸
+    Lib_Define::STAT_IDENTITY_CHECK_SUC =>'ç­‰å¾…åŸ¹è®­',//èº«ä»½ä¿¡æ¯æäº¤æˆåŠŸ,ç­‰å¾…åŸ¹è®­
+    Lib_Define::STAT_IDENTITY_CHECK_FAIL =>'ç­‰å¾…é‡æ–°ä¸Šä¼ èº«ä»½ä¿¡æ¯',//èº«ä»½ä¿¡æ¯æäº¤å¤±è´¥,éœ€è¦é‡æ–°ä¸Šä¼ èº«ä»½ä¿¡æ¯
+    Lib_Define::STAT_ALL_FINISH =>'æ‰€æœ‰æµç¨‹å·²ç»å®Œæˆ'//æ‰€æœ‰æµç¨‹éƒ½å·²ç»å®Œæˆ
 );
 ?>
 <div>
   <div>
-      <span>Ñ¡Ôñ²éÑ¯Àà±ð</span>
+      <span>é€‰æ‹©æŸ¥è¯¢ç±»åˆ«</span>
       <select name="audit_user" id="j_select_audit_user">
           <?
-            echo '<option value="audit">ËùÓÐ´ýÉóºËÓÃ»§</option>';
+            echo '<option value="audit">æ‰€æœ‰å¾…å®¡æ ¸ç”¨æˆ·</option>';
             foreach($arrStatList as $key=>$value){
                 if(isset($_GET['stat'])&&isset($arrStatList[$_GET['stat']])&&$_GET['stat'] == $key){
                     echo '<option value="' . $key.'" selected="true">'.$value.'</option>';
@@ -43,9 +43,9 @@ $arrAllStat = array(
                 }
             }
           if($_GET['all_apply'] == 1){
-              echo '<option value="all_apply" selected="true">ËùÓÐÉêÇëÖÐµÄÓÃ»§</option>';
+              echo '<option value="all_apply" selected="true">æ‰€æœ‰ç”³è¯·ä¸­çš„ç”¨æˆ·</option>';
           }else{
-              echo '<option value="all_apply">ËùÓÐÉêÇëÖÐµÄÓÃ»§</option>';
+              echo '<option value="all_apply">æ‰€æœ‰ç”³è¯·ä¸­çš„ç”¨æˆ·</option>';
           }
           ?>
       </select>
@@ -55,13 +55,13 @@ $arrAllStat = array(
         <table class="table">
             <thead>
                 <tr>
-                    <th>ÕæÊµÓÃ»§Ãû</th>
-                    <th>±àºÅ</th>
-                    <th>ÂÛÌ³ÕËºÅ</th>
-                    <th>µ±Ç°×´Ì¬</th>
-                    <th>²é¿´Ìá½»ÐÅÏ¢</th>
-                    <th>²Ù×÷</th>
-                    <th>±¸×¢</th>
+                    <th>çœŸå®žç”¨æˆ·å</th>
+                    <th>ç¼–å·</th>
+                    <th>è®ºå›è´¦å·</th>
+                    <th>å½“å‰çŠ¶æ€</th>
+                    <th>æŸ¥çœ‹æäº¤ä¿¡æ¯</th>
+                    <th>æ“ä½œ</th>
+                    <th>å¤‡æ³¨</th>
                 </tr>
             </thead>
             <tbody>
@@ -75,12 +75,12 @@ $arrAllStat = array(
                                 echo $arrAllStat[$value['stat']];
                             ?>
                         </td>
-                        <td><a target="_blank" href="/teacher/preview.php?username=<?echo urlencode($value['user']);?>">µã»÷²é¿´</a></td>
+                        <td><a target="_blank" href="/teacher/preview.php?username=<?echo urlencode($value['user']);?>">ç‚¹å‡»æŸ¥çœ‹</a></td>
                         <td>
                             <?
                                 if(isset($arrStatList[$value['stat']])){
-                                    echo '<input type="button" class="btn j_audit_pass_btn btn-primary" value="Í¨¹ý" stat="' . $value['stat'] .'"/>';
-                                    echo '<input type="button" class="btn j_audit_reject_btn  btn-primary" value="²»Í¨¹ý" stat="' . $value['stat'] .'"/>';
+                                    echo '<input type="button" class="btn j_audit_pass_btn btn-primary" value="é€šè¿‡" stat="' . $value['stat'] .'"/>';
+                                    echo '<input type="button" class="btn j_audit_reject_btn  btn-primary" value="ä¸é€šè¿‡" stat="' . $value['stat'] .'"/>';
                                 }
                             ?>
                         </td>
@@ -94,7 +94,7 @@ $arrAllStat = array(
             </tbody>
         </table>
     <?}else{?>
-        <span>Ã»ÓÐµÈ´ýÉóºËµÄÓÃ»§</span>
+        <span>æ²¡æœ‰ç­‰å¾…å®¡æ ¸çš„ç”¨æˆ·</span>
     <?}?>
   </div>
 </div>

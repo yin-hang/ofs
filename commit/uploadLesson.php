@@ -3,7 +3,7 @@
  * Author: jiangzhibin
  * Date: 13-10-27
  * Time: 2013-10-27
- * Desc: 上传教案
+ * Desc: 涓婁紶鏁欐
  */
 require_once('../lib/Base.php');
 class uploadLesson extends BaseAction{
@@ -30,7 +30,7 @@ class uploadLesson extends BaseAction{
     private function _processFile(){
         $this->_strDoc = $this->_upload('doc');
     }
-    //更新身份信息
+    //鏇存柊韬唤淇℃伅
     private function _upIdentity(){
         $arrApplyData = $this->_arrApplyData;
         $arrUpdate = array();

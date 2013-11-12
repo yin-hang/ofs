@@ -11,63 +11,63 @@ if($user['is_login']){
 ?>
 <div class="main_stat">
     <ul>
-        <li class="header">ÄúÄ¿Ç°µÄÖ§½ÌÉêÇëÐÅÏ¢</li>
+        <li class="header">æ‚¨ç›®å‰çš„æ”¯æ•™ç”³è¯·ä¿¡æ¯</li>
     <?php if(!$user['is_login']){?>
-        <li>ÐèÒªÏÈ<a href="http://www.ourfreesky.org/bbs/login.php">µÇÂ¼</a>Ö®ºó²ÅÄÜ½øÐÐÉêÇë²Ù×÷</li>
+        <li>éœ€è¦å…ˆ<a href="http://www.ourfreesky.org/bbs/login.php">ç™»å½•</a>ä¹‹åŽæ‰èƒ½è¿›è¡Œç”³è¯·æ“ä½œ</li>
     <?php }else{
     if($apply_stat === false){
-        echo '<li>ÄãÉÐÎ´½øÐÐÖ§½ÌÉêÇë£¬<a href="/teacher/apply.php">µã»÷½øÐÐÉêÇë</a></li>';
+        echo '<li>ä½ å°šæœªè¿›è¡Œæ”¯æ•™ç”³è¯·ï¼Œ<a href="/teacher/apply.php">ç‚¹å‡»è¿›è¡Œç”³è¯·</a></li>';
     }else{
 	if($apply_stat >= Lib_Define::STAT_PSYCHOLOGY_TEST_EDN){
-		echo '<li><a href="/teacher/preview.php?username='.$user['name'].'" target="_blank">²é¿´Ìá½»µÄÐÅÏ¢</a></li>';
+		echo '<li><a href="/teacher/preview.php?username='.$user['name'].'" target="_blank">æŸ¥çœ‹æäº¤çš„ä¿¡æ¯</a></li>';
 	}
-        echo '<li><div>ÉêÇë±àºÅ:' . $apply_data['apply_num']. '</div></li>';
-        echo '<li><div>Ìá½»Ê±¼ä:'.date('Y-m-d',$apply_data['moditime']).'</div></li>';
+        echo '<li><div>ç”³è¯·ç¼–å·:' . $apply_data['apply_num']. '</div></li>';
+        echo '<li><div>æäº¤æ—¶é—´:'.date('Y-m-d',$apply_data['moditime']).'</div></li>';
         switch($apply_stat){
-            case Lib_Define::STAT_APPLYING;//ÉêÇëÖÐ,»¹Î´Ìá½»ÉêÇë
-                echo 'µ±Ç°×´Ì¬:ÉêÇëÖÐ,»¹Î´Ìá½»ÉêÇë,<a href="/teacher/apply.php">µã»÷</a>ÍêÉÆÐÅÏ¢½øÐÐÉêÇë';
+            case Lib_Define::STAT_APPLYING;//ç”³è¯·ä¸­,è¿˜æœªæäº¤ç”³è¯·
+                echo 'å½“å‰çŠ¶æ€:ç”³è¯·ä¸­,è¿˜æœªæäº¤ç”³è¯·,<a href="/teacher/apply.php">ç‚¹å‡»</a>å®Œå–„ä¿¡æ¯è¿›è¡Œç”³è¯·';
                 break;
-            case Lib_Define::STAT_APPLYED;//ÉêÇëÍê³É,µÈ´ýÐÄÀí²âÊÔ
-                echo 'µ±Ç°×´Ì¬:ÉÐÎ´½øÐÐÐÄÀí²âÊÔ,<a href="http://www.cnpsy.net/16pf/index3.asp" id="j_star_test" target="_blank">µã»÷½øÐÐÐÄÀí²âÊÔ</a>';
+            case Lib_Define::STAT_APPLYED;//ç”³è¯·å®Œæˆ,ç­‰å¾…å¿ƒç†æµ‹è¯•
+                echo 'å½“å‰çŠ¶æ€:å°šæœªè¿›è¡Œå¿ƒç†æµ‹è¯•,<a href="http://www.cnpsy.net/16pf/index3.asp" id="j_star_test" target="_blank">ç‚¹å‡»è¿›è¡Œå¿ƒç†æµ‹è¯•</a>';
                 break;
-            case Lib_Define::STAT_PSYCHOLOGY_TESTING;//ÐÄÀí²âÊÔÖÐ£¬µÈ´ýÐÄÀí²âÊÔ½áÊø
-                echo 'µ±Ç°×´Ì¬:µÈ´ýÐÄÀí²âÊÔÍê³É,ÈôÒÑ¾­Íê³É,Çë<a href="/teacher/index.php" id="j_finish_test">µã»÷Á´½Ó</a>½øÈëÏÂÒ»²½ÉóºË<br/>';
-                echo 'Èç¹ûÃ»Íê³É,Çëµã»÷<a href="http://www.cnpsy.net/16pf/index3.asp" target="_blank">ÐÄÀí²âÊÔµØÖ·</a>½øÐÐ²âÊÔ';
+            case Lib_Define::STAT_PSYCHOLOGY_TESTING;//å¿ƒç†æµ‹è¯•ä¸­ï¼Œç­‰å¾…å¿ƒç†æµ‹è¯•ç»“æŸ
+                echo 'å½“å‰çŠ¶æ€:ç­‰å¾…å¿ƒç†æµ‹è¯•å®Œæˆ,è‹¥å·²ç»å®Œæˆ,è¯·<a href="/teacher/index.php" id="j_finish_test">ç‚¹å‡»é“¾æŽ¥</a>è¿›å…¥ä¸‹ä¸€æ­¥å®¡æ ¸<br/>';
+                echo 'å¦‚æžœæ²¡å®Œæˆ,è¯·ç‚¹å‡»<a href="http://www.cnpsy.net/16pf/index3.asp" target="_blank">å¿ƒç†æµ‹è¯•åœ°å€</a>è¿›è¡Œæµ‹è¯•';
                 break;
-            case Lib_Define::STAT_PSYCHOLOGY_TEST_EDN;//ÐÄÀí²âÊÔ½áÊø,µÈ´ý³õÉó
-                echo '<li>µ±Ç°×´Ì¬:Ìá½»Íê³É,³õÉóÖÐ,µÈ´ý³õÉó½á¹û</li>';
+            case Lib_Define::STAT_PSYCHOLOGY_TEST_EDN;//å¿ƒç†æµ‹è¯•ç»“æŸ,ç­‰å¾…åˆå®¡
+                echo '<li>å½“å‰çŠ¶æ€:æäº¤å®Œæˆ,åˆå®¡ä¸­,ç­‰å¾…åˆå®¡ç»“æžœ</li>';
                 break;
-            case Lib_Define::STAT_FIRST_CHECK_SUC;//³õÉóÍê³É,µÈ´ý¸´Éó
-                echo '<li>µ±Ç°×´Ì¬:³õÉóÍê³É,¸´ÉóÖÐ,µÈ´ý¸´Éó½á¹û</li>';
+            case Lib_Define::STAT_FIRST_CHECK_SUC;//åˆå®¡å®Œæˆ,ç­‰å¾…å¤å®¡
+                echo '<li>å½“å‰çŠ¶æ€:åˆå®¡å®Œæˆ,å¤å®¡ä¸­,ç­‰å¾…å¤å®¡ç»“æžœ</li>';
                 break;
-            case Lib_Define::STAT_FIRST_CHECK_FAIL://³õÉóÊ§°Ü£¬ÇëÏÂ´ÎÔÙÖØÐÂÉêÇë
-                echo '<li>µ±Ç°×´Ì¬:ÉóºËÊ§°Ü,ÇëÏÂ¸öÑ§ÆÚÖØÐÂÉêÇë</li>';
+            case Lib_Define::STAT_FIRST_CHECK_FAIL://åˆå®¡å¤±è´¥ï¼Œè¯·ä¸‹æ¬¡å†é‡æ–°ç”³è¯·
+                echo '<li>å½“å‰çŠ¶æ€:å®¡æ ¸å¤±è´¥,è¯·ä¸‹ä¸ªå­¦æœŸé‡æ–°ç”³è¯·</li>';
                 Lib_View::loadWidget('audit_remark.php');
                 break;
-            case Lib_Define::STAT_SECOND_CHECK_SUC;//¸´ÉóÍê³É,µÈ´ýÌá½»½Ì°¸
+            case Lib_Define::STAT_SECOND_CHECK_SUC;//å¤å®¡å®Œæˆ,ç­‰å¾…æäº¤æ•™æ¡ˆ
                 Lib_View::loadWidget('uploadLessonPlan.php');
                 break;
-            case Lib_Define::STAT_SECOND_CHECK_FAIL;//¸´ÉóÊ§°Ü,ÇëÏÂ´ÎÔÙÖØÐÂÉêÇë
-                echo '<li>µ±Ç°×´Ì¬:ÉóºËÊ§°Ü,ÇëÏÂ¸öÑ§ÆÚÖØÐÂÔÚÉêÇë</li>';
+            case Lib_Define::STAT_SECOND_CHECK_FAIL;//å¤å®¡å¤±è´¥,è¯·ä¸‹æ¬¡å†é‡æ–°ç”³è¯·
+                echo '<li>å½“å‰çŠ¶æ€:å®¡æ ¸å¤±è´¥,è¯·ä¸‹ä¸ªå­¦æœŸé‡æ–°åœ¨ç”³è¯·</li>';
                 Lib_View::loadWidget('audit_remark.php');
                 break;
-            case Lib_Define::STAT_LESSON_UPLOAD_FINISH;//½Ì°¸Ìá½»Íê³É£¬µÈ´ýÉóºË
-                echo '<li>µ±Ç°×´Ì¬:½Ì°¸Ìá½»Íê³É,µÈ´ýÉóºË</li>';
+            case Lib_Define::STAT_LESSON_UPLOAD_FINISH;//æ•™æ¡ˆæäº¤å®Œæˆï¼Œç­‰å¾…å®¡æ ¸
+                echo '<li>å½“å‰çŠ¶æ€:æ•™æ¡ˆæäº¤å®Œæˆ,ç­‰å¾…å®¡æ ¸</li>';
                 break;
-            case Lib_Define::STAT_LESSON_CHECK_NOT_PASS;//½Ì°¸ÉóºËÎ´Í¨¹ý£¬ÐèÒªÐÞ¸Ä
+            case Lib_Define::STAT_LESSON_CHECK_NOT_PASS;//æ•™æ¡ˆå®¡æ ¸æœªé€šè¿‡ï¼Œéœ€è¦ä¿®æ”¹
                 Lib_View::loadWidget('uploadLessonPlan.php');
                 Lib_View::loadWidget('audit_remark.php');
                 break;
-            case Lib_Define::STAT_LESSON_CHECK_PASS;//½Ì°¸ÉóºËÍ¨¹ý,ÐèÒªÌá½»Éí·ÝÐÅÏ¢
+            case Lib_Define::STAT_LESSON_CHECK_PASS;//æ•™æ¡ˆå®¡æ ¸é€šè¿‡,éœ€è¦æäº¤èº«ä»½ä¿¡æ¯
                 Lib_View::loadWidget('identity_upload.php');
                 break;
-            case Lib_Define::STAT_SUBMIT_IDENTITY_END;//Éí·ÝÐÅÏ¢Ìá½»Íê³É,µÈ´ýÉóºË
-                echo '<li>µ±Ç°×´Ì¬:Éí·ÝÐÅÏ¢Ìá½»Íê³É,µÈ´ýÉí·ÝÏà¹ØÐÅÏ¢ÉóºË</li>';
+            case Lib_Define::STAT_SUBMIT_IDENTITY_END;//èº«ä»½ä¿¡æ¯æäº¤å®Œæˆ,ç­‰å¾…å®¡æ ¸
+                echo '<li>å½“å‰çŠ¶æ€:èº«ä»½ä¿¡æ¯æäº¤å®Œæˆ,ç­‰å¾…èº«ä»½ç›¸å…³ä¿¡æ¯å®¡æ ¸</li>';
                 break;
-            case Lib_Define::STAT_IDENTITY_CHECK_SUC;//Éí·ÝÐÅÏ¢Ìá½»³É¹¦,µÈ´ýÅàÑµ
-                echo '<li>µ±Ç°×´Ì¬:Ä¿Ç°ËùÓÐÉóºËÒÑ¾­Íê±Ï,µÈ´ýÅàÑµ</li>';
+            case Lib_Define::STAT_IDENTITY_CHECK_SUC;//èº«ä»½ä¿¡æ¯æäº¤æˆåŠŸ,ç­‰å¾…åŸ¹è®­
+                echo '<li>å½“å‰çŠ¶æ€:ç›®å‰æ‰€æœ‰å®¡æ ¸å·²ç»å®Œæ¯•,ç­‰å¾…åŸ¹è®­</li>';
                 break;
-            case Lib_Define::STAT_IDENTITY_CHECK_FAIL;//Éí·ÝÐÅÏ¢Ìá½»Ê§°Ü,ÐèÒªÖØÐÂÉÏ´«Éí·ÝÐÅÏ¢
+            case Lib_Define::STAT_IDENTITY_CHECK_FAIL;//èº«ä»½ä¿¡æ¯æäº¤å¤±è´¥,éœ€è¦é‡æ–°ä¸Šä¼ èº«ä»½ä¿¡æ¯
                 echo '<li>';
                 Lib_View::loadWidget('identity_upload.php');
                 Lib_View::loadWidget('audit_remark.php');

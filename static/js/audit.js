@@ -27,7 +27,7 @@ var Audit = (function(){
             var id = $node.data('id');
             var remark = $node.find('textarea').val();
             if(!isPass && remark == ''){
-                alert('ÇëÌîĞ´ÉóºË²»Í¨¹ıµÄÔ­Òò');
+                alert('è¯·å¡«å†™å®¡æ ¸ä¸é€šè¿‡çš„åŸå› ');
                 return false;
             }
             var data = {
@@ -43,8 +43,8 @@ var Audit = (function(){
                 data:data,
                 success:function(json){
                     if(json&&json.errno == 0){
-                        alert('²Ù×÷³É¹¦!');
-                        window.location.reload();//Ò³ÃæÖØĞÂË¢ĞÂ
+                        alert('æ“ä½œæˆåŠŸ!');
+                        window.location.reload();//é¡µé¢é‡æ–°åˆ·æ–°
                     }else{
                         alert(json.errmsg);
                     }
