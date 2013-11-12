@@ -1,4 +1,5 @@
 <?php
+//审核页面
 require_once('../lib/Base.php');
 class audit extends BaseAction{
     private $_intStat = false;
