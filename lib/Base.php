@@ -7,8 +7,8 @@
  */
 require_once(dirname(__FILE__).'/../init.php');
 abstract class BaseAction{
-    protected $_intErrno = 0;//´íÎóºÅ
-    protected $_strErrmsg = '';//´íÎóĞÅÏ¢
+    protected $_intErrno = 0;//é”™è¯¯å·
+    protected $_strErrmsg = '';//é”™è¯¯ä¿¡æ¯
     protected $_arrData = array();
     protected $_arrUser = array();
     protected $_strTpl = '';

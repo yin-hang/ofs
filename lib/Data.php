@@ -3,11 +3,11 @@
  * Author: jiangzhibin
  * Date: 13-10-27
  * Time: 2013-10-27
- * Desc: Êı¾İ½Ó¿Ú
+ * Desc: æ•°æ®æ¥å£
  */
 
 class Lib_Data {
-    //»ñÈ¡ÓÃ»§µ±Ç°µÄÉêÇë×´Ì¬
+    //è·å–ç”¨æˆ·å½“å‰çš„ç”³è¯·çŠ¶æ€
     public static function getApplyStatByUsername($strName){
         $arrResult = DB::query('select stat from apply where user=%s', $strName);
         if($arrResult !== false && isset($arrResult[0]['stat'])){
@@ -24,7 +24,7 @@ class Lib_Data {
         }
         return false;
     }
-    //¸ü¸ÄÉêÇë×´Ì¬
+    //æ›´æ”¹ç”³è¯·çŠ¶æ€
     public static function setApplyStat($strName,$stat){
         if($stat < Lib_Define::MIN_STAT || $stat > Lib_Define::MAX_STAT){
             return false;

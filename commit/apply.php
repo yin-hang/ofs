@@ -21,7 +21,8 @@ class apply extends BaseAction{
                 $arrList[$key] = $value;
             }
             //$arrList['photo_path'] = $this->_strPhotoPath;
-            $arrList['photo_path'] = Lib_Encode::convert($this->_strPhotoPath,'utf-8','gbk');
+            //$arrList['photo_path'] = Lib_Encode::convert($this->_strPhotoPath,'utf-8','gbk');
+            $arrList['photo_path'] = $this->_strPhotoPath;
             $this->_arrApplyInfo = $arrList;
             $this->_buildNewApplyNum();
             $this->_insertToDB();//插入数据库
