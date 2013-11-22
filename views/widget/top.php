@@ -61,7 +61,7 @@
             ?>
         </div>
         <div class="nav-logo">
-            <span class="f30">我们的自由天空</span><span class="f22 sub-logo">公益助学</span>
+            <span class="f30"><a href="/">我们的自由天空</a></span><span class="f22 sub-logo">公益助学</span>
         </div>
     </div>
     <div class="nav-bottom">
