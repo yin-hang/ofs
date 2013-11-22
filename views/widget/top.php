@@ -30,7 +30,7 @@
      }
      
 ?>
-
+<!doctype html>
 <html>
 <head>
     <title>OFS支教申请</title>

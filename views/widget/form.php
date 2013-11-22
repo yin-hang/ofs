@@ -199,12 +199,10 @@ $formvalues = $apply_data['info'];
 </div>
 <div class="til2">支教准备工作</div>
 <div class="teach_wrap region">
-    <p>1. 您的身份？
-    <ul>
-        <li><input type=radio value="student" name=work <?php if($formvalues["work"]=="student") echo "checked"; ?> />学生</li>
-        <li><input type=radio value="free" name=work <?php if($formvalues["work"]=="free") echo "checked"; ?> />赋闲在家</li>
-        <li><input type=radio value="work" name=work <?php if($formvalues["work"]=="work") echo "checked"; ?> />在职</li>
-        <li>
+    <p>1. 您的身份？<br/>
+        <input type=radio value="student" name=work <?php if($formvalues["work"]=="student") echo "checked"; ?> />学生<br/>
+        <input type=radio value="free" name=work <?php if($formvalues["work"]=="free") echo "checked"; ?> />赋闲在家<br/>
+        <input type=radio value="work" name=work <?php if($formvalues["work"]=="work") echo "checked"; ?> />在职<br/>
             <ul class="hide" id="j_in_work">
                 <li> 如果您是在职，若通过申请，您计划：</li>
                 <li><input type=radio value="quit" name=onwork <?php if($formvalues["onwork"]=="quit") echo "checked"; ?> />离职去支教</li>
@@ -214,8 +212,7 @@ $formvalues = $apply_data['info'];
                     <input type=text size=30  value="<?php echo $formvalues["workdetail"]?>" name="workdetail" />再去支教
                 </li>
             </ul>
-        </li>
-    </ul>
+ 
     <p>2. 支教活动没有任何经济报酬，一次支教活动根据时间长短和地区差异有所差别，但基本需要自己承担在5000元以上，请确认您对此次支教活动预备的资金。<br>
         <input type="radio" value="grade_1" name="money" <?php if($formvalues['money'] == 'grade_1'){echo 'checked';}?>/><5000元
         <input type="radio" value="grade_2" name="money" <?php if($formvalues['money'] == 'grade_2'){echo 'checked';}?>/>5000-10000元

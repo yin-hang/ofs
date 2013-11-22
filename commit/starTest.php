@@ -23,8 +23,9 @@ class starTest extends BaseAction{
         $stat = Lib_Data::getApplyStatByUsername($this->_arrUser['name']);
         if(!in_array($stat,array(
             Lib_Define::STAT_PSYCHOLOGY_TESTING,
-            Lib_Define::STAT_PSYCHOLOGY_TEST_EDN
+            Lib_Define::STAT_APPLYED
         ))){
+            var_dump($stat);
             return false;
         }
         return true;
