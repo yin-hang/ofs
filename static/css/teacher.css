@@ -168,14 +168,17 @@ table .btn{
     background-color:#F6F4F4;
     color:#ffffff;
 }
+.header a{
+    color:#ffffff;
+}
 .nav-top{
     height:122px;
 }
 .nav-logo{
     font-size:30px;    
 }
-.f22{
-    font-size:22px;
+.f18{
+    font-size:18px;
 }
 .nav{
     height:80px;

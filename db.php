@@ -6,8 +6,10 @@
 	DB::$user = 'yinhang';
 	DB::$password = 'ofs@2006';
 	DB::$dbName = 'teacher';
+	DB::$encoding = 'utf-8';
 //	DB::get('teacher');
 	DB::useDB('teacher');
+    DB::query('set names utf8');
 //	DB::get();
 	$APPLYTABLE = DB::$dbName.".apply";
 ?>

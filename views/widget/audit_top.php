@@ -42,30 +42,16 @@
 </head>
 <body>
 <div class="header">
+    <!--
     <div class="nav-top"></div>
+    -->
     <div class="nav">
-        <div class="nav-list fr">
-            <?
-                $itemLength = count($arrItem);
-                for($i = 0;$i < $itemLength;$i ++){
-                    if($i == $user_stat){
-                        echo '<span class="nav-item cur-item">' . $arrItem[$i] . '</span>';
-                        
-                    }else{
-                        echo '<span class="nav-item">' . $arrItem[$i] . '</span>';
-                    }
-                    if($i != $itemLength -1){
-                        echo '<span class="nav-sep">></span>';    
-                    }    
-                }
-            ?>
-        </div>
         <div class="nav-logo">
-            <span class="f30"><a href="/">我们的自由天空</a></span><span class="f18 sub-logo">公益助学</span>
+            <a href="/" class="f30">我们的自由天空</a><span class="f18 sub-logo">公益助学</span>
         </div>
     </div>
-    <div class="nav-bottom">
-        <?echo $arrItem[$user_stat];?>
+    <div class="nav-bottom audit-til">
+        <span>后台审核管理系统</span>
     </div>
 </div>
 <?php
