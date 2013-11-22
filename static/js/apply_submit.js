@@ -52,6 +52,7 @@ var ApplySubmit = (function(){
         var email = $('input[name=email]');
         var mobile = $('input[name=mobile]');
         validator.add($('input[name=name]'),'isNotEmpty','用户名不能为空');
+        validator.add($('input[name=identity_code]'),'isNotEmpty','身份证号码不能为空');
         validator.add($('input[name=birth]'),'isNotEmpty','出生年月不能为空');
         validator.add($('input[name=nation]'),'isNotEmpty','民族不能为空');
         validator.add($('input[name=hometown]'),'isNotEmpty','籍贯不能为空');
@@ -102,7 +103,7 @@ var ApplySubmit = (function(){
         validator.add($('input[name=lineal_num]'),'isNotEmpty','请填写直系亲属的联系方式');
         validator.add($('input[name=time]:checked'),'isNotEmpty','请选择支教期限');
         validator.add($('input[name=msg_from]:checked'),'isNotEmpty','请选择消息来源');
-        return true;
+        //return true;
         var result =  validator.validate();
         return result;
 	}

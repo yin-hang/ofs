@@ -32,7 +32,8 @@ class apply extends BaseAction{
     }
     private function _display(){
         if($this->_intErrno == 0 && !$this->_bolIsSaveInfo){//表示提交成功
-            $this->_strTpl = 'index.php';
+            //$this->_strTpl = 'index.php';
+            $this->jumpToPage();//跳转到主页
         }else{//表示提交失败
             $this->_strTpl = 'apply.php';
         }
@@ -87,8 +88,9 @@ class apply extends BaseAction{
         $intTime = Time();
         $strInfo = Lib_Encode::array2json($this->_arrApplyInfo);
         $stat = Lib_Define::STAT_APPLYED;
-        if($this->_bolIsSaveInfo){
-            $stat = Lib_Define::STAT_APPLYING;
+        if($this->_bolIsSaveInfo){//如果是保存信息,则保存原来的状态不变
+//            $stat = Lib_Define::STAT_APPLYING;
+            $stat = $result['stat'];
         }
         //进入审核状态就不能在修改信息
         $arrInsert = array(
