@@ -1,5 +1,5 @@
 use teacher;
-DROP TABLE IF EXISTS `apply`;
+/* DROP TABLE IF EXISTS `apply`; */
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `apply` (
@@ -23,6 +23,10 @@ CREATE TABLE `apply` (
   `moditime` INT DEFAULT NULL,
   `create_time` INT DEFAULT NULL,
   `audit_time` int DEFAULT NULL,
-  -- 审核信息
-  `audit_remark` varchar(255) DEFAULT NULL
-)ENGINE=MyISAM DEFAULT CHARSET=gbk;
+  -- 审核信息，申请人可见  
+  `audit_remark` varchar(255) DEFAULT NULL,
+  -- 审核员分配 
+  `first_checker` char(64) DEFAULT NULL,
+  `second_checker` char(64) DEFAULT NULL,
+  `third_checker` char(64) DEFAULT NULL
+)ENGINE=MyISAM DEFAULT CHARSET=utf8;
